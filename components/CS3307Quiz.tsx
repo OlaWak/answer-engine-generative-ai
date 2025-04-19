@@ -113,7 +113,7 @@ export default function CS3307Quiz() {
           <div className="mt-6 text-lg font-semibold">
             {selectedChoice === currentQuestion.correctAnswer ? (
               <>
-                ✅ Correct! <span className="text-pink-600">Yallah, next question!</span>
+                ✅ Correct! <span className="text-pink-600">Yalla, next question!</span>
               </>
             ) : (
               <>

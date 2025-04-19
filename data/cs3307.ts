@@ -1,4 +1,10 @@
-const cs3307 = [
+export type Question = {
+  question: string;
+  choices: string[];
+  correctAnswer: string;
+};
+
+const cs3307: Question[] = [
   {
     question: "What is the main goal of the Strategy pattern?",
     choices: [
