@@ -64,7 +64,7 @@ export default function CS3307Quiz() {
   if (finished) {
     return (
       <div className={`min-h-screen flex flex-col items-center justify-center ${bg} text-gray-800 font-mono px-4 text-center`}>
-        <p className="text-sm italic text-gray-600 mb-2">That’s a wrap! Bismillah came through 🫶🏻</p>
+        <p className="text-sm italic text-gray-600 mb-2">That’s a wrap! Good luck on the final don't forget ur Duaas 🫶🏻</p>
         <h2 className="text-xl font-bold mb-4 underline decoration-pink-500">3307 Practice Quiz — Results</h2>
         <h1 className="text-4xl font-bold mb-4">🎉 Quiz Complete!</h1>
         <p className="text-xl">
@@ -122,9 +122,9 @@ export default function CS3307Quiz() {
         {showFeedback && (
           <div className="mt-6 text-lg font-semibold">
             {selectedChoice === currentQuestion.correctAnswer ? (
-              <>✅ Correct! <span className="text-pink-600">Yalla, next question!</span></>
+              <>✅ Correct! <span className="text-pink-600">u're cookingg 👩🏻‍🍳</span></>
             ) : (
-              <>❌ Not quite! <span className="text-pink-600">In Sha Allah next one</span></>
+              <>❌ Not quite! <span className="text-pink-600">u're getting cooked 😔✋</span></>
             )}
             <br />
             <button
