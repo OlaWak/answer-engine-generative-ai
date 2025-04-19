@@ -9,8 +9,8 @@ import { ExperimentalMessage } from 'ai'
 import { Spinner } from '@/components/ui/spinner'
 import { Section } from '@/components/section'
 import { FollowupPanel } from '@/components/followup-panel'
-import { inquire, researcher, taskManager, querySuggestor } from '@/lib/agents'
-import { writer } from '@/lib/agents/writer'
+//import { inquire, researcher, taskManager, querySuggestor } from '@/lib/agents'
+//import { writer } from '@/lib/agents/writer'
 
 async function submit(formData?: FormData, skip?: boolean) {
   'use server'
