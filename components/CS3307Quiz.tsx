@@ -1,5 +1,6 @@
+// components/CS3307Quiz.tsx
 import { useState } from 'react';
-import cs3307 from '../data/cs3307';
+import cs3307, { Question } from '../data/cs3307';
 
 export default function CS3307Quiz() {
   const [access, setAccess] = useState(false);
@@ -80,7 +81,16 @@ export default function CS3307Quiz() {
       <div className="bg-white bg-opacity-90 rounded-2xl p-8 shadow-lg max-w-2xl w-full text-center border border-pink-200">
         <h2 className="text-xl font-bold mb-2 underline decoration-pink-500">3307 Practice Quiz</h2>
         <h2 className="text-2xl font-bold mb-4">Question {currentIndex + 1} / {cs3307.length}</h2>
-        <p className="text-lg mb-6">{currentQuestion.question}</p>
+        <p className="text-lg mb-4">{currentQuestion.question}</p>
+
+        {/* Render associated image if provided */}
+        {currentQuestion.image && (
+          <img
+            src={currentQuestion.image}
+            alt="Question related"
+            className="mx-auto mb-6 max-h-64"
+          />
+        )}
 
         <div className="grid grid-cols-1 gap-4">
           {currentQuestion.choices.map((choice, idx) => {
@@ -112,13 +122,9 @@ export default function CS3307Quiz() {
         {showFeedback && (
           <div className="mt-6 text-lg font-semibold">
             {selectedChoice === currentQuestion.correctAnswer ? (
-              <>
-                ✅ Correct! <span className="text-pink-600">Yalla, next question!</span>
-              </>
+              <>✅ Correct! <span className="text-pink-600">Yalla, next question!</span></>
             ) : (
-              <>
-                ❌ Not quite! <span className="text-pink-600"> In Sha Allah next one</span>
-              </>
+              <>❌ Not quite! <span className="text-pink-600">In Sha Allah next one</span></>
             )}
             <br />
             <button
