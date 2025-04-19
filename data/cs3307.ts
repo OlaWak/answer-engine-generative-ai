@@ -398,7 +398,104 @@ const cs3307: Question[] = [
       'Client directly instantiates the product classes using new.'
     ],
     correctAnswer: 'Client controls when objects are created, while factory controls what is created.'
+  },
+
+  {
+    question: '“Provide an interface for creating families of related or dependent objects without specifying their concrete classes.” Which design pattern does this definition describe?',
+    choices: [
+      'Abstract Factory',
+      'Singleton',
+      'Factory Method',
+      'Adapter'
+    ],
+    correctAnswer: 'Abstract Factory'
+  },
+  {
+    question: 'Pizza *pizza = new Pizza(12);  // 12" pizza\npizza->addTopping("Pineapple");\npizza->addTopping("Ham");\n\nPizza *pizza = new Pizza(8);\npizza->addTopping("Pepperoni");\npizza->addTopping("Mushroom");\npizza->addTopping("Green Peppers");\npizza->addTopping("Onions");\nAccording to the slides, what design pattern would best replace this manual construction code?',
+    choices: [
+      'Abstract Factory',
+      'Factory Method',
+      'Builder',
+      'Prototype'
+    ],
+    correctAnswer: 'Builder'
+  },
+  {
+    question: '“Separate the construction of a complex object from its representation so that the same construction process can create different representations.” Which design pattern is this the textbook definition of?',
+    choices: [
+      'Builder',
+      'Factory Method',
+      'Abstract Factory',
+      'Adapter'
+    ],
+    correctAnswer: 'Builder'
+  },
+  {
+    question: 'void Cook::constructPizza() {\n    _pizzaBuilder->buildName();\n    _pizzaBuilder->buildDough();\n    _pizzaBuilder->buildSauce();\n    _pizzaBuilder->buildToppings();\n}\nWhich design pattern does this approach to step-by-step assembly demonstrate?',
+    choices: [
+      'Builder',
+      'Abstract Factory',
+      'Template Method',
+      'Strategy'
+    ],
+    correctAnswer: 'Builder'
+  },
+  {
+    question: 'Which of the following is NOT a listed consequence of the Builder pattern from the slides?',
+    choices: [
+      'Lets you vary a product’s internal representation',
+      'Isolates code for construction and representation',
+      'Makes exchanging product families easy',
+      'Gives you finer control over the construction process'
+    ],
+    correctAnswer: 'Makes exchanging product families easy'
+  },
+  {
+    question: 'void HawaiianPizzaBuilder::buildToppings() {\n    _pizza.addTopping("Ham");\n    _pizza.addTopping("Pineapple");\n}\nThis specific implementation of a builder method most directly represents:',
+    choices: [
+      'Director',
+      'Concrete Builder',
+      'Product',
+      'Factory Method'
+    ],
+    correctAnswer: 'Concrete Builder'
+  },
+
+  {
+    question: 'What is not a listed consequence of the Builder pattern?',
+    choices: [
+      'Lets you vary a product’s internal representation',
+      'Isolates code for construction and representation',
+      'Allows run-time class generation',
+      'Gives you finer control over the construction process'
+    ],
+    correctAnswer: 'Allows run-time class generation'
+  },
+  {
+    question: 'Which of the following statements about Builder vs. Abstract Factory is correct?',
+    choices: [
+      'Builder creates families of related objects available immediately',
+      'Abstract Factory assembles one complex object',
+      'Abstract Factory is used when parts are created and assembled in steps',
+      'Builder creates one, complex product, usually made up of different parts'
+    ],
+    correctAnswer: 'Builder creates one, complex product, usually made up of different parts'
+  },
+  {
+    question: 'Which of the following best explains why the Builder pattern is suitable when constructing complex objects in a consistent way?',
+    choices: [
+      'Different objects may require runtime injection of dependencies',
+      'The construction process must allow different representations for the object that’s constructed',
+      'You want to ensure product variants remain consistent with their factory source',
+      'Object creation should be decoupled from class hierarchy and handled via interfaces'
+    ],
+    correctAnswer: 'The construction process must allow different representations for the object that’s constructed'
   }
+
+  
+
+
+
 
 ];
 
