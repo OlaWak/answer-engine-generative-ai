@@ -4,12 +4,7 @@ import { nextActionSchema } from '../schema/next-action'
 
 // Decide whether inquiry is required for the user input
 export async function taskManager(messages: ExperimentalMessage[]) {
-  const openai = new OpenAI({
-    baseUrl: process.env.OPENAI_API_BASE, // optional base URL for proxies etc.
-    apiKey: process.env.OPENAI_API_KEY, // optional API key, default to env property OPENAI_API_KEY
-    organization: '' // optional organization
-  })
-
+  
   try {
     const result = await experimental_generateObject({
       model: openai.chat(process.env.OPENAI_API_MODEL || 'gpt-4-turbo'),

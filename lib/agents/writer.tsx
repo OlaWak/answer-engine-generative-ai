@@ -15,13 +15,7 @@ export async function writer(
       baseUrl: process.env.SPECIFIC_API_BASE,
       apiKey: process.env.SPECIFIC_API_KEY,
     })
-  } else {
-    openai = new OpenAI({
-      baseUrl: process.env.SPECIFIC_API_BASE,
-      apiKey: process.env.SPECIFIC_API_KEY,
-      organization: '' // optional organization
-    })
-  }
+  } 
   let fullResponse = ''
   const answerSection = (
     <Section title="Answer">
