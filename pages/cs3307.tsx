@@ -4,81 +4,105 @@ import cs3307 from '../data/cs3307';
 export default function CS3307Quiz() {
   const [access, setAccess] = useState(false);
   const [password, setPassword] = useState('');
-  const [userAnswers, setUserAnswers] = useState<string[]>([]);
-  const [submitted, setSubmitted] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [score, setScore] = useState(0);
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [selectedChoice, setSelectedChoice] = useState('');
+  const [finished, setFinished] = useState(false);
 
   const checkPassword = () => {
-    if (password === 'cs3307bestie') {
+    if (password === 'cs3307') {
       setAccess(true);
     } else {
       alert('Wrong password!');
     }
   };
 
-  const handleSelect = (index: number, choice: string) => {
-    const newAnswers = [...userAnswers];
-    newAnswers[index] = choice;
-    setUserAnswers(newAnswers);
+  const handleAnswer = (choice: string) => {
+    setSelectedChoice(choice);
+    setShowFeedback(true);
+    if (choice === cs3307[currentIndex].correctAnswer) {
+      setScore(score + 1);
+    }
   };
 
-  const grade = () => {
-    setSubmitted(true);
+  const nextQuestion = () => {
+    setShowFeedback(false);
+    setSelectedChoice('');
+    if (currentIndex + 1 < cs3307.length) {
+      setCurrentIndex(currentIndex + 1);
+    } else {
+      setFinished(true);
+    }
   };
 
   if (!access) {
     return (
-      <div style={{ padding: 50 }}>
-        <h2>🔒 Protected Page</h2>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white font-mono">
+        <h2 className="text-2xl mb-4">🔒 Protected Page</h2>
         <input
           type="password"
           placeholder="Enter password"
           value={password}
           onChange={e => setPassword(e.target.value)}
+          className="px-4 py-2 rounded-md text-black mb-2"
         />
-        <button onClick={checkPassword}>Unlock</button>
+        <button onClick={checkPassword} className="px-4 py-2 bg-purple-500 rounded-md hover:bg-purple-600">
+          Unlock
+        </button>
       </div>
     );
   }
 
-  return (
-    <div style={{ padding: 50 }}>
-      <h1>📝 CS3307 Multiple Choice Quiz</h1>
-      {cs3307.map((q, index) => (
-        <div key={index} style={{ marginBottom: 30 }}>
-          <h3>{index + 1}. {q.question}</h3>
-          {q.choices.map((choice, cIndex) => {
-            const isSelected = userAnswers[index] === choice;
-            const isCorrect = submitted && choice === q.correctAnswer;
-            const isWrong = submitted && isSelected && choice !== q.correctAnswer;
+  if (finished) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white font-mono text-center">
+        <h1 className="text-3xl mb-6">🎉 Quiz Complete!</h1>
+        <p className="text-xl">Your Score: <span className="text-green-400">{score}</span> / {cs3307.length}</p>
+      </div>
+    );
+  }
 
+  const currentQuestion = cs3307[currentIndex];
+
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white font-mono px-4">
+      <div className="bg-gray-800 p-6 rounded-xl shadow-xl w-full max-w-2xl">
+        <div className="mb-4">
+          <h2 className="text-2xl mb-2">Question {currentIndex + 1} of {cs3307.length}</h2>
+          <p className="text-lg">{currentQuestion.question}</p>
+        </div>
+        <div className="space-y-2">
+          {currentQuestion.choices.map((choice, idx) => {
+            let bg = 'bg-gray-700';
+            if (showFeedback) {
+              if (choice === currentQuestion.correctAnswer) bg = 'bg-green-600';
+              else if (choice === selectedChoice && choice !== currentQuestion.correctAnswer) bg = 'bg-red-600';
+            } else if (choice === selectedChoice) {
+              bg = 'bg-purple-600';
+            }
             return (
-              <div key={cIndex} style={{
-                margin: '5px 0',
-                padding: '5px 10px',
-                borderRadius: '6px',
-                backgroundColor: isCorrect ? '#c8f7c5' :
-                                 isWrong ? '#f8d7da' :
-                                 isSelected ? '#d0d0ff' : '#f0f0f0',
-                cursor: 'pointer'
-              }}
-              onClick={() => handleSelect(index, choice)}
+              <div
+                key={idx}
+                onClick={() => !showFeedback && handleAnswer(choice)}
+                className={`${bg} px-4 py-2 rounded-md cursor-pointer hover:brightness-125`}
               >
                 {choice}
               </div>
             );
           })}
-          {submitted && (
-            <p>
-              {userAnswers[index] === q.correctAnswer
-                ? '✅ Correct!'
-                : `❌ Wrong. Correct: ${q.correctAnswer}`}
-            </p>
-          )}
         </div>
-      ))}
-      {!submitted && (
-        <button onClick={grade}>Submit Quiz</button>
-      )}
+        {showFeedback && (
+          <div className="mt-4 text-lg">
+            {selectedChoice === currentQuestion.correctAnswer ? '✅ Correct!' : `❌ Wrong! Correct: ${currentQuestion.correctAnswer}`}
+            <br />
+            <button onClick={nextQuestion} className="mt-4 px-4 py-2 bg-blue-500 rounded-md hover:bg-blue-600">
+              Next Question
+            </button>
+          </div>
+        )}
+        <p className="mt-6 text-sm text-gray-400">Score: <span className="text-green-400 font-bold">{score}</span></p>
+      </div>
     </div>
   );
 }
