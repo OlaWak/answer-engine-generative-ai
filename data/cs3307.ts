@@ -328,7 +328,78 @@ const cs3307: Question[] = [
     question: 'The Command pattern decouples the object that invokes an operation from the one that knows how to perform it.',
     choices: ['True', 'False'],
     correctAnswer: 'True'
+  },
+  {
+    question: 'Which key difference distinguishes Abstract Factory from Factory Method, according to the PowerPoint?',
+    choices: [
+      'Factory Method uses aggregation/composition, Abstract Factory uses inheritance',
+      'Factory Method is for creating families, Abstract Factory is for a single product',
+      'Factory Method uses inheritance; Abstract Factory uses composition and creates families',
+      'Both are identical except for naming conventions'
+    ],
+    correctAnswer: 'Abstract Factory uses aggregation/composition; Factory Method uses inheritance'
+  },
+  {
+    question: 'What is one major limitation of the Abstract Factory pattern according to the slides?',
+    choices: [
+      'Difficult to support new kinds of products',
+      'Does not work with inheritance',
+      'Requires dynamic memory allocation',
+      'Needs multiple singletons'
+    ],
+    correctAnswer: 'Difficult to support new kinds of products'
+  },
+  {
+    question: 'The Abstract Factory pattern is applicable when:',
+    choices: [
+      'A system should be configured with one of multiple families of products',
+      'An object should be created only once',
+      'There’s a need to extend existing hierarchies',
+      'A superclass needs to override behavior of a subclass'
+    ],
+    correctAnswer: 'A system should be configured with one of multiple families of products'
+  },
+  {
+    question: 'Which of the following code usage characteristics most strongly supports this being an Abstract Factory pattern?',
+    choices: [
+      'Aggregation/composition of multiple factory methods',
+      'A single overridden factory function',
+      'Usage of friend classes',
+      'A static method creating global instances'
+    ],
+    correctAnswer: 'Aggregation/composition of multiple factory methods'
+  },
+  {
+    question: 'What design pattern does the following code represent?\n\nclass GameLevel {\npublic:\n    GameLevel(GameObjectFactory* factory) {\n        this->_factory = factory;\n        Monster* m1 = factory->createMonster();\n        Monster* m2 = factory->createMonster();\n        Wall*   w1 = factory->createWall();\n        // ...\n    }\nprivate:\n    GameObjectFactory* _factory;\n};',
+    choices: [
+      'Abstract Factory',
+      'Prototype',
+      'Builder',
+      'Factory Method'
+    ],
+    correctAnswer: 'Abstract Factory'
+  },
+  {
+    question: 'The Abstract Factory pattern is applicable when:\n“A system should be independent of how its products are created.”\nWhich other scenario also matches its applicability?',
+    choices: [
+      'When objects require dynamic configuration at runtime',
+      'When a system should be configured with one of multiple families of products',
+      'When only one instance of a class must exist',
+      'When object creation should be delegated to subclasses'
+    ],
+    correctAnswer: 'When a system should be configured with one of multiple families of products'
+  },
+  {
+    question: 'In the Abstract Factory design pattern, which statement is true about client responsibilities?',
+    choices: [
+      'Client inherits the concrete factory class to instantiate objects.',
+      'Client must be aware of all possible product subclasses.',
+      'Client controls when objects are created, while factory controls what is created.',
+      'Client directly instantiates the product classes using new.'
+    ],
+    correctAnswer: 'Client controls when objects are created, while factory controls what is created.'
   }
+
 ];
 
 export default cs3307;
