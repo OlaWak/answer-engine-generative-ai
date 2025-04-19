@@ -1,14 +1,25 @@
-// components/CS3307Quiz.tsx
 import { useState } from 'react';
 import cs3307, { Question } from '../data/cs3307';
 
+// Fisher–Yates shuffle helper
+function shuffleArray<T>(arr: T[]): T[] {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 export default function CS3307Quiz() {
+  // Shuffle questions once on component mount
+  const [shuffledQuestions] = useState<Question[]>(() => shuffleArray(cs3307));
+
   const [access, setAccess] = useState(false);
   const [password, setPassword] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showFeedback, setShowFeedback] = useState(false);
-  const [selectedChoice, setSelectedChoice] = useState('');
   const [finished, setFinished] = useState(false);
 
   const checkPassword = () => {
@@ -20,24 +31,26 @@ export default function CS3307Quiz() {
   };
 
   const handleAnswer = (choice: string) => {
-    setSelectedChoice(choice);
     setShowFeedback(true);
-    if (choice === cs3307[currentIndex].correctAnswer) {
-      setScore(score + 1);
+    if (choice === shuffledQuestions[currentIndex].correctAnswer) {
+      setScore(s => s + 1);
     }
+    setSelectedChoice(choice);
   };
 
   const nextQuestion = () => {
     setShowFeedback(false);
     setSelectedChoice('');
-    if (currentIndex + 1 < cs3307.length) {
-      setCurrentIndex(currentIndex + 1);
+    if (currentIndex + 1 < total) {
+      setCurrentIndex(i => i + 1);
     } else {
       setFinished(true);
     }
   };
 
   const bg = 'bg-gradient-to-br from-pink-100 via-white to-pink-200';
+  const total = shuffledQuestions.length;
+  const currentQuestion = shuffledQuestions[currentIndex];
 
   if (!access) {
     return (
@@ -68,22 +81,19 @@ export default function CS3307Quiz() {
         <h2 className="text-xl font-bold mb-4 underline decoration-pink-500">3307 Practice Quiz — Results</h2>
         <h1 className="text-4xl font-bold mb-4">🎉 Quiz Complete!</h1>
         <p className="text-xl">
-          Your Score: <span className="text-green-600 font-bold">{score}</span> / {cs3307.length}
+          Your Score: <span className="text-green-600 font-bold">{score}</span> / {total}
         </p>
       </div>
     );
   }
 
-  const currentQuestion = cs3307[currentIndex];
-
   return (
     <div className={`min-h-screen flex items-center justify-center ${bg} text-gray-800 font-mono px-4`}>
       <div className="bg-white bg-opacity-90 rounded-2xl p-8 shadow-lg max-w-2xl w-full text-center border border-pink-200">
         <h2 className="text-xl font-bold mb-2 underline decoration-pink-500">3307 Practice Quiz</h2>
-        <h2 className="text-2xl font-bold mb-4">Question {currentIndex + 1} / {cs3307.length}</h2>
+        <h2 className="text-2xl font-bold mb-4">Question {currentIndex + 1} / {total}</h2>
         <p className="text-lg mb-4">{currentQuestion.question}</p>
 
-        {/* Render associated image if provided */}
         {currentQuestion.image && (
           <img
             src={currentQuestion.image}
@@ -100,7 +110,7 @@ export default function CS3307Quiz() {
             if (showFeedback) {
               if (choice === currentQuestion.correctAnswer) {
                 style = 'bg-green-100 border-green-500';
-              } else if (choice === selectedChoice && choice !== currentQuestion.correctAnswer) {
+              } else if (choice === selectedChoice) {
                 style = 'bg-red-100 border-red-400';
               }
             } else if (choice === selectedChoice) {

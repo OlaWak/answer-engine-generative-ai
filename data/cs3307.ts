@@ -191,6 +191,143 @@ const cs3307: Question[] = [
       "None of the above"
     ],
     correctAnswer: "Create objects through a similar process of steps, but allow the actual representation to vary"
+  },
+  {
+    question: 'The name C++ is derived from the ++ increment operator in C.',
+    choices: ['True', 'False'],
+    correctAnswer: 'True'
+  },
+  {
+    question: 'Before being called C++, the language was originally referred to as C with Classes.',
+    choices: ['True', 'False'],
+    correctAnswer: 'True'
+  },
+  {
+    question: 'The following is (are) true about C++.',
+    choices: [
+      'It is a dynamically typed language',
+      'It allows dynamic dispatch of functions',
+      'It allows inheritance',
+      'It performs garbage collection',
+      'More than one of the above statements are true'
+    ],
+    correctAnswer: 'More than one of the above statements are true'
+  },
+  {
+    question: 'The C++ language is a strict superset of C.',
+    choices: ['True', 'False'],
+    correctAnswer: 'False'
+  },
+  {
+    question: 'Classes are mandatory in all valid C++ programs.',
+    choices: ['True', 'False'],
+    correctAnswer: ''
+  },
+  {
+    question: 'A valid C++ program can have how many main() functions:',
+    choices: ['0', '1', 'More than 1', 'All of the above are, in fact, valid'],
+    correctAnswer: '1'
+  },
+  {
+    question: 'The following is the simplest statement in C++:',
+    choices: ['True', 'False'],
+    correctAnswer: 'True'
+  },
+  {
+    question: 'In C++, a class and a struct are more-or-less equivalent, except for their default visibilities.',
+    choices: ['True', 'False'],
+    correctAnswer: 'True'
+  },
+  {
+    question: 'Which of the following is an acceptable way for a function to exit in C++:',
+    choices: [
+      'The function executes a return statement, providing an appropriate value as necessary, depending on the function.',
+      'The function reaches the end of the function body, which is only allowed in void functions or main().',
+      'The function calls a system function that does not return (like exit()).',
+      'All of the above',
+      'None of the above'
+    ],
+    correctAnswer: 'All of the above'
+  },
+  {
+    question: 'In C++, the destructor for an object is always called when the object is destroyed.',
+    choices: ['True', 'False'],
+    correctAnswer: 'True'
+  },
+  {
+    question: 'Friendship between classes in C++ is:',
+    choices: [
+      'Both reciprocal and transitive',
+      'Reciprocal but not transitive',
+      'Transitive but not reciprocal',
+      'Neither reciprocal nor transitive'
+    ],
+    correctAnswer: 'Neither reciprocal nor transitive'
+  },
+  {
+    question: 'Static member functions in C++ have a this pointer.',
+    choices: ['True', 'False'],
+    correctAnswer: 'False'
+  },
+  {
+    question: 'Consider the following C++ code:\nWhat will be the output of the above code?',
+    image: '/data/imgs/img3.png',
+    choices: [
+      'In Parent default constructor\nIn Parent default constructor\nIn Child default constructor\nIn Child destructor\nIn Parent destructor\nIn Parent destructor',
+      'In Parent default constructor\nIn Child default constructor\nIn Parent default constructor\nIn Parent destructor\nIn Child destructor\nIn Parent destructor',
+      'In Parent default constructor\nIn Child default constructor\nIn Child destructor\nIn Parent destructor',
+      'In Parent default constructor\nIn Parent destructor\nIn Child default constructor\nIn Child destructor',
+      'None of the above'
+    ],
+    correctAnswer: 'In Parent default constructor\nIn Parent default constructor\nIn Child default constructor\nIn Child destructor\nIn Parent destructor\nIn Parent destructor',
+  },
+  {
+    question: 'When overloading a function in C++, the definitions of the function must differ from each other by their:\n1. Name.\n2. Argument types.\n3. Number of arguments.\n4. Return type.\nWhich of the following combinations of statements from the above list is correct:',
+    choices: [
+      'Statement 1.',
+      'Statements 2 and 3.',
+      'Statements 1, 2, and 3.',
+      'Statement 4.',
+      'None of the above options are correct combinations.'
+    ],
+    correctAnswer: 'Statements 2 and 3.'
+  },
+  {
+    question: 'Which of the following statement(s) about user stories is/are correct:',
+    choices: [
+      'User stories are generated in a meeting with the client.',
+      'They encourage deferring detail until later.',
+      'They are intended to avoid “big design up front”.',
+      'They should be independent and estimatable.',
+      'All of the above statements are correct.'
+    ],
+    correctAnswer: 'All of the above statements are correct.'
+  },
+  {
+    question: 'When considering the use of aggregation or composition associations in UML, which of the following statements are true for the case of aggregation:',
+    choices: [
+      'An object comprised of many components owns those components.',
+      'Components cannot exist independent of their owner.',
+      'Components live or die with their owner.',
+      'All of the above.',
+      'None of the above.'
+    ],
+    correctAnswer: 'None of the above.'
+  },
+  {
+    question: 'The Prototype pattern, as discussed in class, works by wrapping one object inside another with the same interface.',
+    choices: ['True', 'False'],
+    correctAnswer: 'True'
+  },
+  {
+    question: 'The Bridge pattern, as discussed in class, defines a family of algorithms, encapsulates each one, and makes them interchangeable. Bridge lets the algorithm vary independently from clients that use it.',
+    choices: ['True', 'False'],
+    correctAnswer: 'False'
+  },
+  {
+    question: 'The Command pattern decouples the object that invokes an operation from the one that knows how to perform it.',
+    choices: ['True', 'False'],
+    correctAnswer: 'True'
   }
 ];
 
