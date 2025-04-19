@@ -59,7 +59,7 @@ const cs3307: Question[] = [
     correctAnswer: "new is invoked"
   },
   {
-    question: "What will be the output of the following code snippet?\n<img src='/public/data/imgs/img1.png' alt='Code snippet' />",
+    question: "What will be the output of the following code snippet?\n<img src='/data/imgs/img1.png' alt='Code snippet' />",
     choices: [
       "4 5 9 44",
       "4 5 4 5",
@@ -70,7 +70,7 @@ const cs3307: Question[] = [
     correctAnswer: "9 44 9 44"
   },
   {
-    question: "Which of the following statements about the class/type T must be true in order for the function to compile and run?\n<img src='/public/data/imgs/img2.png' alt='Function snippet' />",
+    question: "Which of the following statements about the class/type T must be true in order for the function to compile and run?\n<img src='/data/imgs/img2.png' alt='Function snippet' />",
     choices: [
       "It must be some kind of numeric type",
       "It must have the < operator defined",
