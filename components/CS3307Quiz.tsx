@@ -36,18 +36,24 @@ export default function CS3307Quiz() {
     }
   };
 
+  const bg = 'bg-gradient-to-br from-pink-100 via-white to-pink-200';
+
   if (!access) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-800 via-pink-600 to-indigo-700 text-white font-mono px-4">
-        <h2 className="text-3xl mb-4 font-bold">🔒 Protected Page</h2>
+      <div className={`min-h-screen flex flex-col items-center justify-center ${bg} text-gray-800 font-mono px-4`}>
+        <p className="text-sm italic text-gray-600 mb-2">Say Bismillah for extra blessings 🤲🏻</p>
+        <h2 className="text-xl font-bold mb-4 underline decoration-pink-500">3307 Practice Quiz — Good Luck!</h2>
         <input
           type="password"
           placeholder="Enter password"
           value={password}
           onChange={e => setPassword(e.target.value)}
-          className="px-4 py-2 rounded-md text-black mb-2 w-64"
+          className="px-4 py-2 rounded-md border w-64 mb-2 text-gray-800"
         />
-        <button onClick={checkPassword} className="px-6 py-2 bg-white text-purple-700 rounded-md hover:bg-gray-200 font-semibold">
+        <button
+          onClick={checkPassword}
+          className="px-6 py-2 bg-pink-500 text-white rounded-md hover:bg-pink-600 font-semibold"
+        >
           Unlock
         </button>
       </div>
@@ -56,9 +62,13 @@ export default function CS3307Quiz() {
 
   if (finished) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-800 via-pink-600 to-indigo-700 text-white font-mono px-4 text-center">
+      <div className={`min-h-screen flex flex-col items-center justify-center ${bg} text-gray-800 font-mono px-4 text-center`}>
+        <p className="text-sm italic text-gray-600 mb-2">That’s a wrap! Bismillah came through 🫶🏻</p>
+        <h2 className="text-xl font-bold mb-4 underline decoration-pink-500">3307 Practice Quiz — Results</h2>
         <h1 className="text-4xl font-bold mb-4">🎉 Quiz Complete!</h1>
-        <p className="text-xl">Your Score: <span className="text-green-300 font-bold">{score}</span> / {cs3307.length}</p>
+        <p className="text-xl">
+          Your Score: <span className="text-green-600 font-bold">{score}</span> / {cs3307.length}
+        </p>
       </div>
     );
   }
@@ -66,24 +76,25 @@ export default function CS3307Quiz() {
   const currentQuestion = cs3307[currentIndex];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-800 via-pink-600 to-indigo-700 text-white font-mono px-4">
-      <div className="bg-black bg-opacity-50 rounded-2xl p-8 shadow-lg max-w-2xl w-full text-center">
-        <h2 className="text-3xl font-bold mb-6">Question {currentIndex + 1} / {cs3307.length}</h2>
+    <div className={`min-h-screen flex items-center justify-center ${bg} text-gray-800 font-mono px-4`}>
+      <div className="bg-white bg-opacity-90 rounded-2xl p-8 shadow-lg max-w-2xl w-full text-center border border-pink-200">
+        <h2 className="text-xl font-bold mb-2 underline decoration-pink-500">3307 Practice Quiz</h2>
+        <h2 className="text-2xl font-bold mb-4">Question {currentIndex + 1} / {cs3307.length}</h2>
         <p className="text-lg mb-6">{currentQuestion.question}</p>
 
         <div className="grid grid-cols-1 gap-4">
           {currentQuestion.choices.map((choice, idx) => {
-            let baseStyle = 'py-3 px-5 rounded-xl font-semibold cursor-pointer border-2 transition-all';
-            let style = 'border-white bg-white bg-opacity-10 hover:bg-opacity-20';
+            let baseStyle = 'py-3 px-5 rounded-xl font-semibold cursor-pointer border transition-all duration-200';
+            let style = 'border-gray-300 hover:bg-pink-100';
 
             if (showFeedback) {
               if (choice === currentQuestion.correctAnswer) {
-                style = 'bg-green-500 border-green-300';
+                style = 'bg-green-100 border-green-500';
               } else if (choice === selectedChoice && choice !== currentQuestion.correctAnswer) {
-                style = 'bg-red-500 border-red-300';
+                style = 'bg-red-100 border-red-400';
               }
             } else if (choice === selectedChoice) {
-              style = 'bg-purple-600 border-purple-400';
+              style = 'bg-pink-200 border-pink-400';
             }
 
             return (
@@ -100,19 +111,27 @@ export default function CS3307Quiz() {
 
         {showFeedback && (
           <div className="mt-6 text-lg font-semibold">
-            {selectedChoice === currentQuestion.correctAnswer ? '✅ Correct!' : `❌ Wrong! Correct: ${currentQuestion.correctAnswer}`}
+            {selectedChoice === currentQuestion.correctAnswer ? (
+              <>
+                ✅ Correct! <span className="text-pink-600">Yallah, next question!</span>
+              </>
+            ) : (
+              <>
+                ❌ Not quite! <span className="text-pink-600"> In Sha Allah next one</span>
+              </>
+            )}
             <br />
             <button
               onClick={nextQuestion}
-              className="mt-4 px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md"
+              className="mt-4 px-6 py-2 bg-pink-500 hover:bg-pink-600 text-white rounded-md"
             >
               Next Question
             </button>
           </div>
         )}
 
-        <p className="mt-6 text-sm text-gray-300">
-          Score: <span className="text-green-300 font-bold">{score}</span>
+        <p className="mt-6 text-sm text-gray-600">
+          Score: <span className="text-pink-600 font-bold">{score}</span>
         </p>
       </div>
     </div>

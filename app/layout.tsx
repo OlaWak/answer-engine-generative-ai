@@ -12,9 +12,8 @@ const fontSans = FontSans({
   variable: '--font-sans'
 })
 
-const title = 'Ajay Dhangar'
-const description =
-  'A fully open-source AI-powered answer engine with a generative UI.'
+const title = 'CS3307 Quiz'
+const description = '3307 Practice Quiz — Good Luck! 💪'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.codeharborhub.live'),
