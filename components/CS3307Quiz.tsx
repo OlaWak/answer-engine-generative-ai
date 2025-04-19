@@ -1,3 +1,4 @@
+// components/CS3307Quiz.tsx
 import { useState } from 'react';
 import cs3307, { Question } from '../data/cs3307';
 
@@ -12,51 +13,32 @@ function shuffleArray<T>(arr: T[]): T[] {
 }
 
 export default function CS3307Quiz() {
-  // Shuffle questions once on component mount
+  // 1) Shuffle questions once on mount
   const [shuffledQuestions] = useState<Question[]>(() => shuffleArray(cs3307));
 
+  // 2) All the state you need
   const [access, setAccess] = useState(false);
   const [password, setPassword] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showFeedback, setShowFeedback] = useState(false);
+  const [selectedChoice, setSelectedChoice] = useState('');  // ← <--- here
   const [finished, setFinished] = useState(false);
 
-  const checkPassword = () => {
-    if (password === 'cs3307') {
-      setAccess(true);
-    } else {
-      alert('Wrong password!');
-    }
-  };
-
-  const handleAnswer = (choice: string) => {
-    setShowFeedback(true);
-    if (choice === shuffledQuestions[currentIndex].correctAnswer) {
-      setScore(s => s + 1);
-    }
-    setSelectedChoice(choice);
-  };
-
-  const nextQuestion = () => {
-    setShowFeedback(false);
-    setSelectedChoice('');
-    if (currentIndex + 1 < total) {
-      setCurrentIndex(i => i + 1);
-    } else {
-      setFinished(true);
-    }
-  };
-
-  const bg = 'bg-gradient-to-br from-pink-100 via-white to-pink-200';
   const total = shuffledQuestions.length;
   const currentQuestion = shuffledQuestions[currentIndex];
+  const bg = 'bg-gradient-to-br from-pink-100 via-white to-pink-200';
 
+  // 3) Password screen
   if (!access) {
     return (
       <div className={`min-h-screen flex flex-col items-center justify-center ${bg} text-gray-800 font-mono px-4`}>
-        <p className="text-sm italic text-gray-600 mb-2">Say Bismillah for extra blessings 🤲🏻</p>
-        <h2 className="text-xl font-bold mb-4 underline decoration-pink-500">3307 Practice Quiz — Good Luck!</h2>
+        <p className="text-sm italic text-gray-600 mb-2">
+          Say Bismillah for extra blessings 🤲🏻
+        </p>
+        <h2 className="text-xl font-bold mb-4 underline decoration-pink-500">
+          3307 Practice Quiz — Good Luck!
+        </h2>
         <input
           type="password"
           placeholder="Enter password"
@@ -65,7 +47,7 @@ export default function CS3307Quiz() {
           className="px-4 py-2 rounded-md border w-64 mb-2 text-gray-800"
         />
         <button
-          onClick={checkPassword}
+          onClick={() => password === 'cs3307' ? setAccess(true) : alert('Wrong password!')}
           className="px-6 py-2 bg-pink-500 text-white rounded-md hover:bg-pink-600 font-semibold"
         >
           Unlock
@@ -74,11 +56,16 @@ export default function CS3307Quiz() {
     );
   }
 
+  // 4) Results screen
   if (finished) {
     return (
       <div className={`min-h-screen flex flex-col items-center justify-center ${bg} text-gray-800 font-mono px-4 text-center`}>
-        <p className="text-sm italic text-gray-600 mb-2">That&apos;s a wrap! Good luck on the final don&apos;t forget ur Duaas 🫶🏻</p>
-        <h2 className="text-xl font-bold mb-4 underline decoration-pink-500">3307 Practice Quiz — Results</h2>
+        <p className="text-sm italic text-gray-600 mb-2">
+          That&apos;s a wrap! Good luck on the final don&apos;t forget ur Duaas 🫶🏻
+        </p>
+        <h2 className="text-xl font-bold mb-4 underline decoration-pink-500">
+          3307 Practice Quiz — Results
+        </h2>
         <h1 className="text-4xl font-bold mb-4">🎉 Quiz Complete!</h1>
         <p className="text-xl">
           Your Score: <span className="text-green-600 font-bold">{score}</span> / {total}
@@ -87,11 +74,32 @@ export default function CS3307Quiz() {
     );
   }
 
+  // 5) Main quiz screen
+  const handleAnswer = (choice: string) => {
+    setSelectedChoice(choice);
+    setShowFeedback(true);
+    if (choice === currentQuestion.correctAnswer) {
+      setScore(prev => prev + 1);
+    }
+  };
+
+  const nextQuestion = () => {
+    setShowFeedback(false);
+    setSelectedChoice('');
+    if (currentIndex + 1 < total) {
+      setCurrentIndex(prev => prev + 1);
+    } else {
+      setFinished(true);
+    }
+  };
+
   return (
     <div className={`min-h-screen flex items-center justify-center ${bg} text-gray-800 font-mono px-4`}>
       <div className="bg-white bg-opacity-90 rounded-2xl p-8 shadow-lg max-w-2xl w-full text-center border border-pink-200">
         <h2 className="text-xl font-bold mb-2 underline decoration-pink-500">3307 Practice Quiz</h2>
-        <h2 className="text-2xl font-bold mb-4">Question {currentIndex + 1} / {total}</h2>
+        <h2 className="text-2xl font-bold mb-4">
+          Question {currentIndex + 1} / {total}
+        </h2>
         <p className="text-lg mb-4">{currentQuestion.question}</p>
 
         {currentQuestion.image && (
@@ -110,7 +118,7 @@ export default function CS3307Quiz() {
             if (showFeedback) {
               if (choice === currentQuestion.correctAnswer) {
                 style = 'bg-green-100 border-green-500';
-              } else if (choice === selectedChoice) {
+              } else if (choice === selectedChoice && choice !== currentQuestion.correctAnswer) {
                 style = 'bg-red-100 border-red-400';
               }
             } else if (choice === selectedChoice) {
