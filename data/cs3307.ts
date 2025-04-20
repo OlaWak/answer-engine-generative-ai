@@ -1462,10 +1462,499 @@ AppConfig* cfg2 = loadConfig();`,
       'You can avoid function pointers entirely'
     ],
     correctAnswer: 'You can change the implementation at run-time'
+  },
+  {
+    code: `int a = 3, b = 2;
+  int* p = &a;
+  *p = b;
+  std::cout << a << " " << *p << std::endl;`,
+    question: 'What is the output of the following program?',
+    choices: ['2 2', '3 2', '2 3', 'Undefined behavior'],
+    correctAnswer: '2 2'
+  },
+  {
+    code: `int arr[] = {1, 2, 3};
+  int* p = arr + 1;
+  std::cout << *(p + 1);`,
+    question: 'What is printed by this code?',
+    choices: ['1', '2', '3', 'Compilation error'],
+    correctAnswer: '3'
+  },
+  {
+    code: `int x = 5;
+  int* ptr = &x;
+  *ptr = *ptr + 3;
+  int y = *ptr;`,
+    question: 'What is the value of y after this code executes?',
+    choices: ['5', '3', '8', 'Undefined'],
+    correctAnswer: '8'
+  },
+  {
+    code: `int a = 10;
+  int* p = &a;
+  int** pp = &p;
+  **pp = 20;
+  std::cout << a;`,
+    question: 'What is the output?',
+    choices: ['10', '20', '0', 'Segmentation fault'],
+    correctAnswer: '20'
+  },
+  {
+    code: `int a = 5;
+  int b = 10;
+  int* p = &a;
+  p = &b;
+  *p = *p + 1;
+  std::cout << a << " " << b;`,
+    question: 'What does the following code output?',
+    choices: ['5 11', '6 10', '6 11', '5 10'],
+    correctAnswer: '5 11'
+  },
+  {
+    code: `void modify(int &x) {
+      x *= 2;
   }
-  
-  
-  
+  int main() {
+      int a = 3;
+      modify(a);
+      std::cout << a;
+  }`,
+    question: 'What is the output?',
+    choices: ['3', '6', 'Compilation error', 'Undefined'],
+    correctAnswer: '6'
+  },
+  {
+    code: `int a = 4;
+  int* p = &a;
+  *p += 6;
+  std::cout << a;`,
+    question: 'What is printed?',
+    choices: ['4', '6', '10', 'Compilation error'],
+    correctAnswer: '10'
+  },
+  {
+    code: `void foo(int x) {
+      x = 100;
+  }
+  int main() {
+      int y = 10;
+      foo(y);
+      std::cout << y;
+  }`,
+    question: 'What is the output?',
+    choices: ['10', '100', 'Garbage value', 'Compilation error'],
+    correctAnswer: '10'
+  },
+  {
+    code: `int arr[] = {10, 20, 30};
+  int* p = arr;
+  p += 2;
+  std::cout << *p;`,
+    question: 'What is printed?',
+    choices: ['10', '20', '30', 'Undefined behavior'],
+    correctAnswer: '30'
+  },
+  {
+    code: `int x = 10;
+  int* ptr = &x;
+  int& ref = *ptr;
+  ref = 50;
+  std::cout << x;`,
+    question: 'What does this output?',
+    choices: ['10', '50', 'Address of x', 'Compilation error'],
+    correctAnswer: '50'
+  },
+  {
+    question: 'What is the correct way to pass a variable to a function without allowing it to be changed?',
+    choices: [
+      'void func(int x)',
+      'void func(int* x)',
+      'void func(int& x)',
+      'void func(const int& x)'
+    ],
+    correctAnswer: 'void func(const int& x)'
+  },
+  {
+    question: 'Which of the following correctly declares a pointer to a double?',
+    choices: [
+      'double ptr;',
+      'double *ptr;',
+      'ptr double*;',
+      'pointer<double> ptr;'
+    ],
+    correctAnswer: 'double *ptr;'
+  },
+  {
+    question: 'What does this line do: int *p = new int[10];',
+    choices: [
+      'Allocates 10 integers on the stack.',
+      'Allocates 10 integers on the heap.',
+      'Creates a pointer to 10 integers on the heap.',
+      'a and b'
+    ],
+    correctAnswer: 'Allocates 10 integers on the heap.'
+  },
+  {
+    question: 'Which of the following about const is TRUE?',
+    choices: [
+      'It prevents a function from modifying its parameters.',
+      'It prevents assignment to a pointer.',
+      'It removes the need for headers.',
+      'It is only used with int.'
+    ],
+    correctAnswer: 'It prevents a function from modifying its parameters.'
+  },
+  {
+    question: 'How do you deallocate memory allocated with new for an array?',
+    choices: [
+      'free(p);',
+      'delete p;',
+      'delete[] p;',
+      'release(p);'
+    ],
+    correctAnswer: 'delete[] p;'
+  },
+  {
+    question: 'Which line is a valid function definition?',
+    choices: [
+      'int swap(x, y);',
+      'void swap(int a, int b) { return a + b; }',
+      'void swap(int a, int b);',
+      'void swap(int* a, int* b) { int t = *a; *a = *b; *b = t; }'
+    ],
+    correctAnswer: 'void swap(int* a, int* b) { int t = *a; *a = *b; *b = t; }'
+  },
+  {
+    code: `#define square(x) x * x
+  int main() {
+      std::cout << square(5 + 2);
+  }`,
+    question: 'What is the output of this snippet?',
+    choices: ['49', '35', '5 + 2 * 5 + 2', '19'],
+    correctAnswer: '35'
+  },
+  {
+    code: `int* ptr = nullptr;
+  *ptr = 5;`,
+    question: 'What happens in this code?',
+    choices: [
+      'Sets memory to 5',
+      'Runtime segmentation fault',
+      'Compiles and runs fine',
+      'Syntax error'
+    ],
+    correctAnswer: 'Runtime segmentation fault'
+  },
+  {
+    question: 'What is the purpose of #ifndef and #define in a header file?',
+    choices: [
+      'Memory allocation',
+      'Avoid multiple definitions',
+      'Importing functions',
+      'Creating templates'
+    ],
+    correctAnswer: 'Avoid multiple definitions'
+  },
+  {
+    question: 'Which of the following best describes what a namespace does?',
+    choices: [
+      'Prevents pointer issues',
+      'Groups related code and avoids naming conflicts',
+      'Increases execution speed',
+      'Allows dynamic memory'
+    ],
+    correctAnswer: 'Groups related code and avoids naming conflicts'
+  },
+  {
+    code: `int a = 4;
+  int b = 5;
+  int* p = &a;
+  int* q = &b;
+  *p = *q;
+  std::cout << a << " " << b;`,
+    question: 'What is the output of the following?',
+    choices: ['5 5', '4 5', '5 4', 'Compilation error'],
+    correctAnswer: '5 5'
+  },
+  {
+    code: `int x = 7;
+  int y = 10;
+  int* a = &x;
+  int* b = a;
+  *b = y;
+  std::cout << x;`,
+    question: 'What is the output?',
+    choices: ['7', '10', 'Compilation error', 'Garbage value'],
+    correctAnswer: '10'
+  },
+  {
+    code: `void update(int*& ptr) {
+      static int x = 100;
+      ptr = &x;
+  }
+  int* p = nullptr;
+  update(p);
+  std::cout << *p;`,
+    question: 'Given the function and code, what is printed?',
+    choices: ['0', '100', 'Compilation error', 'Undefined behavior'],
+    correctAnswer: '100'
+  },
+  {
+    code: `int a = 5;
+  int* p = &a;
+  int** pp = &p;
+  **pp += 10;
+  std::cout << a;`,
+    question: 'What does this program print?',
+    choices: ['10', '5', '15', 'Segmentation fault'],
+    correctAnswer: '15'
+  },
+  {
+    code: `int* arr = new int[3]{1, 2, 3};
+  std::cout << *(arr + 1);
+  delete[] arr;`,
+    question: 'What happens in this code?',
+    choices: ['1', '2', '3', 'Compilation error'],
+    correctAnswer: '2'
+  },
+  {
+    code: `int foo(int x) {
+      static int y = x;
+      y++;
+      return y;
+  }
+  std::cout << foo(5) << foo(5);`,
+    question: 'What is the result of running this?',
+    choices: ['66', '56', '67', 'Compilation error'],
+    correctAnswer: '67'
+  },
+  {
+    code: `void func(int x = 10) {
+      std::cout << x;
+  }
+  int main() {
+      func();
+  }`,
+    question: 'What will this print?',
+    choices: ['Nothing', '0', '10', 'Compilation error'],
+    correctAnswer: '10'
+  },
+  {
+    code: `constexpr int square(int x) {
+      return x * x;
+  }
+  int y = square(5);
+  std::cout << y;`,
+    question: 'What happens here?',
+    choices: ['Compilation error', '25', 'Address', '10'],
+    correctAnswer: '25'
+  },
+  {
+    code: `#define SQUARE(x) x * x
+  int y = SQUARE(1 + 2);`,
+    question: 'What’s the bug here?',
+    choices: ['9 is stored in y', '1 + 2 * 1 + 2 = 5', '3 is stored', 'Compiler warning'],
+    correctAnswer: '1 + 2 * 1 + 2 = 5'
+  },
+  {
+    code: `struct Point {
+      int x, y;
+  };
+  Point p1 = {3, 4};
+  Point p2;
+  p2 = p1;
+  std::cout << p2.x << p2.y;`,
+    question: 'Consider this code. What is printed?',
+    choices: ['34', 'Compilation error', '43', 'Undefined behavior'],
+    correctAnswer: '34'
+  },
+  {
+    code: `int a[] = {1, 2, 3};
+  int* p = a;
+  p++;
+  std::cout << *p;`,
+    question: 'What will this print?',
+    choices: ['1', '2', '3', 'Undefined'],
+    correctAnswer: '2'
+  },
+  {
+    code: `int arr[3] = {1, 2, 3};
+  int* p = &arr[1];
+  p++;
+  std::cout << *p;`,
+    question: 'Given the array and pointer manipulation, what is printed?',
+    choices: ['1', '2', '3', 'Garbage value'],
+    correctAnswer: '3'
+  },
+  {
+    code: `int x = 3;
+  int* y = &x;
+  int z = *y + 1;
+  std::cout << z;`,
+    question: 'What is the output of this code?',
+    choices: ['2', '3', '4', 'Compilation error'],
+    correctAnswer: '4'
+  },
+  {
+    code: `void setVal(int* x) {
+      *x = 50;
+  }
+  int main() {
+      int y = 25;
+      setVal(&y);
+      std::cout << y;
+  }`,
+    question: 'What will main print?',
+    choices: ['25', '50', 'Undefined', 'Compilation error'],
+    correctAnswer: '50'
+  },
+  {
+    code: `class Base { public: void foo(int) {} };
+  class Derived : public Base { public: void foo(int) {} };
+  int main() {
+      Derived d;
+      d.foo(10);
+  }`,
+    question: 'Which version of foo is called?',
+    choices: ['Base::foo', 'Derived::foo', 'Compilation error', 'Ambiguous'],
+    correctAnswer: 'Derived::foo'
+  },
+  {
+    code: `void greet(std::string name = "World") {
+      std::cout << "Hello, " << name;
+  }
+  int main() {
+      greet();
+  }`,
+    question: 'What happens here?',
+    choices: ['Hello,', 'Hello, World', 'Compilation error', 'Runtime error'],
+    correctAnswer: 'Hello, World'
+  },
+  {
+    question: 'Which part of memory does new int[5] allocate to?',
+    choices: ['Stack', 'Code segment', 'Heap', 'Data segment'],
+    correctAnswer: 'Heap'
+  },
+  {
+    question: 'Which operator is used to free memory from heap?',
+    choices: ['delete', 'remove', 'free', 'release'],
+    correctAnswer: 'delete'
+  },
+  {
+    code: `int x = 100;
+  int* px = &x;
+  std::cout << *px;`,
+    question: 'What does this code print?',
+    choices: ['Memory address', '100', '*px', 'Garbage'],
+    correctAnswer: '100'
+  },
+  {
+    code: `int x;
+  int* p = &x;
+  delete p;`,
+    question: "What's wrong with this?",
+    choices: ['Nothing', "p wasn't dynamically allocated", 'x will be deleted', 'p is invalid'],
+    correctAnswer: "p wasn't dynamically allocated"
+  },
+  {
+    question: 'In C++, the default visibility of struct members is:',
+    choices: ['Private', 'Public', 'Protected', 'Static'],
+    correctAnswer: 'Public'
+  },
+  {
+    question: 'In C++, the default visibility of class members is:',
+    choices: ['Private', 'Public', 'Protected', 'Static'],
+    correctAnswer: 'Private'
+  },
+  {
+    question: 'What does using namespace std; do?',
+    choices: [
+      'Includes all system headers',
+      'Makes std:: optional for things like cout',
+      'Declares a new namespace',
+      'Adds preprocessor definitions'
+    ],
+    correctAnswer: 'Makes std:: optional for things like cout'
+  },
+  {
+    code: `int* p;
+  *p = 42;`,
+    question: 'What is wrong with this?',
+    choices: [
+      'Nothing',
+      'Assigning through uninitialized pointer',
+      'Memory leak',
+      'Valid if inside a function'
+    ],
+    correctAnswer: 'Assigning through uninitialized pointer'
+  },
+  {
+    code: `int foo(int x) {
+      return x + 1;
+  }
+  int main() {
+      std::cout << foo(foo(2));
+  }`,
+    question: 'What is the output of this?',
+    choices: ['4', '5', '6', 'Compilation error'],
+    correctAnswer: '4'
+  },
+  {
+    code: `int x = 10;
+  int* px = &x;
+  *px += 5;
+  std::cout << x;`,
+    question: 'What happens here?',
+    choices: ['10', '15', '5', 'Compilation error'],
+    correctAnswer: '15'
+  },
+  {
+    code: `int a = 1;
+  int b = 2;
+  int* p = &a;
+  p = &b;
+  std::cout << *p;`,
+    question: 'What is the output of this?',
+    choices: ['1', '2', 'Undefined', 'Compilation error'],
+    correctAnswer: '2'
+  },
+  {
+    code: `#define MAX(x, y) x > y ? x : y
+  int a = MAX(2, 3) * 2;`,
+    question: 'What’s the problem with this macro?',
+    choices: ['Expansion error', 'Result is 6', 'Result is 4 due to lack of brackets', 'Segfault'],
+    correctAnswer: 'Result is 4 due to lack of brackets'
+  },
+  {
+    code: `namespace A {
+      int x = 5;
+  }
+  int main() {
+      std::cout << A::x;
+  }`,
+    question: 'What is the output?',
+    choices: ['0', '5', 'Compilation error', 'x'],
+    correctAnswer: '5'
+  },
+  {
+    code: `int arr[] = {5, 10};
+  int* p = arr;
+  std::cout << *(p + 1);`,
+    question: 'What will be printed?',
+    choices: ['5', '10', 'Garbage', 'Compilation error'],
+    correctAnswer: '10'
+  },
+  {
+    code: `constexpr int x = 10;`,
+    question: 'What does this line mean?',
+    choices: [
+      'x is a constant evaluated at runtime',
+      'x must be initialized at runtime',
+      'x is evaluated at compile-time',
+      'constexpr can’t be used for ints'
+    ],
+    correctAnswer: 'x is evaluated at compile-time'
+  }
   
   
 ];
