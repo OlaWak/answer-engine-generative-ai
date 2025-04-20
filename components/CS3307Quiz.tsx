@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import cs3307, { Question } from '../data/cs3307';
 
-// Fisher–Yates shuffle helper
+// Shuffle helper
 function shuffleArray<T>(arr: T[]): T[] {
   const a = arr.slice();
   for (let i = a.length - 1; i > 0; i--) {
@@ -26,6 +26,18 @@ export default function CS3307Quiz() {
   const currentQuestion = shuffledQuestions[currentIndex];
   const total = shuffledQuestions.length;
   const bg = 'bg-gradient-to-br from-pink-100 via-white to-pink-200';
+
+  const resetToMain = () => {
+    setAccess(false);
+    setPassword('');
+    setSelectedSection(null);
+    setShuffledQuestions([]);
+    setCurrentIndex(0);
+    setScore(0);
+    setShowFeedback(false);
+    setSelectedChoice('');
+    setFinished(false);
+  };
 
   // 1) Password screen
   if (!access) {
@@ -59,9 +71,9 @@ export default function CS3307Quiz() {
     const sections = ['PastExams', 'Patterns', 'C++'];
 
     return (
-      <div className={`min-h-screen flex flex-col items-center justify-center ${bg} text-gray-800 font-mono px-4`}>
-        <h2 className="text-2xl font-bold mb-4 underline decoration-pink-500">Choose Section</h2>
-        <div className="flex flex-wrap gap-4">
+      <div className={`min-h-screen flex flex-col items-center justify-center gap-4 ${bg} text-gray-800 font-mono px-4`}>
+        <h2 className="text-2xl font-bold underline decoration-pink-500 mb-2">Choose Section</h2>
+        <div className="flex flex-col gap-4 w-full max-w-xs">
           {sections.map(section => (
             <button
               key={section}
@@ -71,11 +83,17 @@ export default function CS3307Quiz() {
                 setShuffledQuestions(shuffled);
                 setSelectedSection(section);
               }}
-              className="px-6 py-3 bg-pink-400 hover:bg-pink-600 text-white rounded-md text-lg font-semibold"
+              className="w-full py-3 bg-pink-400 hover:bg-pink-600 text-white rounded-md text-lg font-semibold"
             >
               {section === 'PastExams' ? 'Past Exams' : section === 'Patterns' ? 'Design Patterns' : 'C++'}
             </button>
           ))}
+          <button
+            onClick={resetToMain}
+            className="w-full py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-md text-sm"
+          >
+            ⬅ Back to Main Menu
+          </button>
         </div>
       </div>
     );
@@ -92,9 +110,15 @@ export default function CS3307Quiz() {
           3307 Practice Quiz — Results
         </h2>
         <h1 className="text-4xl font-bold mb-4">🎉 Quiz Complete!</h1>
-        <p className="text-xl">
+        <p className="text-xl mb-4">
           Your Score: <span className="text-green-600 font-bold">{score}</span> / {total}
         </p>
+        <button
+          onClick={resetToMain}
+          className="px-6 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-md text-sm"
+        >
+          ⬅ Back to Main Menu
+        </button>
       </div>
     );
   }
@@ -193,7 +217,7 @@ export default function CS3307Quiz() {
           let msg = "";
 
           if (percent >= 90) {
-            msg = "💪🏻 MashaAllah, Fat7i is proud of u ";
+            msg = "💪🏻 MashaAllah ";
           } else if (percent >= 75) {
             msg = "🧠 U got brainzzz fr fr";
           } else if (percent >= 50) {
@@ -210,6 +234,13 @@ export default function CS3307Quiz() {
             </p>
           );
         })()}
+
+        <button
+          onClick={resetToMain}
+          className="mt-6 px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-md text-sm"
+        >
+          ⬅ Back to Main Menu
+        </button>
       </div>
     </div>
   );
