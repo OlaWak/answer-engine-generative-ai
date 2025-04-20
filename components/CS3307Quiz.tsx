@@ -164,7 +164,8 @@ export default function CS3307Quiz() {
         )}
 
         {(() => {
-        const percent = Math.round((score / total) * 100);
+        const attempted = currentIndex + (showFeedback ? 1 : 0);
+        const percent = attempted === 0 ? 0 : Math.round((score / attempted) * 100);
         let msg = "";
 
         if (percent >= 90) {
@@ -179,12 +180,13 @@ export default function CS3307Quiz() {
 
         return (
             <p className="mt-6 text-sm text-gray-600">
-            Score: <span className="text-pink-600 font-bold">{score} / {total}</span> (
+            Score: <span className="text-pink-600 font-bold">{score} / {attempted}</span> (
             <span className="font-semibold">{percent}%</span>)<br />
             <span className="italic">{msg}</span>
             </p>
         );
         })()}
+
 
       </div>
     </div>
