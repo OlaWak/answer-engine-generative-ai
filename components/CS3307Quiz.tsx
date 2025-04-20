@@ -27,9 +27,7 @@ export default function CS3307Quiz() {
   const total = shuffledQuestions.length;
   const bg = 'bg-gradient-to-br from-pink-100 via-white to-pink-200';
 
-  const resetToMain = () => {
-    setAccess(false);
-    setPassword('');
+  const goBackToSectionSelect = () => {
     setSelectedSection(null);
     setShuffledQuestions([]);
     setCurrentIndex(0);
@@ -38,6 +36,7 @@ export default function CS3307Quiz() {
     setSelectedChoice('');
     setFinished(false);
   };
+  
 
   // 1) Password screen
   if (!access) {
@@ -89,7 +88,7 @@ export default function CS3307Quiz() {
             </button>
           ))}
           <button
-            onClick={resetToMain}
+            onClick={goBackToSectionSelect}
             className="w-full py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-md text-sm"
           >
             ⬅ Back to Main Menu
@@ -114,7 +113,7 @@ export default function CS3307Quiz() {
           Your Score: <span className="text-green-600 font-bold">{score}</span> / {total}
         </p>
         <button
-          onClick={resetToMain}
+          onClick={goBackToSectionSelect}
           className="px-6 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-md text-sm"
         >
           ⬅ Back to Main Menu
@@ -236,7 +235,7 @@ export default function CS3307Quiz() {
         })()}
 
         <button
-          onClick={resetToMain}
+          onClick={goBackToSectionSelect}
           className="mt-6 px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-md text-sm"
         >
           ⬅ Back to Main Menu
