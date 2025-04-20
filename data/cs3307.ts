@@ -629,8 +629,267 @@ AppConfig* cfg2 = loadConfig();`,
       'Bridge'
     ],
     correctAnswer: 'Prototype'
-  }
+  },
+  {
+    code: `const Logger* Logger::_instance = NULL;  
+  const Logger& Logger::instance() {  
+     if (_instance == NULL)  
+         _instance = new Logger();  
+     return *_instance;  
+  }`,
+    question: 'Which design pattern does this code implement to ensure a single instance exists and is globally accessible?',
+    choices: ['Singleton', 'Prototype', 'Abstract Factory', 'Strategy'],
+    correctAnswer: 'Singleton'
+  },
+  {
+    question: '“There must be exactly one instance of a class. It must be accessible to clients from a well-known access point.” This is the applicability condition for which design pattern?',
+    choices: ['Builder', 'Abstract Factory', 'Singleton', 'Decorator'],
+    correctAnswer: 'Singleton'
+  },
+  {
+    question: 'Which is not a consequence of the Singleton pattern as listed in the slides?',
+    choices: [
+      'Controlled access to sole instance',
+      'Lazy initialization',
+      'Allows building related objects with consistent interfaces',
+      'Permits refinement through subclassing',
+      'Permits a variable number of instances, if needed'
+    ],
+    correctAnswer: 'Allows building related objects with consistent interfaces'
+  },
+  {
+    question: 'Why is the Logger constructor declared protected in the Singleton pattern?',
+    choices: [
+      'To prevent subclassing',
+      'To prevent inheritance',
+      'To prevent instantiation from outside the class',
+      'To allow static inheritance'
+    ],
+    correctAnswer: 'To prevent instantiation from outside the class'
+  },
+  {
+    question: 'Which design pattern requires you to “worry about who deletes the instance” unless smart pointers are used?',
+    choices: ['Builder', 'Singleton', 'Factory Method', 'Adapter'],
+    correctAnswer: 'Singleton'
+  },
+  {
+    question: 'Which of the following is an applicability condition listed directly on the Singleton slide?',
+    choices: [
+      'There must be no global access to the object',
+      'The object must support deep copying',
+      'The sole instance should be extensible by subclassing',
+      'The object should be composed of multiple products'
+    ],
+    correctAnswer: 'The sole instance should be extensible by subclassing'
+  },
+  {
+    code: `virtual Student* createStudent(const std::string& name) = 0;`,
+    question: 'This line defines a method that defers instantiation to subclasses. Which design pattern is this an example of?',
+    choices: ['Factory Method', 'Prototype', 'Singleton', 'Abstract Factory'],
+    correctAnswer: 'Factory Method'
+  },
+  {
+    question: '“A class can’t anticipate the class of objects it must create” is an Applicability condition for which design pattern?',
+    choices: ['Prototype', 'Abstract Factory', 'Factory Method', 'Strategy'],
+    correctAnswer: 'Factory Method'
+  },
+  {
+    question: 'Which of the following is not listed under the Consequences slide for the Factory Method pattern?',
+    choices: [
+      'Eliminates the need to bind application-specific classes into our code',
+      'Clients have to subclass the Creator class',
+      'Code only deals with the Product interface',
+      'Allows creation of entire families of related objects'
+    ],
+    correctAnswer: 'Allows creation of entire families of related objects'
+  },
+  {
+    code: `class FireGameLevel : public GameLevel {
+  protected:
+      virtual Monster* createMonster() {
+          return new FireMonster();
+      }
+  };`,
+    question: 'This subclass customizes object creation. Which design pattern does it implement?',
+    choices: ['Prototype', 'Factory Method', 'Builder', 'Singleton'],
+    correctAnswer: 'Factory Method'
+  },
+  {
+    question: 'What is one sentence from the slides that explains how Factory Method avoids tightly coupling your app logic to specific concrete classes?',
+    choices: [
+      'The code only deals with the Product interface, so it can work with any user-defined ConcreteProduct classes',
+      'It instantiates all its subclasses directly using new',
+      'The interface itself handles all memory cleanup',
+      'The code depends on static factory selectors'
+    ],
+    correctAnswer: 'The code only deals with the Product interface, so it can work with any user-defined ConcreteProduct classes'
+  },
+  {
+    question: 'You’re designing a flexible system where the base class shouldn’t care what concrete product is made, but you still want new products without modifying that base. What drawback might you run into when using the Factory Method pattern?',
+    choices: [
+      'You’ll have to subclass the Creator class just to create a particular ConcreteProduct object',
+      'You won’t be able to enforce abstract interfaces',
+      'You must recompile the codebase every time a subclass is made',
+      'You can’t pass parameters into constructors'
+    ],
+    correctAnswer: 'You’ll have to subclass the Creator class just to create a particular ConcreteProduct object'
+  },
+  {
+    question: 'Your dev team is tired of adding else-if statements every time a new student department is created. What statement from the slides explains why this is a problem?',
+    choices: [
+      'We are binding application-specific logic into a dynamic class',
+      'We are using the wrong polymorphic signature',
+      'We have to violate the Open-Closed Principle each time we add a new department',
+      'We forgot to use the adapter pattern'
+    ],
+    correctAnswer: 'We have to violate the Open-Closed Principle each time we add a new department'
+  },
+  {
+    question: 'What phrase from the slides illustrates how Factory Method can support user-defined products without rewriting existing logic?',
+    choices: [
+      'It dynamically casts interfaces at runtime',
+      'It allows classes to be serialized from XML',
+      'It stores object type in a runtime string',
+      'It can work with any user-defined ConcreteProduct classes'
+    ],
+    correctAnswer: 'It can work with any user-defined ConcreteProduct classes'
+  },
+  {
+    question: 'Factory methods eliminate the need to:',
+    choices: [
+      'explicitly instantiate derived interfaces',
+      'bind application-specific classes into our code',
+      'recompile after each subclass change',
+      'store type metadata in a visitor object'
+    ],
+    correctAnswer: 'bind application-specific classes into our code'
+  },
+  {
+    question: 'Which pattern is defined as:\n“Define an interface for creating an object, but let subclasses decide which class to instantiate”?',
+    choices: ['Abstract Factory', 'Builder', 'Factory Method', 'Prototype'],
+    correctAnswer: 'Factory Method'
+  },
+  {
+    code: `switch (this->_state) {
+    case NEW:
+    case APPLIED:
+      this->_state = CANCELLED;
+      break;
+  }`,
+    question: 'Which design pattern should you consider applying to cleanly replace this repetitive structure?',
+    choices: ['Abstract Factory', 'Strategy', 'State', 'Template Method'],
+    correctAnswer: 'State'
+  },
+  {
+    question: 'You’re building a loan system where the behavior of withdraw() should change at runtime depending on whether the account is in New, Applied, or Open state. What design pattern fits best here?',
+    choices: ['Builder', 'Abstract Factory', 'State', 'Observer'],
+    correctAnswer: 'State'
+  },
+  {
+    question: 'Which of the following quotes best describes a consequence of applying the State design pattern?',
+    choices: [
+      'Makes state transitions explicit',
+      'Supports interface segregation',
+      'Enables recursive backtracking',
+      'Decouples product creation from client logic'
+    ],
+    correctAnswer: 'Makes state transitions explicit'
+  },
+  {
+    question: '“Allow an object to alter its behaviour when its internal state changes. The object will appear to change its class.” What design pattern is being defined here?',
+    choices: ['State', 'Strategy', 'Factory Method', 'Decorator'],
+    correctAnswer: 'State'
+  },
+  {
+    question: 'What makes LineOfCreditState objects easy to reuse and localize behavior, according to the slides?',
+    choices: [
+      'They are registered as global statics',
+      'They use composition instead of inheritance',
+      'State-specific behaviour is localized into separate state classes',
+      'They inherit from an abstract interface of the credit manager'
+    ],
+    correctAnswer: 'State-specific behaviour is localized into separate state classes'
+  },
+  {
+    question: 'What’s the correct reason, straight from the slides, why a class like OpenState might work across multiple objects instead of making a new one every time?',
+    choices: [
+      'State objects can be shared',
+      'Singleton construction avoids runtime errors',
+      'Enumerated types can’t be dynamically subclassed',
+      'Factory methods must return default types'
+    ],
+    correctAnswer: 'State objects can be shared'
+  },
+  {
+    code: `this->_state = new CancelledState;`,
+    question: 'In the State pattern, what benefit is shown by making this assignment explicitly in a subclass like OpenState?',
+    choices: [
+      'Makes state transitions explicit',
+      'Breaks the observer subscription cycle',
+      'Uses the Abstract Factory\'s product selector',
+      'Enables deep copying of runtime states'
+    ],
+    correctAnswer: 'Makes state transitions explicit'
+  },
+  {
+    question: 'What statement from the slides reflects why all subclasses of LineOfCreditState override the same methods like apply() and cancel()?',
+    choices: [
+      'Often, several operations will contain this same conditional structure',
+      'Overriding is not supported in C++ without pure virtual functions',
+      'State transitions must be inherited through a factory',
+      'Function pointers are preferred over subclassing'
+    ],
+    correctAnswer: 'Often, several operations will contain this same conditional structure'
+  },
+  {
+    code: `Date d(2011, 11, 5, 9, 52, 0, new DateOnlyFormatter);
+  cout << "Date     : " << d.toString() << endl;
+  d.setFormatter(new TimeOnlyFormatter);
+  cout << "Time     : " << d.toString() << endl;
+  d.setFormatter(new DateTimeFormatter);
+  cout << "DateTime : " << d.toString() << endl;`,
+    question: 'What design pattern is demonstrated here, where DateFormatter is swapped at runtime?',
+    choices: ['Strategy', 'Abstract Factory', 'Template Method', 'Builder'],
+    correctAnswer: 'Strategy'
+  },
+  {
+    question: '“Define a family of algorithms, encapsulate each one, and make them interchangeable.” This best defines which design pattern?',
+    choices: ['Strategy', 'Abstract Factory', 'State', 'Prototype'],
+    correctAnswer: 'Strategy'
+  },
+  {
+    question: 'The client must know about different formatter types to construct the object. Based on the slides’ consequences, what is a drawback of the Strategy pattern?',
+    choices: [
+      'Lack of encapsulation',
+      'Clients must be aware of different strategies',
+      'High memory usage',
+      'Tight coupling'
+    ],
+    correctAnswer: 'Clients must be aware of different strategies'
+  },
+  {
+    question: 'Why does the Strategy pattern help in configuring a class with one of many behaviours, as per the slides?',
+    choices: [
+      'To allow polymorphism between client and factory',
+      'To define variant product families',
+      'Because many related classes differ only in their behaviour',
+      'Because it creates a registry of components'
+    ],
+    correctAnswer: 'Because many related classes differ only in their behaviour'
+  },
+  {
+    question: 'What is a key reason to apply the Strategy pattern, based on its applicability in the slides?',
+    choices: [
+      'To simplify object creation logic through factories',
+      'When you need different variants of an algorithm, such as for time/space tradeoffs',
+      'When multiple classes must share global state',
+      'To inherit formatting behavior directly from a base class'
+    ],
+    correctAnswer: 'When you need different variants of an algorithm, such as for time/space tradeoffs'
+  }  
   
+  
+   
 
 ];
 
