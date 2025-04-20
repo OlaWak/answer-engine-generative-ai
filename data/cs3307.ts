@@ -886,11 +886,218 @@ AppConfig* cfg2 = loadConfig();`,
       'To inherit formatting behavior directly from a base class'
     ],
     correctAnswer: 'When you need different variants of an algorithm, such as for time/space tradeoffs'
-  }  
+  },
+  {
+    question: 'A stock ticker class broadcasts price changes to any interested trading algorithms. The ticker doesn’t care who those receivers are, and new listeners can be added or removed at runtime. Which pattern best fits this system?',
+    choices: ['Abstract Factory', 'Observer', 'Prototype', 'Singleton'],
+    correctAnswer: 'Observer'
+  },
+  {
+    code: `class Spreadsheet {
+  public:
+      void attach(Graph* g);
+      void detach(Graph* g);
+      void notify(); // updates all attached graphs
+  private:
+      vector<Graph*> observers;
+  };`,
+    question: 'When one spreadsheet changes and all dependent graphs update automatically, what design pattern is being used here?',
+    choices: ['Mediator', 'Observer', 'Strategy', 'Builder'],
+    correctAnswer: 'Observer'
+  },
+  {
+    question: 'Your file watcher is being observed by both a logger and a UI component. When a file changes, both get notified, but the watcher has no knowledge of either. What principle of Observer is being leveraged?',
+    choices: [
+      'Broadcast communication',
+      'Singleton interface inheritance',
+      'Encapsulation of build steps',
+      'Direct inheritance-based delegation'
+    ],
+    correctAnswer: 'Broadcast communication'
+  },
+  {
+    question: 'A seemingly minor spreadsheet update triggers a bar graph refresh, which triggers a UI redraw, which triggers a screen resize. Which tricky side effect of Observer is being demonstrated here?',
+    choices: [
+      'A cascade of updates to Observers and their dependent objects',
+      'Multiple singleton creations across graph types',
+      'Incorrect factory bindings to context managers',
+      'Observer identity mismanagement'
+    ],
+    correctAnswer: 'A cascade of updates to Observers and their dependent objects'
+  },
+  {
+    question: 'In a system with multiple observers, some may observe more than one subject. An event object is passed to each update() call so observers can know who triggered it. Why is this technique important in Observer-based systems?',
+    choices: [
+      '“Some Observers may observe more than one subject.”',
+      'It allows strategy delegation',
+      'It helps factories group observers',
+      'It supports state retention via cloning'
+    ],
+    correctAnswer: '“Some Observers may observe more than one subject.”'
+  },
+  {
+    question: 'In the graph example, the Spreadsheet subject has many attached graphs, but each graph doesn’t know about the others. What consequence of Observer is being leveraged here?',
+    choices: [
+      'Observers have no knowledge of each other’s presence',
+      'Observers rely on static factories',
+      'Graphs must use shared state',
+      'Updates depend on subclass composition'
+    ],
+    correctAnswer: 'Observers have no knowledge of each other’s presence'
+  },
+  {
+    question: 'Which pattern is defined as: “Defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified and updated automatically.”',
+    choices: ['Strategy', 'Observer', 'State', 'Adapter'],
+    correctAnswer: 'Observer'
+  },
+  {
+    code: `menu.add(new MenuItem("Turn off stereo", cmd6));`,
+    question: 'This menu item has no idea how to turn off the stereo—it simply holds a command object. What design pattern allows this decoupling between UI and behavior?',
+    choices: ['Strategy', 'Observer', 'Command', 'Template Method'],
+    correctAnswer: 'Command'
+  },
+  {
+    question: 'You’re designing a UI library with customizable menu items. The library shouldn’t care what a menu item does when clicked. You just want users to plug in any kind of behavior they want. What design pattern fits this situation perfectly?',
+    choices: ['Strategy', 'Command', 'Factory Method', 'Abstract Factory'],
+    correctAnswer: 'Command'
+  },
+  {
+    code: `Command* cmd1 = new LightOnCommand(l1);
+  Command* cmd3 = new LightOnCommand(l2);`,
+    question: 'Two light commands are created for different lights. When each is executed, it affects a different object. What Command pattern benefit is this demonstrating?',
+    choices: [
+      'We can have multiple receivers',
+      'Observers are dynamically registered',
+      'Only one invoker is allowed',
+      'Factory creates these on demand'
+    ],
+    correctAnswer: 'We can have multiple receivers'
+  },
+  {
+    code: `void execute() {
+     this->_stereo->turnOff();
+  }`,
+    question: 'Which part of the Command pattern is this function representing?',
+    choices: ['ConcreteCommand', 'Invoker', 'Subject', 'Receiver'],
+    correctAnswer: 'ConcreteCommand'
+  },
+  {
+    code: `menu.add(new MenuItem("Play stereo", cmd7));`,
+    question: 'When this item is selected, it invokes cmd7->execute(). Why is this a clean, modular design?',
+    choices: [
+      'Commands are first-class objects; they can be manipulated and extended like any other object',
+      'Factory binding avoids unnecessary class instantiation',
+      'Singleton manages command creation',
+      'All menu actions are serialized'
+    ],
+    correctAnswer: 'Commands are first-class objects; they can be manipulated and extended like any other object'
+  },
+  {
+    question: 'A robotics controller queues a series of move, lift, and rotate commands to execute one by one. Which pattern allows this queuing behavior?',
+    choices: ['Command', 'State', 'Interpreter', 'Decorator'],
+    correctAnswer: 'Command'
+  },
+  {
+    question: 'You want to support undoing the last action in a text editor (like typing or deleting). Which design pattern directly enables this?',
+    choices: ['Command', 'Observer', 'Adapter', 'Strategy'],
+    correctAnswer: 'Command'
+  },
+  {
+    question: 'In a client-driven system, the object that knows how to perform an action (like turning on a stereo) is not the one that initiates it. What is the object that executes but doesn’t know how to perform the task called?',
+    choices: ['Invoker', 'Receiver', 'ConcreteCommand', 'Subject'],
+    correctAnswer: 'Invoker'
+  },
+  {
+    question: 'Which pattern is defined as: “Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.”',
+    choices: ['Strategy', 'Observer', 'Command', 'Visitor'],
+    correctAnswer: 'Command'
+  },
+  {
+    code: `void HourlyEmployee::accept(EmployeeVisitor* visitor) {
+      visitor->visit(this);
+  }`,
+    question: 'This pattern allows new operations (like reports) to be performed without changing the HourlyEmployee class. What design pattern is used?',
+    choices: ['Strategy', 'Visitor', 'Command', 'Builder'],
+    correctAnswer: 'Visitor'
+  },
+  {
+    question: 'A company wants to generate multiple reports (hourly pay, salary report, all-pay). They want to add new reports at any time without modifying Employee classes. Which pattern meets this goal without violating the Open-Closed Principle?',
+    choices: ['Abstract Factory', 'Visitor', 'Template Method', 'Singleton'],
+    correctAnswer: 'Visitor'
+  },
+  {
+    code: `class HourlyPayReport : public EmployeeVisitor {
+      void visit(HourlyEmployee* e);
+      void visit(SalariedEmployee* e);
+  };`,
+    question: 'This visitor provides an operation that acts only on HourlyEmployee, doing nothing for salaried staff. What does this demonstrate?',
+    choices: [
+      'The visitor gathers related operations and separates unrelated ones',
+      'The visitor combines all report types into one',
+      'The visitor inherits behavior from a composite class',
+      'The visitor subclasses employee types directly'
+    ],
+    correctAnswer: 'The visitor gathers related operations and separates unrelated ones'
+  },
+  {
+    code: `virtual void accept(EmployeeVisitor*) = 0;`,
+    question: 'In a system using Visitor, the Employee class has this method:\nWhy can’t you just call rpt1.visit(*it) on an Employee* in main()?',
+    choices: [
+      'The visit method requires a pointer to an instance of a concrete subclass, not the abstract parent.',
+      'The visit method must be private',
+      'The Employee object has no public name field',
+      'Dynamic dispatch can’t be used with vectors'
+    ],
+    correctAnswer: 'The visit method requires a pointer to an instance of a concrete subclass, not the abstract parent.'
+  },
+  {
+    question: 'Your architecture involves multiple unrelated operations like HourlyPayReport, AllPayReport, and future ones like TaxReport, all acting on HourlyEmployee and SalariedEmployee. Why is Visitor appropriate here?',
+    choices: [
+      'The object structure frequently changes',
+      'Strategy allows dynamic swapping of employee types',
+      'Many distinct and unrelated operations need to be performed on objects in an object structure and you want to avoid polluting their classes with these operations',
+      'You can use a factory to store reports'
+    ],
+    correctAnswer: 'Many distinct and unrelated operations need to be performed on objects in an object structure and you want to avoid polluting their classes with these operations'
+  },
+  {
+    question: 'What is a major limitation of the Visitor pattern according to the slides?',
+    choices: [
+      'Adding new ConcreteElement classes is hard',
+      'Visitors can only return void',
+      'You cannot accumulate state',
+      'Accept methods cannot be virtual'
+    ],
+    correctAnswer: 'Adding new ConcreteElement classes is hard'
+  },
+  {
+    code: `Employee* e = new HourlyEmployee("Joe", 60, 25.75);
+  e->accept(&rpt1);`,
+    question: 'Which benefit of Visitor does this illustrate?',
+    choices: [
+      'Operations depend on the concrete class of the element',
+      'Employee owns all reporting logic',
+      'accept defers to a generic report factory',
+      'Dynamic dispatch is prevented'
+    ],
+    correctAnswer: 'Operations depend on the concrete class of the element'
+  },
+  {
+    question: 'Suppose you are using a third-party employee library. You can’t change the source code, but you need to define operations like printing hours or generating CSV. Why is Visitor the best fit?',
+    choices: [
+      'The classes defining the object structure rarely change (or cannot change), but you want to define new operations',
+      'Strategy allows behavior to be changed inside the class',
+      'Abstract Factory provides cross-compatibility',
+      'State encapsulates third-party field data'
+    ],
+    correctAnswer: 'The classes defining the object structure rarely change (or cannot change), but you want to define new operations'
+  },
+  {
+    question: 'What pattern is being described here:\n“Represent an operation to be performed on the elements of an object structure. Lets you define a new operation without changing the classes of the elements on which it operates.”',
+    choices: ['Visitor', 'Command', 'Decorator', 'Adapter'],
+    correctAnswer: 'Visitor'
+  }
   
-  
-   
-
 ];
 
 export default cs3307;
