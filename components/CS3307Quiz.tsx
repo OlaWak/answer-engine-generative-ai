@@ -13,23 +13,21 @@ function shuffleArray<T>(arr: T[]): T[] {
 }
 
 export default function CS3307Quiz() {
-  // 1) Shuffle questions once on mount
-  const [shuffledQuestions] = useState<Question[]>(() => shuffleArray(cs3307));
-
-  // 2) All the state you need
   const [access, setAccess] = useState(false);
   const [password, setPassword] = useState('');
+  const [selectedSection, setSelectedSection] = useState<string | null>(null);
+  const [shuffledQuestions, setShuffledQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showFeedback, setShowFeedback] = useState(false);
-  const [selectedChoice, setSelectedChoice] = useState('');  
+  const [selectedChoice, setSelectedChoice] = useState('');
   const [finished, setFinished] = useState(false);
 
-  const total = shuffledQuestions.length;
   const currentQuestion = shuffledQuestions[currentIndex];
+  const total = shuffledQuestions.length;
   const bg = 'bg-gradient-to-br from-pink-100 via-white to-pink-200';
 
-  // 3) Password screen
+  // 1) Password screen
   if (!access) {
     return (
       <div className={`min-h-screen flex flex-col items-center justify-center ${bg} text-gray-800 font-mono px-4`}>
@@ -56,7 +54,34 @@ export default function CS3307Quiz() {
     );
   }
 
-  // 4) Results screen
+  // 2) Section select screen
+  if (access && !selectedSection) {
+    const sections = ['PastExams', 'Patterns', 'C++'];
+
+    return (
+      <div className={`min-h-screen flex flex-col items-center justify-center ${bg} text-gray-800 font-mono px-4`}>
+        <h2 className="text-2xl font-bold mb-4 underline decoration-pink-500">Choose Section</h2>
+        <div className="flex flex-wrap gap-4">
+          {sections.map(section => (
+            <button
+              key={section}
+              onClick={() => {
+                const filtered = cs3307.filter(q => q.category === section);
+                const shuffled = shuffleArray(filtered);
+                setShuffledQuestions(shuffled);
+                setSelectedSection(section);
+              }}
+              className="px-6 py-3 bg-pink-400 hover:bg-pink-600 text-white rounded-md text-lg font-semibold"
+            >
+              {section === 'PastExams' ? 'Past Exams' : section === 'Patterns' ? 'Design Patterns' : 'C++'}
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // 3) Results screen
   if (finished) {
     return (
       <div className={`min-h-screen flex flex-col items-center justify-center ${bg} text-gray-800 font-mono px-4 text-center`}>
@@ -74,7 +99,7 @@ export default function CS3307Quiz() {
     );
   }
 
-  // 5) Main quiz screen
+  // 4) Main quiz screen
   const handleAnswer = (choice: string) => {
     setSelectedChoice(choice);
     setShowFeedback(true);
@@ -101,7 +126,6 @@ export default function CS3307Quiz() {
           Question {currentIndex + 1} / {total}
         </h2>
 
-        {/* ← replaced the old question line with this block */}
         <div className="text-left mb-4">
           {currentQuestion.code && (
             <pre className="bg-gray-100 p-4 rounded font-mono whitespace-pre-wrap text-sm">
@@ -164,30 +188,28 @@ export default function CS3307Quiz() {
         )}
 
         {(() => {
-        const attempted = currentIndex + (showFeedback ? 1 : 0);
-        const percent = attempted === 0 ? 0 : Math.round((score / attempted) * 100);
-        let msg = "";
+          const attempted = currentIndex + (showFeedback ? 1 : 0);
+          const percent = attempted === 0 ? 0 : Math.round((score / attempted) * 100);
+          let msg = "";
 
-        if (percent >= 90) {
+          if (percent >= 90) {
             msg = "💪🏻 MashaAllah, Fat7i is proud of u ";
-        } else if (percent >= 75) {
+          } else if (percent >= 75) {
             msg = "🧠 U got brainzzz fr fr";
-        } else if (percent >= 50) {
+          } else if (percent >= 50) {
             msg = "😅 Not bad not bad keep grinding";
-        } else {
+          } else {
             msg = "🔐 It's giving... u should duaa, tahajjud, and lock in";
-        }
+          }
 
-        return (
+          return (
             <p className="mt-6 text-sm text-gray-600">
-            Score: <span className="text-pink-600 font-bold">{score} / {attempted}</span> (
-            <span className="font-semibold">{percent}%</span>)<br />
-            <span className="italic">{msg}</span>
+              Score: <span className="text-pink-600 font-bold">{score} / {attempted}</span> (
+              <span className="font-semibold">{percent}%</span>)<br />
+              <span className="italic">{msg}</span>
             </p>
-        );
+          );
         })()}
-
-
       </div>
     </div>
   );

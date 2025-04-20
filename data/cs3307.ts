@@ -5,20 +5,21 @@ export type Question = {
   choices: string[];
   correctAnswer: string;
   image?: string;
+  category: string; // NEW
 };
 
 const cs3307: Question[] = [
-  {
+{ category: 'PastExams',
     question: 'In C++, a non-null pointer always “points to” data allocated on the heap.',
     choices: ['True', 'False'],
     correctAnswer: 'False'
   },
-  {
+{ category: 'PastExams',
     question: 'If a variable i is declared as:\nconst int i = 0;\nthen the value of i cannot be changed in subsequent code.',
     choices: ['True', 'False'],
     correctAnswer: 'True'
   },
-  {
+{ category: 'PastExams',
     question: 'The syntax const int *bob indicates that bob is a:',
     choices: [
       'Regular pointer to regular int type',
@@ -28,7 +29,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'Regular pointer to constant int type'
   },
-  {
+{ category: 'PastExams',
     question: 'Under what circumstances should you declare a function as const?',
     choices: [
       'When the function modifies only the object’s member data',
@@ -39,7 +40,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'When the function does not modify *this'
   },
-  {
+{ category: 'PastExams',
     question: 'Space is always allocated on the stack when:',
     choices: [
       'new is invoked',
@@ -50,7 +51,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'A function is called'
   },
-  {
+{ category: 'PastExams',
     question: 'Space is always allocated on the heap when:',
     choices: [
       'new is invoked',
@@ -61,7 +62,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'new is invoked'
   },
-  {
+{ category: 'PastExams',
     question: 'What will be the output of the following code snippet?',
     image: '/data/imgs/img1.png',
     choices: [
@@ -73,7 +74,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: '9 44 9 44'
   },
-  {
+{ category: 'PastExams',
     question: 'Which of the following statements about the class/type T must be true in order for the function to compile and run?',
     image: '/data/imgs/img2.png',
     choices: [
@@ -85,22 +86,22 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'None of the above'
   },
-  {
+{ category: 'PastExams',
     question: "In C++, the destructor for an object is always called when the object is destroyed.",
     choices: ["True", "False"],
     correctAnswer: "True"
   },
-  {
+{ category: 'PastExams',
     question: "In C++, only operations that are declared to be virtual can be overridden in derived classes.",
     choices: ["True", "False"],
     correctAnswer: "False"
   },
-  {
+{ category: 'PastExams',
     question: "All member functions in a C++ class have a this pointer.",
     choices: ["True", "False"],
     correctAnswer: "False"
   },
-  {
+{ category: 'PastExams',
     question: "The story points of a user story:",
     choices: [
       "Have a work-hours equivalent defined specifically in the user story specifications",
@@ -111,12 +112,12 @@ const cs3307: Question[] = [
     ],
     correctAnswer: "Are used to indicate the approximate size and complexity of a story"
   },
-  {
+{ category: 'PastExams',
     question: "In a UML class diagram, there can never be more than one association or relationship between any two classes in the diagram.",
     choices: ["True", "False"],
     correctAnswer: "False"
   },
-  {
+{ category: 'PastExams',
     question: "Which of the following statements is false?",
     choices: [
       "Design principles define guidelines for “good” code",
@@ -127,7 +128,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: "All of the above statements are true, not false"
   },
-  {
+{ category: 'PastExams',
     question: "Why does the Interface Segregation Principle aim to avoid fat interfaces?",
     choices: [
       "High level modules should not depend on lower level modules, because higher level interfaces are less likely to change",
@@ -138,7 +139,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: "Any class inheriting the interface must provide an implementation for all interface functions, which may be empty or meaningless"
   },
-  {
+{ category: 'PastExams',
     question: "Which of the following are true about a successful implementation of the Singleton design pattern?",
     choices: [
       "It relies on public constructors",
@@ -149,7 +150,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: "It must use the keyword static"
   },
-  {
+{ category: 'PastExams',
     question: "Which of the following statements about the Decorator pattern are true?",
     choices: [
       "It can be used to add and remove behaviour dynamically at run time",
@@ -160,7 +161,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: "All of the above"
   },
-  {
+{ category: 'PastExams',
     question: "Creational design patterns:",
     choices: [
       "Are all based on some sort of factory pattern",
@@ -171,7 +172,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: "Are used to encapsulate the creation of objects"
   },
-  {
+{ category: 'PastExams',
     question: "The Adapter pattern:",
     choices: [
       "Can be implemented in C++ using multiple inheritance",
@@ -182,7 +183,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: "Both a) and c) are true"
   },
-  {
+{ category: 'PastExams',
     question: "The Builder pattern is used to:",
     choices: [
       "Create objects by merging classes with each other",
@@ -193,17 +194,17 @@ const cs3307: Question[] = [
     ],
     correctAnswer: "Create objects through a similar process of steps, but allow the actual representation to vary"
   },
-  {
+{ category: 'PastExams',
     question: 'The name C++ is derived from the ++ increment operator in C.',
     choices: ['True', 'False'],
     correctAnswer: 'True'
   },
-  {
+{ category: 'PastExams',
     question: 'Before being called C++, the language was originally referred to as C with Classes.',
     choices: ['True', 'False'],
     correctAnswer: 'True'
   },
-  {
+{ category: 'PastExams',
     question: 'The following is (are) true about C++.',
     choices: [
       'It is a dynamically typed language',
@@ -214,32 +215,32 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'More than one of the above statements are true'
   },
-  {
+{ category: 'PastExams',
     question: 'The C++ language is a strict superset of C.',
     choices: ['True', 'False'],
     correctAnswer: 'False'
   },
-  {
+{ category: 'PastExams',
     question: 'Classes are mandatory in all valid C++ programs.',
     choices: ['True', 'False'],
     correctAnswer: ''
   },
-  {
+{ category: 'PastExams',
     question: 'A valid C++ program can have how many main() functions:',
     choices: ['0', '1', 'More than 1', 'All of the above are, in fact, valid'],
     correctAnswer: '1'
   },
-  {
+{ category: 'PastExams',
     question: 'The following is the simplest statement in C++: \n;',
     choices: ['True', 'False'],
     correctAnswer: 'True'
   },
-  {
+{ category: 'PastExams',
     question: 'In C++, a class and a struct are more-or-less equivalent, except for their default visibilities.',
     choices: ['True', 'False'],
     correctAnswer: 'True'
   },
-  {
+{ category: 'PastExams',
     question: 'Which of the following is an acceptable way for a function to exit in C++:',
     choices: [
       'The function executes a return statement, providing an appropriate value as necessary, depending on the function.',
@@ -250,12 +251,12 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'All of the above'
   },
-  {
+{ category: 'PastExams',
     question: 'In C++, the destructor for an object is always called when the object is destroyed.',
     choices: ['True', 'False'],
     correctAnswer: 'True'
   },
-  {
+{ category: 'PastExams',
     question: 'Friendship between classes in C++ is:',
     choices: [
       'Both reciprocal and transitive',
@@ -265,12 +266,12 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'Neither reciprocal nor transitive'
   },
-  {
+{ category: 'PastExams',
     question: 'Static member functions in C++ have a this pointer.',
     choices: ['True', 'False'],
     correctAnswer: 'False'
   },
-  {
+{ category: 'PastExams',
     question: 'Consider the following C++ code:\nWhat will be the output of the above code?',
     image: '/data/imgs/img3.png',
     choices: [
@@ -282,7 +283,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'In Parent default constructor\nIn Parent default constructor\nIn Child default constructor\nIn Child destructor\nIn Parent destructor\nIn Parent destructor',
   },
-  {
+{ category: 'PastExams',
     question: 'When overloading a function in C++, the definitions of the function must differ from each other by their:\n1. Name.\n2. Argument types.\n3. Number of arguments.\n4. Return type.\nWhich of the following combinations of statements from the above list is correct:',
     choices: [
       'Statement 1.',
@@ -293,7 +294,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'Statements 2 and 3.'
   },
-  {
+{ category: 'PastExams',
     question: 'Which of the following statement(s) about user stories is/are correct:',
     choices: [
       'User stories are generated in a meeting with the client.',
@@ -304,7 +305,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'All of the above statements are correct.'
   },
-  {
+{ category: 'PastExams',
     question: 'When considering the use of aggregation or composition associations in UML, which of the following statements are true for the case of aggregation:',
     choices: [
       'An object comprised of many components owns those components.',
@@ -315,22 +316,22 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'None of the above.'
   },
-  {
+{ category: 'PastExams',
     question: 'The Prototype pattern, as discussed in class, works by wrapping one object inside another with the same interface.',
     choices: ['True', 'False'],
     correctAnswer: 'True'
   },
-  {
+{ category: 'PastExams',
     question: 'The Bridge pattern, as discussed in class, defines a family of algorithms, encapsulates each one, and makes them interchangeable. Bridge lets the algorithm vary independently from clients that use it.',
     choices: ['True', 'False'],
     correctAnswer: 'False'
   },
-  {
+{ category: 'PastExams',
     question: 'The Command pattern decouples the object that invokes an operation from the one that knows how to perform it.',
     choices: ['True', 'False'],
     correctAnswer: 'True'
   },
-  {
+{ category: 'Patterns',
     question: 'Which key difference distinguishes Abstract Factory from Factory Method, according to the PowerPoint?',
     choices: [
       'Factory Method uses aggregation/composition, Abstract Factory uses inheritance',
@@ -340,7 +341,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'Abstract Factory uses aggregation/composition; Factory Method uses inheritance'
   },
-  {
+{ category: 'Patterns',
     question: 'What is one major limitation of the Abstract Factory pattern according to the slides?',
     choices: [
       'Difficult to support new kinds of products',
@@ -350,7 +351,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'Difficult to support new kinds of products'
   },
-  {
+{ category: 'Patterns',
     question: 'The Abstract Factory pattern is applicable when:',
     choices: [
       'A system should be configured with one of multiple families of products',
@@ -360,7 +361,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'A system should be configured with one of multiple families of products'
   },
-  {
+{ category: 'Patterns',
     question: 'Which of the following code usage characteristics most strongly supports this being an Abstract Factory pattern?',
     choices: [
       'Aggregation/composition of multiple factory methods',
@@ -371,7 +372,7 @@ const cs3307: Question[] = [
     correctAnswer: 'Aggregation/composition of multiple factory methods'
   },
  
-  {
+{ category: 'Patterns',
     question: 'The Abstract Factory pattern is applicable when:\n“A system should be independent of how its products are created.”\nWhich other scenario also matches its applicability?',
     choices: [
       'When objects require dynamic configuration at runtime',
@@ -381,7 +382,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'When a system should be configured with one of multiple families of products'
   },
-  {
+{ category: 'Patterns',
     question: 'In the Abstract Factory design pattern, which statement is true about client responsibilities?',
     choices: [
       'Client inherits the concrete factory class to instantiate objects.',
@@ -392,7 +393,7 @@ const cs3307: Question[] = [
     correctAnswer: 'Client controls when objects are created, while factory controls what is created.'
   },
 
-  {
+{ category: 'Patterns',
     question: '“Provide an interface for creating families of related or dependent objects without specifying their concrete classes.” Which design pattern does this definition describe?',
     choices: [
       'Abstract Factory',
@@ -403,7 +404,7 @@ const cs3307: Question[] = [
     correctAnswer: 'Abstract Factory'
   },
   
-  {
+{ category: 'Patterns',
     question: '“Separate the construction of a complex object from its representation so that the same construction process can create different representations.” Which design pattern is this the textbook definition of?',
     choices: [
       'Builder',
@@ -414,7 +415,7 @@ const cs3307: Question[] = [
     correctAnswer: 'Builder'
   },
   
-  {
+{ category: 'Patterns',
     question: 'Which of the following is NOT a listed consequence of the Builder pattern from the slides?',
     choices: [
       'Lets you vary a product’s internal representation',
@@ -426,7 +427,7 @@ const cs3307: Question[] = [
   },
   
 
-  {
+{ category: 'Patterns',
     question: 'What is not a listed consequence of the Builder pattern?',
     choices: [
       'Lets you vary a product’s internal representation',
@@ -436,7 +437,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'Allows run-time class generation'
   },
-  {
+{ category: 'Patterns',
     question: 'Which of the following statements about Builder vs. Abstract Factory is correct?',
     choices: [
       'Builder creates families of related objects available immediately',
@@ -446,7 +447,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'Builder creates one, complex product, usually made up of different parts'
   },
-  {
+{ category: 'Patterns',
     question: 'Which of the following best explains why the Builder pattern is suitable when constructing complex objects in a consistent way?',
     choices: [
       'Different objects may require runtime injection of dependencies',
@@ -457,7 +458,7 @@ const cs3307: Question[] = [
     correctAnswer: 'The construction process must allow different representations for the object that’s constructed'
   },
   
-  {
+{ category: 'Patterns',
     question: `AppConfig* cfg2 = cfg1->clone();
 This code avoids reloading a heavy configuration file by copying an existing object. What design pattern does this illustrate?`,
     choices: [
@@ -468,7 +469,7 @@ This code avoids reloading a heavy configuration file by copying an existing obj
     ],
     correctAnswer: 'Prototype'
   },
-  {
+{ category: 'Patterns',
     question: `“Specify the kinds of objects to create using a prototypical instance, and create new objects by copying the prototype.”
 Which design pattern is described by this definition?`,
     choices: [
@@ -479,7 +480,7 @@ Which design pattern is described by this definition?`,
     ],
     correctAnswer: 'Prototype'
   },
-  {
+{ category: 'Patterns',
     question: `Which design pattern is most appropriate when:
 “Instances are expensive to create, but easy to copy”?`,
     choices: [
@@ -491,7 +492,7 @@ Which design pattern is described by this definition?`,
     correctAnswer: 'Prototype'
   },
  
-  {
+{ category: 'Patterns',
     question: `Why can’t a copy constructor be used to duplicate AppConfig objects in the prototype example (refer to slides)?`,
     choices: [
       'Because AppConfig is a template class',
@@ -502,7 +503,7 @@ Which design pattern is described by this definition?`,
     correctAnswer: 'Because AppConfig is abstract and cannot be instantiated directly'
   },
  
-  {
+{ category: 'Patterns',
     question: `“Hides the concrete product classes from the client – we don’t have to know which concrete type we’re cloning”
 This is a listed consequence of which design pattern?`,
     choices: [
@@ -513,7 +514,7 @@ This is a listed consequence of which design pattern?`,
     ],
     correctAnswer: 'Prototype'
   },
-  {
+{ category: 'Patterns',
     question: `When might you prefer using prototypes instead of factory subclasses to build game levels?`,
     choices: [
       'When you want the client to have strict control over object creation',
@@ -525,7 +526,7 @@ This is a listed consequence of which design pattern?`,
   },
 
 
-  {
+{ category: 'Patterns',
     code: `Pizza *pizza = new Pizza(12);
 pizza->addTopping("Pineapple");
 pizza->addTopping("Ham");
@@ -544,7 +545,7 @@ pizza->addTopping("Onions");`,
     ],
     correctAnswer: 'Builder'
   },
-  {
+{ category: 'Patterns',
     code: `void HawaiianPizzaBuilder::buildToppings() {
     _pizza.addTopping("Ham");
     _pizza.addTopping("Pineapple");
@@ -558,7 +559,7 @@ pizza->addTopping("Onions");`,
     ],
     correctAnswer: 'Concrete Builder'
   },
-  {
+{ category: 'Patterns',
     code: `class GameLevel {
 public:
     GameLevel(GameObjectFactory* factory) {
@@ -580,7 +581,7 @@ private:
     ],
     correctAnswer: 'Abstract Factory'
   },
-  {
+{ category: 'Patterns',
     code: `void Cook::constructPizza() {
     _pizzaBuilder->buildName();
     _pizzaBuilder->buildDough();
@@ -596,7 +597,7 @@ private:
     ],
     correctAnswer: 'Builder'
   },
-  {
+{ category: 'Patterns',
     code: `AppConfig* cfg2 = cfg1->clone();`,
     question: 'This code avoids reloading a heavy configuration file by copying an existing object. What design pattern does this illustrate?',
     choices: [
@@ -607,7 +608,7 @@ private:
     ],
     correctAnswer: 'Prototype'
   },
-  {
+{ category: 'Patterns',
     code: `AppConfig* cfg1 = loadConfig();
 AppConfig* cfg2 = loadConfig();`,
     question: 'This method incurs a performance hit because loadConfig() is called multiple times. What design pattern could avoid this overhead while still producing similar objects?',
@@ -619,7 +620,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Prototype'
   },
-  {
+{ category: 'Patterns',
     code: `Monster* monster = f->createMonster();`,
     question: 'In the context of:\nObjectFactory* f = new ObjectFactory(m, w, s);\nWhat design pattern is being used to dynamically return a new object of the same type without requiring a factory subclass for each type?',
     choices: [
@@ -630,7 +631,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Prototype'
   },
-  {
+{ category: 'Patterns',
     code: `const Logger* Logger::_instance = NULL;  
   const Logger& Logger::instance() {  
      if (_instance == NULL)  
@@ -641,12 +642,12 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['Singleton', 'Prototype', 'Abstract Factory', 'Strategy'],
     correctAnswer: 'Singleton'
   },
-  {
+{ category: 'Patterns',
     question: '“There must be exactly one instance of a class. It must be accessible to clients from a well-known access point.” This is the applicability condition for which design pattern?',
     choices: ['Builder', 'Abstract Factory', 'Singleton', 'Decorator'],
     correctAnswer: 'Singleton'
   },
-  {
+{ category: 'Patterns',
     question: 'Which is not a consequence of the Singleton pattern as listed in the slides?',
     choices: [
       'Controlled access to sole instance',
@@ -657,7 +658,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Allows building related objects with consistent interfaces'
   },
-  {
+{ category: 'Patterns',
     question: 'Why is the Logger constructor declared protected in the Singleton pattern?',
     choices: [
       'To prevent subclassing',
@@ -667,12 +668,12 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'To prevent instantiation from outside the class'
   },
-  {
+{ category: 'Patterns',
     question: 'Which design pattern requires you to “worry about who deletes the instance” unless smart pointers are used?',
     choices: ['Builder', 'Singleton', 'Factory Method', 'Adapter'],
     correctAnswer: 'Singleton'
   },
-  {
+{ category: 'Patterns',
     question: 'Which of the following is an applicability condition listed directly on the Singleton slide?',
     choices: [
       'There must be no global access to the object',
@@ -682,18 +683,18 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'The sole instance should be extensible by subclassing'
   },
-  {
+{ category: 'Patterns',
     code: `virtual Student* createStudent(const std::string& name) = 0;`,
     question: 'This line defines a method that defers instantiation to subclasses. Which design pattern is this an example of?',
     choices: ['Factory Method', 'Prototype', 'Singleton', 'Abstract Factory'],
     correctAnswer: 'Factory Method'
   },
-  {
+{ category: 'Patterns',
     question: '“A class can’t anticipate the class of objects it must create” is an Applicability condition for which design pattern?',
     choices: ['Prototype', 'Abstract Factory', 'Factory Method', 'Strategy'],
     correctAnswer: 'Factory Method'
   },
-  {
+{ category: 'Patterns',
     question: 'Which of the following is not listed under the Consequences slide for the Factory Method pattern?',
     choices: [
       'Eliminates the need to bind application-specific classes into our code',
@@ -703,7 +704,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Allows creation of entire families of related objects'
   },
-  {
+{ category: 'Patterns',
     code: `class FireGameLevel : public GameLevel {
   protected:
       virtual Monster* createMonster() {
@@ -714,7 +715,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['Prototype', 'Factory Method', 'Builder', 'Singleton'],
     correctAnswer: 'Factory Method'
   },
-  {
+{ category: 'Patterns',
     question: 'What is one sentence from the slides that explains how Factory Method avoids tightly coupling your app logic to specific concrete classes?',
     choices: [
       'The code only deals with the Product interface, so it can work with any user-defined ConcreteProduct classes',
@@ -724,7 +725,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'The code only deals with the Product interface, so it can work with any user-defined ConcreteProduct classes'
   },
-  {
+{ category: 'Patterns',
     question: 'You’re designing a flexible system where the base class shouldn’t care what concrete product is made, but you still want new products without modifying that base. What drawback might you run into when using the Factory Method pattern?',
     choices: [
       'You’ll have to subclass the Creator class just to create a particular ConcreteProduct object',
@@ -734,7 +735,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'You’ll have to subclass the Creator class just to create a particular ConcreteProduct object'
   },
-  {
+{ category: 'Patterns',
     question: 'Your dev team is tired of adding else-if statements every time a new student department is created. What statement from the slides explains why this is a problem?',
     choices: [
       'We are binding application-specific logic into a dynamic class',
@@ -744,7 +745,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'We have to violate the Open-Closed Principle each time we add a new department'
   },
-  {
+{ category: 'Patterns',
     question: 'What phrase from the slides illustrates how Factory Method can support user-defined products without rewriting existing logic?',
     choices: [
       'It dynamically casts interfaces at runtime',
@@ -754,7 +755,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'It can work with any user-defined ConcreteProduct classes'
   },
-  {
+{ category: 'Patterns',
     question: 'Factory methods eliminate the need to:',
     choices: [
       'explicitly instantiate derived interfaces',
@@ -764,12 +765,12 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'bind application-specific classes into our code'
   },
-  {
+{ category: 'Patterns',
     question: 'Which pattern is defined as:\n“Define an interface for creating an object, but let subclasses decide which class to instantiate”?',
     choices: ['Abstract Factory', 'Builder', 'Factory Method', 'Prototype'],
     correctAnswer: 'Factory Method'
   },
-  {
+{ category: 'Patterns',
     code: `switch (this->_state) {
     case NEW:
     case APPLIED:
@@ -780,12 +781,12 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['Abstract Factory', 'Strategy', 'State', 'Template Method'],
     correctAnswer: 'State'
   },
-  {
+{ category: 'Patterns',
     question: 'You’re building a loan system where the behavior of withdraw() should change at runtime depending on whether the account is in New, Applied, or Open state. What design pattern fits best here?',
     choices: ['Builder', 'Abstract Factory', 'State', 'Observer'],
     correctAnswer: 'State'
   },
-  {
+{ category: 'Patterns',
     question: 'Which of the following quotes best describes a consequence of applying the State design pattern?',
     choices: [
       'Makes state transitions explicit',
@@ -795,12 +796,12 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Makes state transitions explicit'
   },
-  {
+{ category: 'Patterns',
     question: '“Allow an object to alter its behaviour when its internal state changes. The object will appear to change its class.” What design pattern is being defined here?',
     choices: ['State', 'Strategy', 'Factory Method', 'Decorator'],
     correctAnswer: 'State'
   },
-  {
+{ category: 'Patterns',
     question: 'What makes LineOfCreditState objects easy to reuse and localize behavior, according to the slides?',
     choices: [
       'They are registered as global statics',
@@ -810,7 +811,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'State-specific behaviour is localized into separate state classes'
   },
-  {
+{ category: 'Patterns',
     question: 'What’s the correct reason, straight from the slides, why a class like OpenState might work across multiple objects instead of making a new one every time?',
     choices: [
       'State objects can be shared',
@@ -820,7 +821,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'State objects can be shared'
   },
-  {
+{ category: 'Patterns',
     code: `this->_state = new CancelledState;`,
     question: 'In the State pattern, what benefit is shown by making this assignment explicitly in a subclass like OpenState?',
     choices: [
@@ -831,7 +832,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Makes state transitions explicit'
   },
-  {
+{ category: 'Patterns',
     question: 'What statement from the slides reflects why all subclasses of LineOfCreditState override the same methods like apply() and cancel()?',
     choices: [
       'Often, several operations will contain this same conditional structure',
@@ -841,7 +842,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Often, several operations will contain this same conditional structure'
   },
-  {
+{ category: 'Patterns',
     code: `Date d(2011, 11, 5, 9, 52, 0, new DateOnlyFormatter);
   cout << "Date     : " << d.toString() << endl;
   d.setFormatter(new TimeOnlyFormatter);
@@ -852,12 +853,12 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['Strategy', 'Abstract Factory', 'Template Method', 'Builder'],
     correctAnswer: 'Strategy'
   },
-  {
+{ category: 'Patterns',
     question: '“Define a family of algorithms, encapsulate each one, and make them interchangeable.” This best defines which design pattern?',
     choices: ['Strategy', 'Abstract Factory', 'State', 'Prototype'],
     correctAnswer: 'Strategy'
   },
-  {
+{ category: 'Patterns',
     question: 'The client must know about different formatter types to construct the object. Based on the slides’ consequences, what is a drawback of the Strategy pattern?',
     choices: [
       'Lack of encapsulation',
@@ -867,7 +868,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Clients must be aware of different strategies'
   },
-  {
+{ category: 'Patterns',
     question: 'Why does the Strategy pattern help in configuring a class with one of many behaviours, as per the slides?',
     choices: [
       'To allow polymorphism between client and factory',
@@ -877,7 +878,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Because many related classes differ only in their behaviour'
   },
-  {
+{ category: 'Patterns',
     question: 'What is a key reason to apply the Strategy pattern, based on its applicability in the slides?',
     choices: [
       'To simplify object creation logic through factories',
@@ -887,12 +888,12 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'When you need different variants of an algorithm, such as for time/space tradeoffs'
   },
-  {
+{ category: 'Patterns',
     question: 'A stock ticker class broadcasts price changes to any interested trading algorithms. The ticker doesn’t care who those receivers are, and new listeners can be added or removed at runtime. Which pattern best fits this system?',
     choices: ['Abstract Factory', 'Observer', 'Prototype', 'Singleton'],
     correctAnswer: 'Observer'
   },
-  {
+{ category: 'Patterns',
     code: `class Spreadsheet {
   public:
       void attach(Graph* g);
@@ -905,7 +906,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['Mediator', 'Observer', 'Strategy', 'Builder'],
     correctAnswer: 'Observer'
   },
-  {
+{ category: 'Patterns',
     question: 'Your file watcher is being observed by both a logger and a UI component. When a file changes, both get notified, but the watcher has no knowledge of either. What principle of Observer is being leveraged?',
     choices: [
       'Broadcast communication',
@@ -915,7 +916,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Broadcast communication'
   },
-  {
+{ category: 'Patterns',
     question: 'A seemingly minor spreadsheet update triggers a bar graph refresh, which triggers a UI redraw, which triggers a screen resize. Which tricky side effect of Observer is being demonstrated here?',
     choices: [
       'A cascade of updates to Observers and their dependent objects',
@@ -925,7 +926,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'A cascade of updates to Observers and their dependent objects'
   },
-  {
+{ category: 'Patterns',
     question: 'In a system with multiple observers, some may observe more than one subject. An event object is passed to each update() call so observers can know who triggered it. Why is this technique important in Observer-based systems?',
     choices: [
       '“Some Observers may observe more than one subject.”',
@@ -935,7 +936,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: '“Some Observers may observe more than one subject.”'
   },
-  {
+{ category: 'Patterns',
     question: 'In the graph example, the Spreadsheet subject has many attached graphs, but each graph doesn’t know about the others. What consequence of Observer is being leveraged here?',
     choices: [
       'Observers have no knowledge of each other’s presence',
@@ -945,23 +946,23 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Observers have no knowledge of each other’s presence'
   },
-  {
+{ category: 'Patterns',
     question: 'Which pattern is defined as: “Defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified and updated automatically.”',
     choices: ['Strategy', 'Observer', 'State', 'Adapter'],
     correctAnswer: 'Observer'
   },
-  {
+{ category: 'Patterns',
     code: `menu.add(new MenuItem("Turn off stereo", cmd6));`,
     question: 'This menu item has no idea how to turn off the stereo—it simply holds a command object. What design pattern allows this decoupling between UI and behavior?',
     choices: ['Strategy', 'Observer', 'Command', 'Template Method'],
     correctAnswer: 'Command'
   },
-  {
+{ category: 'Patterns',
     question: 'You’re designing a UI library with customizable menu items. The library shouldn’t care what a menu item does when clicked. You just want users to plug in any kind of behavior they want. What design pattern fits this situation perfectly?',
     choices: ['Strategy', 'Command', 'Factory Method', 'Abstract Factory'],
     correctAnswer: 'Command'
   },
-  {
+{ category: 'Patterns',
     code: `Command* cmd1 = new LightOnCommand(l1);
   Command* cmd3 = new LightOnCommand(l2);`,
     question: 'Two light commands are created for different lights. When each is executed, it affects a different object. What Command pattern benefit is this demonstrating?',
@@ -973,7 +974,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'We can have multiple receivers'
   },
-  {
+{ category: 'Patterns',
     code: `void execute() {
      this->_stereo->turnOff();
   }`,
@@ -981,7 +982,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['ConcreteCommand', 'Invoker', 'Subject', 'Receiver'],
     correctAnswer: 'ConcreteCommand'
   },
-  {
+{ category: 'Patterns',
     code: `menu.add(new MenuItem("Play stereo", cmd7));`,
     question: 'When this item is selected, it invokes cmd7->execute(). Why is this a clean, modular design?',
     choices: [
@@ -992,27 +993,27 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Commands are first-class objects; they can be manipulated and extended like any other object'
   },
-  {
+{ category: 'Patterns',
     question: 'A robotics controller queues a series of move, lift, and rotate commands to execute one by one. Which pattern allows this queuing behavior?',
     choices: ['Command', 'State', 'Interpreter', 'Decorator'],
     correctAnswer: 'Command'
   },
-  {
+{ category: 'Patterns',
     question: 'You want to support undoing the last action in a text editor (like typing or deleting). Which design pattern directly enables this?',
     choices: ['Command', 'Observer', 'Adapter', 'Strategy'],
     correctAnswer: 'Command'
   },
-  {
+{ category: 'Patterns',
     question: 'In a client-driven system, the object that knows how to perform an action (like turning on a stereo) is not the one that initiates it. What is the object that executes but doesn’t know how to perform the task called?',
     choices: ['Invoker', 'Receiver', 'ConcreteCommand', 'Subject'],
     correctAnswer: 'Invoker'
   },
-  {
+{ category: 'Patterns',
     question: 'Which pattern is defined as: “Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.”',
     choices: ['Strategy', 'Observer', 'Command', 'Visitor'],
     correctAnswer: 'Command'
   },
-  {
+{ category: 'Patterns',
     code: `void HourlyEmployee::accept(EmployeeVisitor* visitor) {
       visitor->visit(this);
   }`,
@@ -1020,12 +1021,12 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['Strategy', 'Visitor', 'Command', 'Builder'],
     correctAnswer: 'Visitor'
   },
-  {
+{ category: 'Patterns',
     question: 'A company wants to generate multiple reports (hourly pay, salary report, all-pay). They want to add new reports at any time without modifying Employee classes. Which pattern meets this goal without violating the Open-Closed Principle?',
     choices: ['Abstract Factory', 'Visitor', 'Template Method', 'Singleton'],
     correctAnswer: 'Visitor'
   },
-  {
+{ category: 'Patterns',
     code: `class HourlyPayReport : public EmployeeVisitor {
       void visit(HourlyEmployee* e);
       void visit(SalariedEmployee* e);
@@ -1039,7 +1040,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'The visitor gathers related operations and separates unrelated ones'
   },
-  {
+{ category: 'Patterns',
     code: `virtual void accept(EmployeeVisitor*) = 0;`,
     question: 'In a system using Visitor, the Employee class has this method:\nWhy can’t you just call rpt1.visit(*it) on an Employee* in main()?',
     choices: [
@@ -1050,7 +1051,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'The visit method requires a pointer to an instance of a concrete subclass, not the abstract parent.'
   },
-  {
+{ category: 'Patterns',
     question: 'Your architecture involves multiple unrelated operations like HourlyPayReport, AllPayReport, and future ones like TaxReport, all acting on HourlyEmployee and SalariedEmployee. Why is Visitor appropriate here?',
     choices: [
       'The object structure frequently changes',
@@ -1060,7 +1061,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Many distinct and unrelated operations need to be performed on objects in an object structure and you want to avoid polluting their classes with these operations'
   },
-  {
+{ category: 'Patterns',
     question: 'What is a major limitation of the Visitor pattern according to the slides?',
     choices: [
       'Adding new ConcreteElement classes is hard',
@@ -1070,7 +1071,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Adding new ConcreteElement classes is hard'
   },
-  {
+{ category: 'Patterns',
     code: `Employee* e = new HourlyEmployee("Joe", 60, 25.75);
   e->accept(&rpt1);`,
     question: 'Which benefit of Visitor does this illustrate?',
@@ -1082,7 +1083,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Operations depend on the concrete class of the element'
   },
-  {
+{ category: 'Patterns',
     question: 'Suppose you are using a third-party employee library. You can’t change the source code, but you need to define operations like printing hours or generating CSV. Why is Visitor the best fit?',
     choices: [
       'The classes defining the object structure rarely change (or cannot change), but you want to define new operations',
@@ -1092,12 +1093,12 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'The classes defining the object structure rarely change (or cannot change), but you want to define new operations'
   },
-  {
+{ category: 'Patterns',
     question: 'What pattern is being described here:\n“Represent an operation to be performed on the elements of an object structure. Lets you define a new operation without changing the classes of the elements on which it operates.”',
     choices: ['Visitor', 'Command', 'Decorator', 'Adapter'],
     correctAnswer: 'Visitor'
   },
-  {
+{ category: 'Patterns',
     question: 'Your organization chart app lets you structure employees into a tree of Manager and RegularEmployee objects. Which Composite feature makes the client code like print() easy to write?',
     choices: [
       'Clients don’t have to distinguish between primitive and composite objects',
@@ -1107,7 +1108,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Clients don’t have to distinguish between primitive and composite objects'
   },
-  {
+{ category: 'Patterns',
     code: `Employee* dean = new Manager("Matt Davison");
   dean->add(new RegularEmployee("Art Mulder"));
   dean->print();`,
@@ -1120,7 +1121,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Because wherever client code expects a primitive object, it can also take a composite object'
   },
-  {
+{ category: 'Patterns',
     code: `virtual void add(Employee* member) {
       // do nothing -- throw exception?
   }`,
@@ -1133,7 +1134,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Leaf methods may do nothing, while composites override them for structural behavior'
   },
-  {
+{ category: 'Patterns',
     question: 'Why does this line in the slides reflect the core motivation for using Composite?\n“You want clients to be able to ignore the difference between compositions of objects and individual objects.”',
     choices: [
       'It simplifies client code that works on both Manager and RegularEmployee',
@@ -1143,7 +1144,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'It simplifies client code that works on both Manager and RegularEmployee'
   },
-  {
+{ category: 'Patterns',
     question: 'Which of the following is the exact definition of the Composite pattern, according to the slides?',
     choices: [
       'Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.',
@@ -1153,7 +1154,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.'
   },
-  {
+{ category: 'Patterns',
     code: `for (Employee* e : organization) {
       e->print();
   }`,
@@ -1166,7 +1167,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Newly-defined Leaf/Composite subclasses work automatically with existing structures and client code'
   },
-  {
+{ category: 'Patterns',
     question: 'What is one downside of the Composite pattern explicitly mentioned in the slides?',
     choices: [
       'Can make the code overly general',
@@ -1176,12 +1177,12 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Can make the code overly general'
   },
-  {
+{ category: 'Patterns',
     question: 'You’re modeling a filesystem where files and folders both implement print(). Which pattern should you use that is “Often used to model files and directories,” to let folders contain files and other folders without changing the client logic?',
     choices: ['Adapter', 'Decorator', 'Composite', 'Command'],
     correctAnswer: 'Composite'
   },
-  {
+{ category: 'Patterns',
     code: `FileInputStream fis = new FileInputStream("file.gz");
   BufferedInputStream bis = new BufferedInputStream(fis);
   GZIPInputStream gis = new GZIPInputStream(bis);`,
@@ -1189,7 +1190,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['Decorator', 'Bridge', 'Factory Method', 'Adapter'],
     correctAnswer: 'Decorator'
   },
-  {
+{ category: 'Patterns',
     question: 'From the Decorator slides why is it inappropriate to add GZIP compression logic directly into the InputStream base class?',
     choices: [
       'Java does not support multiple readers',
@@ -1199,7 +1200,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'It violates the Open / Closed Principle'
   },
-  {
+{ category: 'Patterns',
     question: 'You’re designing a GUI where windows can optionally include scrollbars, borders, or shadows. These should be attachable in any combination. Why is subclassing not ideal here?',
     choices: [
       'Subclassing is slower than procedural logic',
@@ -1209,7 +1210,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Subclassing would produce an explosion of subclasses to support every combination'
   },
-  {
+{ category: 'Patterns',
     question: 'What is the exact definition of the Decorator pattern from the slides?',
     choices: [
       'Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.',
@@ -1219,7 +1220,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.'
   },
-  {
+{ category: 'Patterns',
     question: 'Which example best demonstrates runtime flexibility offered by the Decorator pattern?',
     choices: [
       'Decorators must be attached at compile time',
@@ -1229,7 +1230,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'You can add or remove decorators dynamically without changing the base object'
   },
-  {
+{ category: 'Patterns',
     question: 'Why is BufferedInputStream a better design than putting buffering directly into all types of InputStream subclasses?',
     choices: [
       'It reduces runtime casting',
@@ -1239,7 +1240,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'It avoids feature-laden classes high up in the hierarchy'
   },
-  {
+{ category: 'Patterns',
     code: `GZIPInputStream gis = new GZIPInputStream(new BufferedInputStream(new FileInputStream("file.gz")));`,
     question: 'What does the following structure reveal about how Decorator objects are organized?',
     choices: [
@@ -1250,7 +1251,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Decorators act as transparent enclosures'
   },
-  {
+{ category: 'Patterns',
     question: 'Which drawback of the Decorator pattern is listed in the slides and commonly felt by new Java devs?',
     choices: [
       'Lots of big objects',
@@ -1260,7 +1261,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Lots of little objects'
   },
-  {
+{ category: 'Patterns',
     question: 'Why might a developer struggle with Decorator-based Java I/O the first time they encounter it?',
     choices: [
       '“Decorators force inline subclassing.”',
@@ -1270,7 +1271,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: '“What happened to simple file I/O?”'
   },
-  {
+{ category: 'Patterns',
     question: 'What does the Decorator pattern allow you to do that Strategy and Composite do not?',
     choices: [
       'Separate interface and implementation',
@@ -1280,7 +1281,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Add responsibilities to individual objects dynamically without affecting other objects'
   },
-  {
+{ category: 'Patterns',
     code: `void CiscoDvrAdapter::play(int h, int m, int s) {
     Time t; t.hour = h; t.minute = m; t.second = s;
     this->beginPlayBack(t);
@@ -1289,7 +1290,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['Adapter', 'Strategy', 'Proxy', 'Bridge'],
     correctAnswer: 'Adapter'
   },
-  {
+{ category: 'Patterns',
     question: 'You are given three DVR libraries with different play() methods:\nbeginPlayBack(Time)\nstartPlayback(long)\nplayFrom(h, m, s)\nWhat makes Adapter necessary in this situation?',
     choices: [
       'We must dynamically clone each DVR',
@@ -1299,7 +1300,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Each library has a different interface, but we want to treat all DVRs uniformly'
   },
-  {
+{ category: 'Patterns',
     question: 'What is the exact definition of the Adapter design pattern, according to the slides?',
     choices: [
       'Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.',
@@ -1309,7 +1310,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.'
   },
-  {
+{ category: 'Patterns',
     question: 'Which of the following is a clear sign you need the Adapter pattern according to the Applicability slide?',
     choices: [
       'You want to use an existing class, but its interface does not match the one you need',
@@ -1319,7 +1320,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'You want to use an existing class, but its interface does not match the one you need'
   },
-  {
+{ category: 'Patterns',
     code: `class CiscoDvrAdapter : public Dvr, private CiscoDvr {
   public:
       void play(int h, int m, int s);
@@ -1328,7 +1329,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['Class Adapter', 'Object Adapter', 'Strategy Adapter', 'Proxy Adapter'],
     correctAnswer: 'Class Adapter'
   },
-  {
+{ category: 'Patterns',
     question: 'Which is a consequence of class adapters mentioned in the slides?',
     choices: [
       'Introduces only one object, and no additional pointer indirection is needed',
@@ -1338,7 +1339,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Introduces only one object, and no additional pointer indirection is needed'
   },
-  {
+{ category: 'Patterns',
     question: 'Which is a drawback of class adapters according to the slides?',
     choices: [
       'A class adapter must be created per instance',
@@ -1348,7 +1349,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'A class adapter won’t work when we want to adapt a class and all of its subclasses'
   },
-  {
+{ category: 'Patterns',
     question: 'Which of the following is a benefit of object adapters?',
     choices: [
       'Lets a single adapter work with many Adaptees',
@@ -1358,7 +1359,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Lets a single adapter work with many Adaptees'
   },
-  {
+{ category: 'Patterns',
     question: 'Which of the following is a limitation of object adapters?',
     choices: [
       'Makes it harder to override Adaptee behaviour',
@@ -1368,7 +1369,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Makes it harder to override Adaptee behaviour'
   },
-  {
+{ category: 'Patterns',
     code: `template <class T>
   class List {
   public:
@@ -1381,7 +1382,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['Bridge', 'Composite', 'Decorator', 'Factory'],
     correctAnswer: 'Bridge'
   },
-  {
+{ category: 'Patterns',
     question: 'You want to define multiple List interfaces (VerboseList, PrintableList) while swapping between storage implementations (ArrayListImpl, SetListImpl). What makes Bridge the most appropriate pattern here?',
     choices: [
       'You want to avoid a permanent binding between an abstraction and its implementation',
@@ -1391,7 +1392,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'You want to avoid a permanent binding between an abstraction and its implementation'
   },
-  {
+{ category: 'Patterns',
     question: 'What is the exact definition of the Bridge design pattern as per the slide?',
     choices: [
       'Decouple an abstraction from its implementation so that the two can vary dependently',
@@ -1401,7 +1402,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Decouple an abstraction from its implementation so that the two can vary independently'
   },
-  {
+{ category: 'Patterns',
     question: 'Which consequence of Bridge is directly stated in the slides?',
     choices: [
       'Hides accessors and mutators from subclasses',
@@ -1411,7 +1412,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Decouples interface and implementation → the two are not bound permanently'
   },
-  {
+{ category: 'Patterns',
     question: 'What Bridge applicability statement explains why it\'s useful when you expect to add new storage types or interfaces later?',
     choices: [
       'Multiple constructors allow context-passing',
@@ -1421,7 +1422,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Changes in the implementation of an abstraction should have no impact on clients'
   },
-  {
+{ category: 'Patterns',
     question: 'Bridge and Strategy both decouple behaviors — but what\'s the key difference, according to the final slides?',
     choices: [
       'Bridge decouples algorithms; Strategy decouples abstractions from implementations',
@@ -1431,7 +1432,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Strategy decouples algorithms; Bridge decouples abstractions from implementations'
   },
-  {
+{ category: 'Patterns',
     question: 'Which Bridge consequence explains why clients don’t need to know if ArrayListImpl or SetListImpl is used?',
     choices: [
       'Hides implementation details from clients',
@@ -1441,7 +1442,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Hides implementation details from clients'
   },
-  {
+{ category: 'Patterns',
     question: 'Why is Bridge preferable over deep subclass hierarchies when multiple dimensions of change are expected?',
     choices: [
       'It collapses subclasses into a single hierarchy',
@@ -1451,7 +1452,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Improved extensibility → can extend Abstraction and Implementor independently'
   },
-  {
+{ category: 'Patterns',
     code: `list = new PrintableList<int>(new SetListImpl<int>());
   testList(list, values);`,
     question: 'What runtime flexibility of the Bridge pattern does this demonstrate?',
@@ -1463,7 +1464,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'You can change the implementation at run-time'
   },
-  {
+{ category: 'C++',
     code: `int a = 3, b = 2;
   int* p = &a;
   *p = b;
@@ -1472,7 +1473,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['2 2', '3 2', '2 3', 'Undefined behavior'],
     correctAnswer: '2 2'
   },
-  {
+{ category: 'C++',
     code: `int arr[] = {1, 2, 3};
   int* p = arr + 1;
   std::cout << *(p + 1);`,
@@ -1480,7 +1481,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['1', '2', '3', 'Compilation error'],
     correctAnswer: '3'
   },
-  {
+{ category: 'C++',
     code: `int x = 5;
   int* ptr = &x;
   *ptr = *ptr + 3;
@@ -1489,7 +1490,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['5', '3', '8', 'Undefined'],
     correctAnswer: '8'
   },
-  {
+{ category: 'C++',
     code: `int a = 10;
   int* p = &a;
   int** pp = &p;
@@ -1499,7 +1500,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['10', '20', '0', 'Segmentation fault'],
     correctAnswer: '20'
   },
-  {
+{ category: 'C++',
     code: `int a = 5;
   int b = 10;
   int* p = &a;
@@ -1510,7 +1511,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['5 11', '6 10', '6 11', '5 10'],
     correctAnswer: '5 11'
   },
-  {
+{ category: 'C++',
     code: `void modify(int &x) {
       x *= 2;
   }
@@ -1523,7 +1524,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['3', '6', 'Compilation error', 'Undefined'],
     correctAnswer: '6'
   },
-  {
+{ category: 'C++',
     code: `int a = 4;
   int* p = &a;
   *p += 6;
@@ -1532,7 +1533,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['4', '6', '10', 'Compilation error'],
     correctAnswer: '10'
   },
-  {
+{ category: 'C++',
     code: `void foo(int x) {
       x = 100;
   }
@@ -1545,7 +1546,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['10', '100', 'Garbage value', 'Compilation error'],
     correctAnswer: '10'
   },
-  {
+{ category: 'C++',
     code: `int arr[] = {10, 20, 30};
   int* p = arr;
   p += 2;
@@ -1554,7 +1555,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['10', '20', '30', 'Undefined behavior'],
     correctAnswer: '30'
   },
-  {
+{ category: 'C++',
     code: `int x = 10;
   int* ptr = &x;
   int& ref = *ptr;
@@ -1564,7 +1565,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['10', '50', 'Address of x', 'Compilation error'],
     correctAnswer: '50'
   },
-  {
+{ category: 'C++',
     question: 'What is the correct way to pass a variable to a function without allowing it to be changed?',
     choices: [
       'void func(int x)',
@@ -1574,7 +1575,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'void func(const int& x)'
   },
-  {
+{ category: 'C++',
     question: 'Which of the following correctly declares a pointer to a double?',
     choices: [
       'double ptr;',
@@ -1584,7 +1585,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'double *ptr;'
   },
-  {
+{ category: 'C++',
     question: 'What does this line do: int *p = new int[10];',
     choices: [
       'Allocates 10 integers on the stack.',
@@ -1594,7 +1595,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Allocates 10 integers on the heap.'
   },
-  {
+{ category: 'C++',
     question: 'Which of the following about const is TRUE?',
     choices: [
       'It prevents a function from modifying its parameters.',
@@ -1604,7 +1605,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'It prevents a function from modifying its parameters.'
   },
-  {
+{ category: 'C++',
     question: 'How do you deallocate memory allocated with new for an array?',
     choices: [
       'free(p);',
@@ -1614,7 +1615,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'delete[] p;'
   },
-  {
+{ category: 'C++',
     question: 'Which line is a valid function definition?',
     choices: [
       'int swap(x, y);',
@@ -1624,7 +1625,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'void swap(int* a, int* b) { int t = *a; *a = *b; *b = t; }'
   },
-  {
+{ category: 'C++',
     code: `#define square(x) x * x
   int main() {
       std::cout << square(5 + 2);
@@ -1633,7 +1634,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['49', '35', '5 + 2 * 5 + 2', '19'],
     correctAnswer: '35'
   },
-  {
+{ category: 'C++',
     code: `int* ptr = nullptr;
   *ptr = 5;`,
     question: 'What happens in this code?',
@@ -1645,7 +1646,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Runtime segmentation fault'
   },
-  {
+{ category: 'C++',
     question: 'What is the purpose of #ifndef and #define in a header file?',
     choices: [
       'Memory allocation',
@@ -1655,7 +1656,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Avoid multiple definitions'
   },
-  {
+{ category: 'C++',
     question: 'Which of the following best describes what a namespace does?',
     choices: [
       'Prevents pointer issues',
@@ -1665,7 +1666,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Groups related code and avoids naming conflicts'
   },
-  {
+{ category: 'C++',
     code: `int a = 4;
   int b = 5;
   int* p = &a;
@@ -1676,7 +1677,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['5 5', '4 5', '5 4', 'Compilation error'],
     correctAnswer: '5 5'
   },
-  {
+{ category: 'C++',
     code: `int x = 7;
   int y = 10;
   int* a = &x;
@@ -1687,7 +1688,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['7', '10', 'Compilation error', 'Garbage value'],
     correctAnswer: '10'
   },
-  {
+{ category: 'C++',
     code: `void update(int*& ptr) {
       static int x = 100;
       ptr = &x;
@@ -1699,7 +1700,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['0', '100', 'Compilation error', 'Undefined behavior'],
     correctAnswer: '100'
   },
-  {
+{ category: 'C++',
     code: `int a = 5;
   int* p = &a;
   int** pp = &p;
@@ -1709,7 +1710,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['10', '5', '15', 'Segmentation fault'],
     correctAnswer: '15'
   },
-  {
+{ category: 'C++',
     code: `int* arr = new int[3]{1, 2, 3};
   std::cout << *(arr + 1);
   delete[] arr;`,
@@ -1717,7 +1718,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['1', '2', '3', 'Compilation error'],
     correctAnswer: '2'
   },
-  {
+{ category: 'C++',
     code: `int foo(int x) {
       static int y = x;
       y++;
@@ -1728,7 +1729,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['66', '56', '67', 'Compilation error'],
     correctAnswer: '67'
   },
-  {
+{ category: 'C++',
     code: `void func(int x = 10) {
       std::cout << x;
   }
@@ -1739,7 +1740,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['Nothing', '0', '10', 'Compilation error'],
     correctAnswer: '10'
   },
-  {
+{ category: 'C++',
     code: `constexpr int square(int x) {
       return x * x;
   }
@@ -1749,14 +1750,14 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['Compilation error', '25', 'Address', '10'],
     correctAnswer: '25'
   },
-  {
+{ category: 'C++',
     code: `#define SQUARE(x) x * x
   int y = SQUARE(1 + 2);`,
     question: 'What’s the bug here?',
     choices: ['9 is stored in y', '1 + 2 * 1 + 2 = 5', '3 is stored', 'Compiler warning'],
     correctAnswer: '1 + 2 * 1 + 2 = 5'
   },
-  {
+{ category: 'C++',
     code: `struct Point {
       int x, y;
   };
@@ -1768,7 +1769,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['34', 'Compilation error', '43', 'Undefined behavior'],
     correctAnswer: '34'
   },
-  {
+{ category: 'C++',
     code: `int a[] = {1, 2, 3};
   int* p = a;
   p++;
@@ -1777,7 +1778,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['1', '2', '3', 'Undefined'],
     correctAnswer: '2'
   },
-  {
+{ category: 'C++',
     code: `int arr[3] = {1, 2, 3};
   int* p = &arr[1];
   p++;
@@ -1786,7 +1787,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['1', '2', '3', 'Garbage value'],
     correctAnswer: '3'
   },
-  {
+{ category: 'C++',
     code: `int x = 3;
   int* y = &x;
   int z = *y + 1;
@@ -1795,7 +1796,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['2', '3', '4', 'Compilation error'],
     correctAnswer: '4'
   },
-  {
+{ category: 'C++',
     code: `void setVal(int* x) {
       *x = 50;
   }
@@ -1808,7 +1809,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['25', '50', 'Undefined', 'Compilation error'],
     correctAnswer: '50'
   },
-  {
+{ category: 'C++',
     code: `class Base { public: void foo(int) {} };
   class Derived : public Base { public: void foo(int) {} };
   int main() {
@@ -1819,7 +1820,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['Base::foo', 'Derived::foo', 'Compilation error', 'Ambiguous'],
     correctAnswer: 'Derived::foo'
   },
-  {
+{ category: 'C++',
     code: `void greet(std::string name = "World") {
       std::cout << "Hello, " << name;
   }
@@ -1830,17 +1831,17 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['Hello,', 'Hello, World', 'Compilation error', 'Runtime error'],
     correctAnswer: 'Hello, World'
   },
-  {
+{ category: 'C++',
     question: 'Which part of memory does new int[5] allocate to?',
     choices: ['Stack', 'Code segment', 'Heap', 'Data segment'],
     correctAnswer: 'Heap'
   },
-  {
+{ category: 'C++',
     question: 'Which operator is used to free memory from heap?',
     choices: ['delete', 'remove', 'free', 'release'],
     correctAnswer: 'delete'
   },
-  {
+{ category: 'C++',
     code: `int x = 100;
   int* px = &x;
   std::cout << *px;`,
@@ -1848,7 +1849,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['Memory address', '100', '*px', 'Garbage'],
     correctAnswer: '100'
   },
-  {
+{ category: 'C++',
     code: `int x;
   int* p = &x;
   delete p;`,
@@ -1856,17 +1857,17 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['Nothing', "p wasn't dynamically allocated", 'x will be deleted', 'p is invalid'],
     correctAnswer: "p wasn't dynamically allocated"
   },
-  {
+{ category: 'C++',
     question: 'In C++, the default visibility of struct members is:',
     choices: ['Private', 'Public', 'Protected', 'Static'],
     correctAnswer: 'Public'
   },
-  {
+{ category: 'C++',
     question: 'In C++, the default visibility of class members is:',
     choices: ['Private', 'Public', 'Protected', 'Static'],
     correctAnswer: 'Private'
   },
-  {
+{ category: 'C++',
     question: 'What does using namespace std; do?',
     choices: [
       'Includes all system headers',
@@ -1876,7 +1877,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Makes std:: optional for things like cout'
   },
-  {
+{ category: 'C++',
     code: `int* p;
   *p = 42;`,
     question: 'What is wrong with this?',
@@ -1888,7 +1889,7 @@ AppConfig* cfg2 = loadConfig();`,
     ],
     correctAnswer: 'Assigning through uninitialized pointer'
   },
-  {
+{ category: 'C++',
     code: `int foo(int x) {
       return x + 1;
   }
@@ -1899,7 +1900,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['4', '5', '6', 'Compilation error'],
     correctAnswer: '4'
   },
-  {
+{ category: 'C++',
     code: `int x = 10;
   int* px = &x;
   *px += 5;
@@ -1908,7 +1909,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['10', '15', '5', 'Compilation error'],
     correctAnswer: '15'
   },
-  {
+{ category: 'C++',
     code: `int a = 1;
   int b = 2;
   int* p = &a;
@@ -1918,14 +1919,14 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['1', '2', 'Undefined', 'Compilation error'],
     correctAnswer: '2'
   },
-  {
+{ category: 'C++',
     code: `#define MAX(x, y) x > y ? x : y
   int a = MAX(2, 3) * 2;`,
     question: 'What’s the problem with this macro?',
     choices: ['Expansion error', 'Result is 6', 'Result is 4 due to lack of brackets', 'Segfault'],
     correctAnswer: 'Result is 4 due to lack of brackets'
   },
-  {
+{ category: 'C++',
     code: `namespace A {
       int x = 5;
   }
@@ -1936,7 +1937,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['0', '5', 'Compilation error', 'x'],
     correctAnswer: '5'
   },
-  {
+{ category: 'C++',
     code: `int arr[] = {5, 10};
   int* p = arr;
   std::cout << *(p + 1);`,
@@ -1944,7 +1945,7 @@ AppConfig* cfg2 = loadConfig();`,
     choices: ['5', '10', 'Garbage', 'Compilation error'],
     correctAnswer: '10'
   },
-  {
+{ category: 'C++',
     code: `constexpr int x = 10;`,
     question: 'What does this line mean?',
     choices: [
