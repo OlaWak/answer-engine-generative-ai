@@ -1096,7 +1096,377 @@ AppConfig* cfg2 = loadConfig();`,
     question: 'What pattern is being described here:\n“Represent an operation to be performed on the elements of an object structure. Lets you define a new operation without changing the classes of the elements on which it operates.”',
     choices: ['Visitor', 'Command', 'Decorator', 'Adapter'],
     correctAnswer: 'Visitor'
+  },
+  {
+    question: 'Your organization chart app lets you structure employees into a tree of Manager and RegularEmployee objects. Which Composite feature makes the client code like print() easy to write?',
+    choices: [
+      'Clients don’t have to distinguish between primitive and composite objects',
+      'Managers inherit Observer notifications',
+      'All leaves must register themselves with the factory',
+      'The Strategy pattern is used to inject print behavior'
+    ],
+    correctAnswer: 'Clients don’t have to distinguish between primitive and composite objects'
+  },
+  {
+    code: `Employee* dean = new Manager("Matt Davison");
+  dean->add(new RegularEmployee("Art Mulder"));
+  dean->print();`,
+    question: 'Why does this design avoid conditionals like if (isManager()) in the client code?',
+    choices: [
+      'Because wherever client code expects a primitive object, it can also take a composite object',
+      'Because the factory pre-sorts employees',
+      'Because employees use polymorphic templates',
+      'Because Strategy handles the conditional logic'
+    ],
+    correctAnswer: 'Because wherever client code expects a primitive object, it can also take a composite object'
+  },
+  {
+    code: `virtual void add(Employee* member) {
+      // do nothing -- throw exception?
+  }`,
+    question: 'This method is defined in the base class Employee, but overridden by Manager. What does this show about how leaf vs. composite behavior is handled in the Composite pattern?',
+    choices: [
+      'Leaf methods may do nothing, while composites override them for structural behavior',
+      'Only composites can be constructed from factories',
+      'Leaves cannot call methods on base classes',
+      'All methods must be pure virtual in composites'
+    ],
+    correctAnswer: 'Leaf methods may do nothing, while composites override them for structural behavior'
+  },
+  {
+    question: 'Why does this line in the slides reflect the core motivation for using Composite?\n“You want clients to be able to ignore the difference between compositions of objects and individual objects.”',
+    choices: [
+      'It simplifies client code that works on both Manager and RegularEmployee',
+      'It enforces strict separation of interfaces',
+      'It reduces memory usage via pointer compression',
+      'It allows type-erasure polymorphism'
+    ],
+    correctAnswer: 'It simplifies client code that works on both Manager and RegularEmployee'
+  },
+  {
+    question: 'Which of the following is the exact definition of the Composite pattern, according to the slides?',
+    choices: [
+      'Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.',
+      'Encapsulate algorithms into interchangeable behaviors',
+      'Define one-to-many relationships for dynamic events',
+      'Represent operations on elements of object structures'
+    ],
+    correctAnswer: 'Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.'
+  },
+  {
+    code: `for (Employee* e : organization) {
+      e->print();
+  }`,
+    question: 'This loop works seamlessly whether e is a Manager or RegularEmployee. Which line from the Consequences slide explains this?',
+    choices: [
+      'Composite prevents recursion errors',
+      'Leaves provide base case print overrides',
+      'Newly-defined Leaf/Composite subclasses work automatically with existing structures and client code',
+      'Composite components require special wrappers'
+    ],
+    correctAnswer: 'Newly-defined Leaf/Composite subclasses work automatically with existing structures and client code'
+  },
+  {
+    question: 'What is one downside of the Composite pattern explicitly mentioned in the slides?',
+    choices: [
+      'Can make the code overly general',
+      'Requires tight coupling between leaves and containers',
+      'Cannot handle nested hierarchies',
+      'Only supports one level of inheritance'
+    ],
+    correctAnswer: 'Can make the code overly general'
+  },
+  {
+    question: 'You’re modeling a filesystem where files and folders both implement print(). Which pattern should you use that is “Often used to model files and directories,” to let folders contain files and other folders without changing the client logic?',
+    choices: ['Adapter', 'Decorator', 'Composite', 'Command'],
+    correctAnswer: 'Composite'
+  },
+  {
+    code: `FileInputStream fis = new FileInputStream("file.gz");
+  BufferedInputStream bis = new BufferedInputStream(fis);
+  GZIPInputStream gis = new GZIPInputStream(bis);`,
+    question: 'This layering of input streams enhances functionality at runtime without subclassing. What design pattern is this?',
+    choices: ['Decorator', 'Bridge', 'Factory Method', 'Adapter'],
+    correctAnswer: 'Decorator'
+  },
+  {
+    question: 'From the Decorator slides why is it inappropriate to add GZIP compression logic directly into the InputStream base class?',
+    choices: [
+      'Java does not support multiple readers',
+      'Streams cannot implement gzip by inheritance',
+      'Subclassing limits interface use',
+      'It violates the Open / Closed Principle'
+    ],
+    correctAnswer: 'It violates the Open / Closed Principle'
+  },
+  {
+    question: 'You’re designing a GUI where windows can optionally include scrollbars, borders, or shadows. These should be attachable in any combination. Why is subclassing not ideal here?',
+    choices: [
+      'Subclassing is slower than procedural logic',
+      'Scrollbars can’t inherit from shadows',
+      'Subclassing would produce an explosion of subclasses to support every combination',
+      'Strategy cannot apply styling'
+    ],
+    correctAnswer: 'Subclassing would produce an explosion of subclasses to support every combination'
+  },
+  {
+    question: 'What is the exact definition of the Decorator pattern from the slides?',
+    choices: [
+      'Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.',
+      'Let objects appear to change their class',
+      'Define a common interface for multiple styles. Decorators provide a flexible alternative to subclassing for extending functionality.',
+      'Allow recursive composition of styles'
+    ],
+    correctAnswer: 'Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.'
+  },
+  {
+    question: 'Which example best demonstrates runtime flexibility offered by the Decorator pattern?',
+    choices: [
+      'Decorators must be attached at compile time',
+      'You can add or remove decorators dynamically without changing the base object',
+      'Only concrete base classes may be extended',
+      'Decorators must use static inheritance'
+    ],
+    correctAnswer: 'You can add or remove decorators dynamically without changing the base object'
+  },
+  {
+    question: 'Why is BufferedInputStream a better design than putting buffering directly into all types of InputStream subclasses?',
+    choices: [
+      'It reduces runtime casting',
+      'It prevents serialization',
+      'It avoids feature-laden classes high up in the hierarchy',
+      'It limits polymorphism'
+    ],
+    correctAnswer: 'It avoids feature-laden classes high up in the hierarchy'
+  },
+  {
+    code: `GZIPInputStream gis = new GZIPInputStream(new BufferedInputStream(new FileInputStream("file.gz")));`,
+    question: 'What does the following structure reveal about how Decorator objects are organized?',
+    choices: [
+      'Decorators must be flattened at runtime',
+      'Each wrapper has unique interface requirements',
+      'Layers can only be composed by factories',
+      'Decorators act as transparent enclosures'
+    ],
+    correctAnswer: 'Decorators act as transparent enclosures'
+  },
+  {
+    question: 'Which drawback of the Decorator pattern is listed in the slides and commonly felt by new Java devs?',
+    choices: [
+      'Lots of big objects',
+      'Decorators must be stateless',
+      'Lots of little objects',
+      'Decorators cannot be garbage collected'
+    ],
+    correctAnswer: 'Lots of little objects'
+  },
+  {
+    question: 'Why might a developer struggle with Decorator-based Java I/O the first time they encounter it?',
+    choices: [
+      '“Decorators force inline subclassing.”',
+      '“File readers must inherit from their data stream.”',
+      '“What happened to simple file I/O?”',
+      '“Java lacks recursive decorators.”'
+    ],
+    correctAnswer: '“What happened to simple file I/O?”'
+  },
+  {
+    question: 'What does the Decorator pattern allow you to do that Strategy and Composite do not?',
+    choices: [
+      'Separate interface and implementation',
+      'Treat individual and grouped objects uniformly',
+      'Allow encapsulated behavior to be shared',
+      'Add responsibilities to individual objects dynamically without affecting other objects'
+    ],
+    correctAnswer: 'Add responsibilities to individual objects dynamically without affecting other objects'
+  },
+  {
+    code: `void CiscoDvrAdapter::play(int h, int m, int s) {
+    Time t; t.hour = h; t.minute = m; t.second = s;
+    this->beginPlayBack(t);
+  }`,
+    question: 'This code converts one interface to another at runtime. What pattern is being used here?',
+    choices: ['Adapter', 'Strategy', 'Proxy', 'Bridge'],
+    correctAnswer: 'Adapter'
+  },
+  {
+    question: 'You are given three DVR libraries with different play() methods:\nbeginPlayBack(Time)\nstartPlayback(long)\nplayFrom(h, m, s)\nWhat makes Adapter necessary in this situation?',
+    choices: [
+      'We must dynamically clone each DVR',
+      'The clients require a static binding to constructors',
+      'Each library has a different interface, but we want to treat all DVRs uniformly',
+      'Adapter supports interface inheritance, not delegation'
+    ],
+    correctAnswer: 'Each library has a different interface, but we want to treat all DVRs uniformly'
+  },
+  {
+    question: 'What is the exact definition of the Adapter design pattern, according to the slides?',
+    choices: [
+      'Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.',
+      'Use delegation to swap implementations',
+      'Bridge two unrelated classes with a shared parent',
+      'Merge objects using runtime polymorphism. Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.'
+    ],
+    correctAnswer: 'Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.'
+  },
+  {
+    question: 'Which of the following is a clear sign you need the Adapter pattern according to the Applicability slide?',
+    choices: [
+      'You want to use an existing class, but its interface does not match the one you need',
+      'You need to implement observer callbacks',
+      'You want to subclass different GUI components',
+      'You are trying to pass multiple strategies at once'
+    ],
+    correctAnswer: 'You want to use an existing class, but its interface does not match the one you need'
+  },
+  {
+    code: `class CiscoDvrAdapter : public Dvr, private CiscoDvr {
+  public:
+      void play(int h, int m, int s);
+  };`,
+    question: 'What kind of adapter is this?',
+    choices: ['Class Adapter', 'Object Adapter', 'Strategy Adapter', 'Proxy Adapter'],
+    correctAnswer: 'Class Adapter'
+  },
+  {
+    question: 'Which is a consequence of class adapters mentioned in the slides?',
+    choices: [
+      'Introduces only one object, and no additional pointer indirection is needed',
+      'Requires shared pointer ownership',
+      'Requires subclassing each client type',
+      'Causes recursive delegation problems'
+    ],
+    correctAnswer: 'Introduces only one object, and no additional pointer indirection is needed'
+  },
+  {
+    question: 'Which is a drawback of class adapters according to the slides?',
+    choices: [
+      'A class adapter must be created per instance',
+      'You cannot override Adaptee methods',
+      'Class adapters require public inheritance',
+      'A class adapter won’t work when we want to adapt a class and all of its subclasses'
+    ],
+    correctAnswer: 'A class adapter won’t work when we want to adapt a class and all of its subclasses'
+  },
+  {
+    question: 'Which of the following is a benefit of object adapters?',
+    choices: [
+      'Lets a single adapter work with many Adaptees',
+      'Allows multiple interface inheritance',
+      'Forces all subclasses to override the same method',
+      'Prevents subclass slicing'
+    ],
+    correctAnswer: 'Lets a single adapter work with many Adaptees'
+  },
+  {
+    question: 'Which of the following is a limitation of object adapters?',
+    choices: [
+      'Makes it harder to override Adaptee behaviour',
+      'Introduces identity mismatch',
+      'Cannot use dynamic polymorphism',
+      'Cannot inherit interfaces'
+    ],
+    correctAnswer: 'Makes it harder to override Adaptee behaviour'
+  },
+  {
+    code: `template <class T>
+  class List {
+  public:
+      List(ListImpl<T>* impl) : _listImpl(impl) {}
+      virtual void add(T value) {
+          this->_listImpl->add(value);
+      }
+  };`,
+    question: 'What pattern separates the high-level List interface from implementation details like storage?',
+    choices: ['Bridge', 'Composite', 'Decorator', 'Factory'],
+    correctAnswer: 'Bridge'
+  },
+  {
+    question: 'You want to define multiple List interfaces (VerboseList, PrintableList) while swapping between storage implementations (ArrayListImpl, SetListImpl). What makes Bridge the most appropriate pattern here?',
+    choices: [
+      'You want to avoid a permanent binding between an abstraction and its implementation',
+      'You want to encapsulate a collection traversal strategy',
+      'You want to use recursive trees for your list',
+      'You want to enforce only compile-time interface selection'
+    ],
+    correctAnswer: 'You want to avoid a permanent binding between an abstraction and its implementation'
+  },
+  {
+    question: 'What is the exact definition of the Bridge design pattern as per the slide?',
+    choices: [
+      'Decouple an abstraction from its implementation so that the two can vary dependently',
+      'Decouple an abstraction from its implementation so that the two can vary independently',
+      'Couples an abstraction to its implementation so that the two cannot vary independently',
+      'Couples an abstraction to its implementation so that the two cannot vary dependently'
+    ],
+    correctAnswer: 'Decouple an abstraction from its implementation so that the two can vary independently'
+  },
+  {
+    question: 'Which consequence of Bridge is directly stated in the slides?',
+    choices: [
+      'Hides accessors and mutators from subclasses',
+      'Increases the number of constructors',
+      'Decouples interface and implementation → the two are not bound permanently',
+      'Requires adapters for runtime delegation'
+    ],
+    correctAnswer: 'Decouples interface and implementation → the two are not bound permanently'
+  },
+  {
+    question: 'What Bridge applicability statement explains why it\'s useful when you expect to add new storage types or interfaces later?',
+    choices: [
+      'Multiple constructors allow context-passing',
+      'Recursion trees require duplicate visitor entry points',
+      'Heterogeneous objects must be sliced',
+      'Changes in the implementation of an abstraction should have no impact on clients'
+    ],
+    correctAnswer: 'Changes in the implementation of an abstraction should have no impact on clients'
+  },
+  {
+    question: 'Bridge and Strategy both decouple behaviors — but what\'s the key difference, according to the final slides?',
+    choices: [
+      'Bridge decouples algorithms; Strategy decouples abstractions from implementations',
+      'Strategy allows interface reuse; Bridge uses shared memory',
+      'Strategy decouples algorithms; Bridge decouples abstractions from implementations',
+      'Bridge favors deep copying; Strategy uses shallow state'
+    ],
+    correctAnswer: 'Strategy decouples algorithms; Bridge decouples abstractions from implementations'
+  },
+  {
+    question: 'Which Bridge consequence explains why clients don’t need to know if ArrayListImpl or SetListImpl is used?',
+    choices: [
+      'Hides implementation details from clients',
+      'Encapsulates polymorphic context',
+      'Applies visitor lazily',
+      'Creates a common root for all interfaces'
+    ],
+    correctAnswer: 'Hides implementation details from clients'
+  },
+  {
+    question: 'Why is Bridge preferable over deep subclass hierarchies when multiple dimensions of change are expected?',
+    choices: [
+      'It collapses subclasses into a single hierarchy',
+      'Improved extensibility → can extend Abstraction and Implementor independently',
+      'It uses only interface inheritance',
+      'Bridge eliminates all memory allocation'
+    ],
+    correctAnswer: 'Improved extensibility → can extend Abstraction and Implementor independently'
+  },
+  {
+    code: `list = new PrintableList<int>(new SetListImpl<int>());
+  testList(list, values);`,
+    question: 'What runtime flexibility of the Bridge pattern does this demonstrate?',
+    choices: [
+      'You can change the implementation at run-time',
+      'You must construct the implementation in the abstraction',
+      'You have compile-time binding of list behavior',
+      'You can avoid function pointers entirely'
+    ],
+    correctAnswer: 'You can change the implementation at run-time'
   }
+  
+  
+  
+  
   
 ];
 
