@@ -2423,8 +2423,106 @@ AppConfig* cfg2 = loadConfig();`,
         'Instantiates abstract class'
       ],
       correctAnswer: 'Error at compile time'
-    }
-  
+    },
+    {
+      category: 'C++',
+      question: 'In the expression Triangle *tr1 = new Triangle;, what does new do?',
+      choices: [
+        'Initializes variables to zero',
+        'Declares a reference',
+        'Allocates memory on the heap and calls the constructor',
+        'Invokes a copy constructor'
+      ],
+      correctAnswer: 'Allocates memory on the heap and calls the constructor'
+    },
+    {
+      category: 'C++',
+      question: 'What does it mean to instantiate a class in C++?',
+      choices: [
+        'Create a function inside a class',
+        'Define a constructor',
+        'Create an object of the class',
+        'Declare a template'
+      ],
+      correctAnswer: 'Create an object of the class'
+    },
+    {
+      category: 'C++',
+      question: 'When is a stack-allocated object destroyed in C++?',
+      choices: [
+        'When delete is called',
+        'When main() returns',
+        'When the function it was declared in returns',
+        'At runtime manually'
+      ],
+      correctAnswer: 'When the function it was declared in returns'
+    },
+    {
+      category: 'C++',
+      question: 'What does “low coupling” indicate in object-oriented design?',
+      choices: [
+        'All classes share memory',
+        'Classes are highly interdependent',
+        'Classes are loosely connected and changes are isolated',
+        'The program will run faster'
+      ],
+      correctAnswer: 'Classes are loosely connected and changes are isolated'
+    },
+    {
+      category: 'C++',
+      question: 'Which of the following scenarios describes high cohesion?',
+      choices: [
+        'A class performs unrelated tasks',
+        'A class provides a single, well-defined functionality',
+        'A class has many public data members',
+        'A class delegates behavior to multiple external methods'
+      ],
+      correctAnswer: 'A class provides a single, well-defined functionality'
+    },
+    {
+      category: 'C++',
+      question: 'Why is high cohesion desirable in a C++ class?',
+      choices: [
+        'It increases runtime speed',
+        'It minimizes constructor overhead',
+        'It improves readability, maintainability, and reuse',
+        'It ensures faster memory allocation'
+      ],
+      correctAnswer: 'It improves readability, maintainability, and reuse'
+    },
+    {
+      category: 'C++',
+      question: 'What best describes coupling in OOP?',
+      choices: [
+        'The amount of template usage in a class',
+        'The dependency between components or classes',
+        'The number of constructors a class defines',
+        'Whether or not inheritance is used'
+      ],
+      correctAnswer: 'The dependency between components or classes'
+    },
+    {
+      category: 'C++',
+      question: 'Which of the following causes tight coupling in design?',
+      choices: [
+        'Using composition instead of inheritance',
+        'Depending on hard-coded class implementations',
+        'Using virtual functions and interfaces',
+        'Delegating behavior through loose references'
+      ],
+      correctAnswer: 'Depending on hard-coded class implementations'
+    },
+    {
+      category: 'C++',
+      question: 'What is the downside of tight coupling between classes?',
+      choices: [
+        'It makes code easier to modify',
+        'It allows access to private members',
+        'It makes changes in one class affect many others',
+        'It increases polymorphism'
+      ],
+      correctAnswer: 'It makes changes in one class affect many others'
+    }  
   
   
 ];
