@@ -1955,6 +1955,166 @@ AppConfig* cfg2 = loadConfig();`,
       'constexpr can’t be used for ints'
     ],
     correctAnswer: 'x is evaluated at compile-time'
+  },
+  {
+    category: 'UML',
+    question: "What is the purpose of UML being called a 'Language'?",
+    choices: [
+      'It restricts the communication to only formal programming languages',
+      'It provides the means to communicate this design in a logical, consistent, and comprehensible fashion',
+      'It forces design into a single programming paradigm',
+      'It allows runtime code generation from diagrams'
+    ],
+    correctAnswer: 'It provides the means to communicate this design in a logical, consistent, and comprehensible fashion'
+  },
+  {
+    category: 'UML',
+    question: 'What was one primary motivation for creating UML?',
+    choices: [
+      'To allow faster runtime performance',
+      'To replace all existing object-oriented languages',
+      'To resolve the clutter and confusion caused by dozens of modeling variants',
+      'To enforce agile programming standards'
+    ],
+    correctAnswer: 'To resolve the clutter and confusion caused by dozens of modeling variants'
+  },
+  {
+    category: 'UML',
+    question: 'Which of the following is NOT a goal of UML?',
+    choices: [
+      'Enable the modeling of object-oriented designs',
+      'Visually depict aspects of a solution’s design',
+      'Standardize variable names in codebases',
+      'Be independent of particular programming languages and processes'
+    ],
+    correctAnswer: 'Standardize variable names in codebases'
+  },
+  {
+    category: 'UML',
+    question: 'What does the solid line with an arrowhead in a class diagram signify?',
+    choices: [
+      'An abstract dependency',
+      'A unidirectional association',
+      'A composition relationship',
+      'A type conversion'
+    ],
+    correctAnswer: 'A unidirectional association'
+  },
+  {
+    category: 'UML',
+    question: 'In UML, what does a filled diamond represent?',
+    choices: [
+      'Multiplicity',
+      'Aggregation',
+      'Composition',
+      'Generalization'
+    ],
+    correctAnswer: 'Composition'
+  },
+  {
+    category: 'UML',
+    question: 'Which of these is not a visibility symbol used in class diagrams?',
+    choices: ['+', '#', '/', '-'],
+    correctAnswer: '/'
+  },
+  {
+    category: 'UML',
+    question: "Which of the following best defines 'aggregation' as shown in UML?",
+    choices: [
+      'It shows an object permanently embedded within another',
+      'It uses a filled diamond to indicate strong ownership',
+      'It is a part-of relationship with independent parts',
+      'It indicates inheritance between two classes'
+    ],
+    correctAnswer: 'It is a part-of relationship with independent parts'
+  },
+  {
+    category: 'UML',
+    question: 'In UML, what does a generalization relationship model?',
+    choices: [
+      'A one-to-many multiplicity',
+      'A bidirectional aggregation',
+      'Inheritance between parent and child classes',
+      'A dependency with notes'
+    ],
+    correctAnswer: 'Inheritance between parent and child classes'
+  },
+  {
+    category: 'UML',
+    question: 'Which of the following is TRUE about composition in UML?',
+    choices: [
+      'Components can be shared among multiple classes',
+      'The relationship is depicted by a hollow diamond',
+      'Instances may have multiple owners',
+      'Components cannot exist independent of their owner'
+    ],
+    correctAnswer: 'Components cannot exist independent of their owner'
+  },
+  {
+    category: 'UML',
+    question: 'What UML construct supports ‘parent-child’ relationships?',
+    choices: [
+      'Dependency',
+      'Association',
+      'Generalization',
+      'Aggregation'
+    ],
+    correctAnswer: 'Generalization'
+  },
+  {
+    category: 'UML',
+    question: 'What happens to a composed component when its owner is destroyed?',
+    choices: [
+      'The component persists independently',
+      'The component is reassigned to another owner',
+      'The component dies with the owner',
+      'Nothing happens unless explicitly removed'
+    ],
+    correctAnswer: 'The component dies with the owner'
+  },
+  {
+    category: 'UML',
+    question: 'What does this mean in UML? -name : string = "guest"',
+    choices: [
+      'Protected variable with default null',
+      'Private string variable with default value "guest"',
+      'Public static function returning a string',
+      'Read-only global constant'
+    ],
+    correctAnswer: 'Private string variable with default value "guest"'
+  },
+  {
+    category: 'UML',
+    question: 'According to the slides, which is NOT one of the three main parts of a class box in UML?',
+    choices: [
+      'Name',
+      'Operations',
+      'Dependencies',
+      'Attributes'
+    ],
+    correctAnswer: 'Dependencies'
+  },
+  {
+    category: 'UML',
+    question: 'What is true about class diagrams in early-stage agile development?',
+    choices: [
+      'All attributes must be filled in at the start',
+      'Only abstract classes are shown',
+      'Some classes or details might be missing',
+      'Only associations are allowed, not aggregations'
+    ],
+    correctAnswer: 'Some classes or details might be missing'
+  },
+  {
+    category: 'UML',
+    question: 'What does a dashed line in UML indicate?',
+    choices: [
+      'A generalization',
+      'A dependency',
+      'A bidirectional aggregation',
+      'An interface implementation'
+    ],
+    correctAnswer: 'A dependency'
   }
   
   
