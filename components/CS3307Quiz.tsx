@@ -87,12 +87,6 @@ export default function CS3307Quiz() {
               {section === 'PastExams' ? 'Past Exams' : section === 'Patterns' ? 'Design Patterns' : 'C++'}
             </button>
           ))}
-          <button
-            onClick={goBackToSectionSelect}
-            className="w-full py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-md text-sm"
-          >
-            ⬅ Back to Main Menu
-          </button>
         </div>
       </div>
     );
