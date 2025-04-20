@@ -1,6 +1,7 @@
 // data/cs3307.ts
 export type Question = {
   question: string;
+  code?: string;             
   choices: string[];
   correctAnswer: string;
   image?: string;
@@ -401,26 +402,6 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'Abstract Factory'
   },
-  {
-    question: `Pizza *pizza = new Pizza(12);
-  pizza->addTopping("Pineapple");
-  pizza->addTopping("Ham");
-  
-  Pizza *pizza = new Pizza(8);
-  pizza->addTopping("Pepperoni");
-  pizza->addTopping("Mushroom");
-  pizza->addTopping("Green Peppers");
-  pizza->addTopping("Onions");
-  
-  According to the slides, what design pattern would best replace this manual construction code?`,
-    choices: [
-      'Abstract Factory',
-      'Factory Method',
-      'Builder',
-      'Prototype'
-    ],
-    correctAnswer: 'Builder'
-  },
   
   {
     question: '“Separate the construction of a complex object from its representation so that the same construction process can create different representations.” Which design pattern is this the textbook definition of?',
@@ -443,16 +424,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'Makes exchanging product families easy'
   },
-  {
-    question: 'void HawaiianPizzaBuilder::buildToppings() {\n    _pizza.addTopping("Ham");\n    _pizza.addTopping("Pineapple");\n}\nThis specific implementation of a builder method most directly represents:',
-    choices: [
-      'Director',
-      'Concrete Builder',
-      'Product',
-      'Factory Method'
-    ],
-    correctAnswer: 'Concrete Builder'
-  },
+  
 
   {
     question: 'What is not a listed consequence of the Builder pattern?',
@@ -484,45 +456,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'The construction process must allow different representations for the object that’s constructed'
   },
-  {
-    question: `What design pattern does the following code represent?
-
-class GameLevel {
-public:
-    GameLevel(GameObjectFactory* factory) {
-        this->_factory = factory;
-        Monster* m1 = factory->createMonster();
-        Monster* m2 = factory->createMonster();
-        Wall*   w1 = factory->createWall();
-        // ...
-    }
-private:
-    GameObjectFactory* _factory;
-};`,
-    choices: [
-      'Abstract Factory',
-      'Prototype',
-      'Builder',
-      'Factory Method'
-    ],
-    correctAnswer: 'Abstract Factory'
-  },
-  {
-    question: `void Cook::constructPizza() {
-    _pizzaBuilder->buildName();
-    _pizzaBuilder->buildDough();
-    _pizzaBuilder->buildSauce();
-    _pizzaBuilder->buildToppings();
-}
-Which design pattern does this approach to step-by-step assembly demonstrate?`,
-    choices: [
-      'Builder',
-      'Abstract Factory',
-      'Template Method',
-      'Strategy'
-    ],
-    correctAnswer: 'Builder'
-  },
+  
   {
     question: `AppConfig* cfg2 = cfg1->clone();
 This code avoids reloading a heavy configuration file by copying an existing object. What design pattern does this illustrate?`,
@@ -556,18 +490,7 @@ Which design pattern is described by this definition?`,
     ],
     correctAnswer: 'Prototype'
   },
-  {
-    question: `AppConfig* cfg1 = loadConfig();
-AppConfig* cfg2 = loadConfig();
-This method incurs a performance hit because loadConfig() is called multiple times. What design pattern could avoid this overhead while still producing similar objects?`,
-    choices: [
-      'Prototype',
-      'Abstract Factory',
-      'Builder',
-      'Command'
-    ],
-    correctAnswer: 'Prototype'
-  },
+ 
   {
     question: `Why can’t a copy constructor be used to duplicate AppConfig objects in the prototype example (refer to slides)?`,
     choices: [
@@ -578,19 +501,7 @@ This method incurs a performance hit because loadConfig() is called multiple tim
     ],
     correctAnswer: 'Because AppConfig is abstract and cannot be instantiated directly'
   },
-  {
-    question: `Monster* monster = f->createMonster();
-In the context of:
-ObjectFactory* f = new ObjectFactory(m, w, s);
-What design pattern is being used to dynamically return a new object of the same type without requiring a factory subclass for each type?`,
-    choices: [
-      'Prototype',
-      'Singleton',
-      'Abstract Factory',
-      'Bridge'
-    ],
-    correctAnswer: 'Prototype'
-  },
+ 
   {
     question: `“Hides the concrete product classes from the client – we don’t have to know which concrete type we’re cloning”
 This is a listed consequence of which design pattern?`,
@@ -611,13 +522,115 @@ This is a listed consequence of which design pattern?`,
       'When object creation needs to be restricted to a single instance'
     ],
     correctAnswer: 'When you want flexible combinations of products without requiring subclassing'
+  },
+
+
+  {
+    code: `Pizza *pizza = new Pizza(12);
+pizza->addTopping("Pineapple");
+pizza->addTopping("Ham");
+
+Pizza *pizza = new Pizza(8);
+pizza->addTopping("Pepperoni");
+pizza->addTopping("Mushroom");
+pizza->addTopping("Green Peppers");
+pizza->addTopping("Onions");`,
+    question: 'According to the slides, what design pattern would best replace this manual construction code?',
+    choices: [
+      'Abstract Factory',
+      'Factory Method',
+      'Builder',
+      'Prototype'
+    ],
+    correctAnswer: 'Builder'
+  },
+  {
+    code: `void HawaiianPizzaBuilder::buildToppings() {
+    _pizza.addTopping("Ham");
+    _pizza.addTopping("Pineapple");
+}`,
+    question: 'This specific implementation of a builder method most directly represents:',
+    choices: [
+      'Director',
+      'Concrete Builder',
+      'Product',
+      'Factory Method'
+    ],
+    correctAnswer: 'Concrete Builder'
+  },
+  {
+    code: `class GameLevel {
+public:
+    GameLevel(GameObjectFactory* factory) {
+        this->_factory = factory;
+        Monster* m1 = factory->createMonster();
+        Monster* m2 = factory->createMonster();
+        Wall*   w1 = factory->createWall();
+        // ...
+    }
+private:
+    GameObjectFactory* _factory;
+};`,
+    question: 'What design pattern does the following code represent?',
+    choices: [
+      'Abstract Factory',
+      'Prototype',
+      'Builder',
+      'Factory Method'
+    ],
+    correctAnswer: 'Abstract Factory'
+  },
+  {
+    code: `void Cook::constructPizza() {
+    _pizzaBuilder->buildName();
+    _pizzaBuilder->buildDough();
+    _pizzaBuilder->buildSauce();
+    _pizzaBuilder->buildToppings();
+}`,
+    question: 'Which design pattern does this approach to step-by-step assembly demonstrate?',
+    choices: [
+      'Builder',
+      'Abstract Factory',
+      'Template Method',
+      'Strategy'
+    ],
+    correctAnswer: 'Builder'
+  },
+  {
+    code: `AppConfig* cfg2 = cfg1->clone();`,
+    question: 'This code avoids reloading a heavy configuration file by copying an existing object. What design pattern does this illustrate?',
+    choices: [
+      'Abstract Factory',
+      'Prototype',
+      'Singleton',
+      'Builder'
+    ],
+    correctAnswer: 'Prototype'
+  },
+  {
+    code: `AppConfig* cfg1 = loadConfig();
+AppConfig* cfg2 = loadConfig();`,
+    question: 'This method incurs a performance hit because loadConfig() is called multiple times. What design pattern could avoid this overhead while still producing similar objects?',
+    choices: [
+      'Prototype',
+      'Abstract Factory',
+      'Builder',
+      'Command'
+    ],
+    correctAnswer: 'Prototype'
+  },
+  {
+    code: `Monster* monster = f->createMonster();`,
+    question: 'In the context of:\nObjectFactory* f = new ObjectFactory(m, w, s);\nWhat design pattern is being used to dynamically return a new object of the same type without requiring a factory subclass for each type?',
+    choices: [
+      'Prototype',
+      'Singleton',
+      'Abstract Factory',
+      'Bridge'
+    ],
+    correctAnswer: 'Prototype'
   }
-
-
   
-
-
-
 
 ];
 

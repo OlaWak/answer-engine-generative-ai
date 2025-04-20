@@ -22,7 +22,7 @@ export default function CS3307Quiz() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showFeedback, setShowFeedback] = useState(false);
-  const [selectedChoice, setSelectedChoice] = useState('');  // ← <--- here
+  const [selectedChoice, setSelectedChoice] = useState('');  
   const [finished, setFinished] = useState(false);
 
   const total = shuffledQuestions.length;
@@ -100,7 +100,16 @@ export default function CS3307Quiz() {
         <h2 className="text-2xl font-bold mb-4">
           Question {currentIndex + 1} / {total}
         </h2>
-        <p className="text-lg mb-4">{currentQuestion.question}</p>
+
+        {/* ← replaced the old question line with this block */}
+        <div className="text-left mb-4">
+          {currentQuestion.code && (
+            <pre className="bg-gray-100 p-4 rounded font-mono whitespace-pre-wrap text-sm">
+              {currentQuestion.code}
+            </pre>
+          )}
+          <p className="mt-2 text-lg">{currentQuestion.question}</p>
+        </div>
 
         {currentQuestion.image && (
           <img
@@ -154,9 +163,29 @@ export default function CS3307Quiz() {
           </div>
         )}
 
-        <p className="mt-6 text-sm text-gray-600">
-          Score: <span className="text-pink-600 font-bold">{score}</span>
-        </p>
+        {(() => {
+        const percent = Math.round((score / total) * 100);
+        let msg = "";
+
+        if (percent >= 90) {
+            msg = "💪🏻 MashaAllah, Fat7i is proud of u ";
+        } else if (percent >= 75) {
+            msg = "🧠 U got brainzzz fr fr";
+        } else if (percent >= 50) {
+            msg = "😅 Not bad not bad keep grinding";
+        } else {
+            msg = "🔐 It's giving... u should duaa, tahajjud, and lock in";
+        }
+
+        return (
+            <p className="mt-6 text-sm text-gray-600">
+            Score: <span className="text-pink-600 font-bold">{score} / {total}</span> (
+            <span className="font-semibold">{percent}%</span>)<br />
+            <span className="italic">{msg}</span>
+            </p>
+        );
+        })()}
+
       </div>
     </div>
   );
