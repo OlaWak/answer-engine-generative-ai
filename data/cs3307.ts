@@ -1632,7 +1632,7 @@ AppConfig* cfg2 = loadConfig();`,
   }`,
     question: 'What is the output of this snippet?',
     choices: ['49', '35', '5 + 2 * 5 + 2', '19'],
-    correctAnswer: '35'
+    correctAnswer: '5 + 2 * 5 + 2'
   },
 { category: 'C++',
     code: `int* ptr = nullptr;
@@ -1924,7 +1924,7 @@ AppConfig* cfg2 = loadConfig();`,
   int a = MAX(2, 3) * 2;`,
     question: 'What’s the problem with this macro?',
     choices: ['Expansion error', 'Result is 6', 'Result is 4 due to lack of brackets', 'Segfault'],
-    correctAnswer: 'Result is 4 due to lack of brackets'
+    correctAnswer: 'Result is 6'
   },
 { category: 'C++',
     code: `namespace A {
