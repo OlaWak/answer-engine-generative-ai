@@ -2115,7 +2115,316 @@ AppConfig* cfg2 = loadConfig();`,
       'An interface implementation'
     ],
     correctAnswer: 'A dependency'
-  }
+  },
+
+{
+      category: 'C++',
+      question: 'What happens when the user enters “John Doe” using cin >> name?',
+      choices: [
+        'It throws a runtime error.',
+        'The variable name will contain John.',
+        'The variable name will contain John Doe.',
+        'The entire input will be ignored due to whitespace.'
+      ],
+      correctAnswer: 'The variable name will contain John.'
+    },
+    {
+      category: 'C++',
+      question: 'In class diagrams, private members of a class are:',
+      choices: [
+        'Only accessible by derived classes.',
+        'Accessible from anywhere in the same program.',
+        'Accessible only by member functions of the same class.',
+        'Always visible in header files.'
+      ],
+      correctAnswer: 'Accessible only by member functions of the same class.'
+    },
+    {
+      category: 'C++',
+      question: 'What is true of class constructors?',
+      choices: [
+        'They must always return an object.',
+        'They are optional, and if not provided, a default one is created.',
+        'They are called only for heap-allocated objects.',
+        'They must be virtual to be invoked.'
+      ],
+      correctAnswer: 'They are optional, and if not provided, a default one is created.'
+    },
+    {
+      category: 'C++',
+      question: 'What keyword is used to define a generic function or class in C++?',
+      choices: ['gen', 'generic', 'typedef', 'template'],
+      correctAnswer: 'template'
+    },
+    {
+      category: 'C++',
+      question: 'In multiple inheritance, how is the derivation list structured?',
+      choices: [
+        'One class only, followed by ...',
+        'One class followed by public',
+        'A comma-separated list after :',
+        'It must use virtual base classes'
+      ],
+      correctAnswer: 'A comma-separated list after :'
+    },
+    {
+      category: 'C++',
+      question: 'Which access modifier allows derived classes access but hides from external code?',
+      choices: ['public', 'private', 'protected', 'static'],
+      correctAnswer: 'protected'
+    },
+    {
+      category: 'C++',
+      question: 'What is the default access specifier for class inheritance in C++?',
+      choices: ['public', 'private', 'protected', 'friend'],
+      correctAnswer: 'private'
+    },
+    {
+      category: 'C++',
+      question: 'What is the output stream for errors called in C++?',
+      choices: ['cin', 'cout', 'cerr', 'cerrout'],
+      correctAnswer: 'cerr'
+    },
+    {
+      category: 'C++',
+      question: 'What distinguishes getline(cin, str) from cin >> str?',
+      choices: [
+        'getline reads entire lines including spaces.',
+        'getline is buffered differently.',
+        'getline requires a pointer as an argument.',
+        'They are the same but one is deprecated.'
+      ],
+      correctAnswer: 'getline reads entire lines including spaces.'
+    },
+    {
+      category: 'C++',
+      question: 'What does friend allow in a class?',
+      choices: [
+        'Access to global functions',
+        'Private inheritance',
+        'A non-member to access private/protected members',
+        'Forward declarations'
+      ],
+      correctAnswer: 'A non-member to access private/protected members'
+    },
+    {
+      category: 'C++',
+      question: 'What operator is overloaded to print user-defined objects using cout?',
+      choices: ['>>', '->', '<<', '::'],
+      correctAnswer: '<<'
+    },
+    {
+      category: 'C++',
+      question: 'What’s a key downside of dynamic dispatching with virtual?',
+      choices: [
+        'Less object flexibility',
+        'Slower compile time',
+        'Performance overhead at runtime',
+        'Cannot use destructors'
+      ],
+      correctAnswer: 'Performance overhead at runtime'
+    },
+    {
+      category: 'C++',
+      question: 'Which constructor is called first when instantiating a derived object?',
+      choices: [
+        'The most derived one',
+        'The one listed first in multiple inheritance',
+        'The base class constructor',
+        'The virtual constructor'
+      ],
+      correctAnswer: 'The base class constructor'
+    },
+    {
+      category: 'C++',
+      question: 'When does the compiler create an implicit copy constructor?',
+      choices: [
+        'Always',
+        'If no constructor is provided',
+        'If no copy constructor is defined explicitly',
+        'If all variables are private'
+      ],
+      correctAnswer: 'If no copy constructor is defined explicitly'
+    },
+    {
+      category: 'C++',
+      question: 'What is the correct syntax for defining a class template?',
+      choices: [
+        'template class<T> class Foo',
+        'template<typename T> class Foo',
+        'generic<class T> class Foo',
+        'template T class Foo'
+      ],
+      correctAnswer: 'template<typename T> class Foo'
+    },
+    {
+      category: 'C++',
+      question: 'Which inheritance type results in public members of base becoming protected in derived?',
+      choices: ['public', 'private', 'protected', 'friend'],
+      correctAnswer: 'protected'
+    },
+    {
+      category: 'C++',
+      question: 'How does a Rectangle class gain access to private data of a Square class?',
+      choices: [
+        'Inheritance',
+        'Using public getter functions',
+        'Declaring Rectangle as a friend class',
+        'Using global functions'
+      ],
+      correctAnswer: 'Declaring Rectangle as a friend class'
+    },
+    {
+      category: 'C++',
+      question: 'What does template<class T> allow you to do?',
+      choices: [
+        'Create a function only for integers',
+        'Dynamically create memory',
+        'Define functions/classes that work with different types',
+        'Use inheritance with templates'
+      ],
+      correctAnswer: 'Define functions/classes that work with different types'
+    },
+    {
+      category: 'C++',
+      question: 'What is true about polymorphism in C++?',
+      choices: [
+        'It only applies to overloaded constructors',
+        'It only works with abstract classes',
+        'It lets derived classes be accessed via base class pointers',
+        'It breaks encapsulation'
+      ],
+      correctAnswer: 'It lets derived classes be accessed via base class pointers'
+    },
+    {
+      category: 'C++',
+      question: 'What does virtual void sayHello() = 0; signify?',
+      choices: [
+        'Overloaded method',
+        'Inline function',
+        'Pure virtual method',
+        'Static dispatch method'
+      ],
+      correctAnswer: 'Pure virtual method'
+    },
+    {
+      category: 'C++',
+      question: 'Which of these cannot be overloaded in C++?',
+      choices: ['+', '<<', '[]', '.'],
+      correctAnswer: '.'
+    },
+    {
+      category: 'C++',
+      question: 'Why would using operator+ incorrectly be dangerous?',
+      choices: [
+        'It causes memory leaks',
+        'It alters virtual tables',
+        'It makes the code semantically confusing',
+        'It compiles but does not link'
+      ],
+      correctAnswer: 'It makes the code semantically confusing'
+    },
+    {
+      category: 'C++',
+      question: 'What is the effect of defining Rectangle(Rectangle &r) without const?',
+      choices: [
+        'Nothing changes',
+        'The object can\'t be passed to the constructor',
+        'It allows modification of the source',
+        'The copy constructor is now invalid'
+      ],
+      correctAnswer: 'It allows modification of the source'
+    },
+    {
+      category: 'C++',
+      question: 'Which STL component allows stepping through elements of collections of objects?',
+      choices: ['Generics', 'Algorithms', 'Iterators', 'Data Templates'],
+      correctAnswer: 'Iterators'
+    },
+    {
+      category: 'C++',
+      question: 'Which STL component acts on containers?',
+      choices: ['Algorithms', 'Iterators', 'Data Templates'],
+      correctAnswer: 'Algorithms'
+    },
+    {
+      category: 'C++',
+      code: `int x;
+  cout << "Enter number: ";
+  cin >> x;
+  cout << "You entered: " << x;
+  // Input: abc`,
+      question: 'What is printed?',
+      choices: [
+        'Runtime error',
+        'You entered: 0',
+        'You entered: abc',
+        'Nothing'
+      ],
+      correctAnswer: 'You entered: 0'
+    },
+    {
+      category: 'C++',
+      code: `string name;
+  getline(cin, name);
+  cout << name;
+  // Input: John Doe`,
+      question: 'What does this print?',
+      choices: ['John', 'John Doe', 'Doe', 'Error'],
+      correctAnswer: 'John Doe'
+    },
+    {
+      category: 'C++',
+      code: `template <typename T>
+  T add(T a, T b) { return a + b; }
+  
+  int main() {
+    cout << add(3, 4);
+  }`,
+      question: 'What is printed?',
+      choices: ['7', '34', '0', 'Error'],
+      correctAnswer: '7'
+    },
+    {
+      category: 'C++',
+      code: `Person* p;
+  Student* s = new Student();
+  p = s;
+  p->sayHello();`,
+      question: 'Which method is called?',
+      choices: [
+        'Person’s sayHello',
+        'Student’s sayHello',
+        'Error',
+        'Undefined'
+      ],
+      correctAnswer: 'Person’s sayHello'
+    },
+    {
+      category: 'C++',
+      question: 'What changes this output to “I am a Student” instead of “I am a Person”?',
+      choices: [
+        'Add static to sayHello',
+        'Add virtual to base class sayHello',
+        'Use composition',
+        'Remove inheritance'
+      ],
+      correctAnswer: 'Add virtual to base class sayHello'
+    },
+    {
+      category: 'C++',
+      code: `Person *p = new Person();
+  // When Person has a pure virtual function.`,
+      question: 'What happens here?',
+      choices: [
+        'Runs fine',
+        'Error at compile time',
+        'Error at runtime',
+        'Instantiates abstract class'
+      ],
+      correctAnswer: 'Error at compile time'
+    }
+  
   
   
 ];
