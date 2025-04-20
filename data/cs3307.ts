@@ -229,7 +229,7 @@ const cs3307: Question[] = [
     correctAnswer: '1'
   },
   {
-    question: 'The following is the simplest statement in C++:',
+    question: 'The following is the simplest statement in C++: \n;',
     choices: ['True', 'False'],
     correctAnswer: 'True'
   },
@@ -369,16 +369,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'Aggregation/composition of multiple factory methods'
   },
-  {
-    question: 'What design pattern does the following code represent?\n\nclass GameLevel {\npublic:\n    GameLevel(GameObjectFactory* factory) {\n        this->_factory = factory;\n        Monster* m1 = factory->createMonster();\n        Monster* m2 = factory->createMonster();\n        Wall*   w1 = factory->createWall();\n        // ...\n    }\nprivate:\n    GameObjectFactory* _factory;\n};',
-    choices: [
-      'Abstract Factory',
-      'Prototype',
-      'Builder',
-      'Factory Method'
-    ],
-    correctAnswer: 'Abstract Factory'
-  },
+ 
   {
     question: 'The Abstract Factory pattern is applicable when:\n“A system should be independent of how its products are created.”\nWhich other scenario also matches its applicability?',
     choices: [
@@ -411,7 +402,17 @@ const cs3307: Question[] = [
     correctAnswer: 'Abstract Factory'
   },
   {
-    question: 'Pizza *pizza = new Pizza(12);  // 12" pizza\npizza->addTopping("Pineapple");\npizza->addTopping("Ham");\n\nPizza *pizza = new Pizza(8);\npizza->addTopping("Pepperoni");\npizza->addTopping("Mushroom");\npizza->addTopping("Green Peppers");\npizza->addTopping("Onions");\nAccording to the slides, what design pattern would best replace this manual construction code?',
+    question: `Pizza *pizza = new Pizza(12);
+  pizza->addTopping("Pineapple");
+  pizza->addTopping("Ham");
+  
+  Pizza *pizza = new Pizza(8);
+  pizza->addTopping("Pepperoni");
+  pizza->addTopping("Mushroom");
+  pizza->addTopping("Green Peppers");
+  pizza->addTopping("Onions");
+  
+  According to the slides, what design pattern would best replace this manual construction code?`,
     choices: [
       'Abstract Factory',
       'Factory Method',
@@ -420,6 +421,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'Builder'
   },
+  
   {
     question: '“Separate the construction of a complex object from its representation so that the same construction process can create different representations.” Which design pattern is this the textbook definition of?',
     choices: [
@@ -430,16 +432,7 @@ const cs3307: Question[] = [
     ],
     correctAnswer: 'Builder'
   },
-  {
-    question: 'void Cook::constructPizza() {\n    _pizzaBuilder->buildName();\n    _pizzaBuilder->buildDough();\n    _pizzaBuilder->buildSauce();\n    _pizzaBuilder->buildToppings();\n}\nWhich design pattern does this approach to step-by-step assembly demonstrate?',
-    choices: [
-      'Builder',
-      'Abstract Factory',
-      'Template Method',
-      'Strategy'
-    ],
-    correctAnswer: 'Builder'
-  },
+  
   {
     question: 'Which of the following is NOT a listed consequence of the Builder pattern from the slides?',
     choices: [
@@ -490,7 +483,136 @@ const cs3307: Question[] = [
       'Object creation should be decoupled from class hierarchy and handled via interfaces'
     ],
     correctAnswer: 'The construction process must allow different representations for the object that’s constructed'
+  },
+  {
+    question: `What design pattern does the following code represent?
+
+class GameLevel {
+public:
+    GameLevel(GameObjectFactory* factory) {
+        this->_factory = factory;
+        Monster* m1 = factory->createMonster();
+        Monster* m2 = factory->createMonster();
+        Wall*   w1 = factory->createWall();
+        // ...
+    }
+private:
+    GameObjectFactory* _factory;
+};`,
+    choices: [
+      'Abstract Factory',
+      'Prototype',
+      'Builder',
+      'Factory Method'
+    ],
+    correctAnswer: 'Abstract Factory'
+  },
+  {
+    question: `void Cook::constructPizza() {
+    _pizzaBuilder->buildName();
+    _pizzaBuilder->buildDough();
+    _pizzaBuilder->buildSauce();
+    _pizzaBuilder->buildToppings();
+}
+Which design pattern does this approach to step-by-step assembly demonstrate?`,
+    choices: [
+      'Builder',
+      'Abstract Factory',
+      'Template Method',
+      'Strategy'
+    ],
+    correctAnswer: 'Builder'
+  },
+  {
+    question: `AppConfig* cfg2 = cfg1->clone();
+This code avoids reloading a heavy configuration file by copying an existing object. What design pattern does this illustrate?`,
+    choices: [
+      'Abstract Factory',
+      'Prototype',
+      'Singleton',
+      'Builder'
+    ],
+    correctAnswer: 'Prototype'
+  },
+  {
+    question: `“Specify the kinds of objects to create using a prototypical instance, and create new objects by copying the prototype.”
+Which design pattern is described by this definition?`,
+    choices: [
+      'Builder',
+      'Abstract Factory',
+      'Prototype',
+      'Factory Method'
+    ],
+    correctAnswer: 'Prototype'
+  },
+  {
+    question: `Which design pattern is most appropriate when:
+“Instances are expensive to create, but easy to copy”?`,
+    choices: [
+      'Prototype',
+      'Singleton',
+      'Factory Method',
+      'Strategy'
+    ],
+    correctAnswer: 'Prototype'
+  },
+  {
+    question: `AppConfig* cfg1 = loadConfig();
+AppConfig* cfg2 = loadConfig();
+This method incurs a performance hit because loadConfig() is called multiple times. What design pattern could avoid this overhead while still producing similar objects?`,
+    choices: [
+      'Prototype',
+      'Abstract Factory',
+      'Builder',
+      'Command'
+    ],
+    correctAnswer: 'Prototype'
+  },
+  {
+    question: `Why can’t a copy constructor be used to duplicate AppConfig objects in the prototype example (refer to slides)?`,
+    choices: [
+      'Because AppConfig is a template class',
+      'Because AppConfig is abstract and cannot be instantiated directly',
+      'Because the compiler disables copy constructors by default',
+      'Because clone() uses deep copying'
+    ],
+    correctAnswer: 'Because AppConfig is abstract and cannot be instantiated directly'
+  },
+  {
+    question: `Monster* monster = f->createMonster();
+In the context of:
+ObjectFactory* f = new ObjectFactory(m, w, s);
+What design pattern is being used to dynamically return a new object of the same type without requiring a factory subclass for each type?`,
+    choices: [
+      'Prototype',
+      'Singleton',
+      'Abstract Factory',
+      'Bridge'
+    ],
+    correctAnswer: 'Prototype'
+  },
+  {
+    question: `“Hides the concrete product classes from the client – we don’t have to know which concrete type we’re cloning”
+This is a listed consequence of which design pattern?`,
+    choices: [
+      'Factory Method',
+      'Prototype',
+      'Abstract Factory',
+      'Adapter'
+    ],
+    correctAnswer: 'Prototype'
+  },
+  {
+    question: `When might you prefer using prototypes instead of factory subclasses to build game levels?`,
+    choices: [
+      'When you want the client to have strict control over object creation',
+      'When the object creation depends on external configuration files',
+      'When you want flexible combinations of products without requiring subclassing',
+      'When object creation needs to be restricted to a single instance'
+    ],
+    correctAnswer: 'When you want flexible combinations of products without requiring subclassing'
   }
+
 
   
 
