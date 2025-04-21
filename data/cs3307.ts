@@ -2924,6 +2924,178 @@ AppConfig* cfg2 = loadConfig();`,
           'Composition Principle'
         ],
         correctAnswer: 'Liskov Substitution'
+      },
+      {
+        category: 'User',
+        question: 'Which of the following is a key reason stories should be Independent?',
+        choices: [
+          'To make developers work alone on tasks',
+          'To reduce code duplication in design',
+          'So they can be freely reordered or moved in the release schedule',
+          'So they require detailed technical specifications up front'
+        ],
+        correctAnswer: 'So they can be freely reordered or moved in the release schedule'
+      },
+      {
+        category: 'User',
+        question: 'What does the “N” in INVEST mean according to your slides?',
+        choices: [
+          'Stories should be nested',
+          'Stories must include numeric IDs',
+          'Stories are not contracts; they are negotiable and discussed',
+          'Stories are non-functional by design'
+        ],
+        correctAnswer: 'Stories are not contracts; they are negotiable and discussed'
+      },
+      {
+        category: 'User',
+        question: 'What is a common danger when a user story includes too much detail up front?',
+        choices: [
+          'The dev team gets bored',
+          'The story loses relevance',
+          'It may be mistaken as complete, and conversation stops',
+          'It becomes testable'
+        ],
+        correctAnswer: 'It may be mistaken as complete, and conversation stops'
+      },
+      {
+        category: 'User',
+        question: 'According to the “V” in INVEST, what is a red flag in user stories?',
+        choices: [
+          'Stories written in the third person',
+          'Stories focused on technical implementation (e.g., connection pooling)',
+          'Stories with fewer than three acceptance tests',
+          'Stories that use a persona'
+        ],
+        correctAnswer: 'Stories focused on technical implementation (e.g., connection pooling)'
+      },
+      {
+        category: 'User',
+        question: 'Which story is a better example of value to the user, based on the slide?',
+        choices: [
+          '“All logging will use Log4J v3.”',
+          '“Connection pooling should follow standard practices.”',
+          '“Up to 50 users can use the app with a 5-user DB license.”',
+          '“Exceptions are caught and stack traces logged.”'
+        ],
+        correctAnswer: '“Up to 50 users can use the app with a 5-user DB license.”'
+      },
+      {
+        category: 'User',
+        question: 'What makes a story un-estimatable, according to the slides?',
+        choices: [
+          'It’s written in passive voice',
+          'The acceptance tests are too strict',
+          'It’s too big or developers lack technical/domain knowledge',
+          'It hasn’t been approved by the customer'
+        ],
+        correctAnswer: 'It’s too big or developers lack technical/domain knowledge'
+      },
+      {
+        category: 'User',
+        question: 'What is a spike in story estimation used for?',
+        choices: [
+          'Stress testing',
+          'Performance validation',
+          'A short, timeboxed experiment to learn just enough to estimate',
+          'A placeholder for missing features'
+        ],
+        correctAnswer: 'A short, timeboxed experiment to learn just enough to estimate'
+      },
+      {
+        category: 'User',
+        question: 'What is the INVEST guideline around story size?',
+        choices: [
+          'Stories should be at least a week of work',
+          'Stories should be small but not too small',
+          'Stories should include 10–20 sub-tasks',
+          'Stories should be broken down into separate UMLs'
+        ],
+        correctAnswer: 'Stories should be small but not too small'
+      },
+      {
+        category: 'User',
+        question: 'Why is it important for a story to be testable?',
+        choices: [
+          'To avoid writing unit tests',
+          'So it can be discussed by the whole team',
+          'So developers know when the story is done',
+          'So testers can manually check off items'
+        ],
+        correctAnswer: 'So developers know when the story is done'
+      },
+      {
+        category: 'User',
+        question: 'Which of the following violates the “Testable” principle?',
+        choices: [
+          '“A user must never have to wait long for a screen to appear.”',
+          '“User logs in with credentials.”',
+          '“Error messages must be visible.”',
+          '“A user can reset their password.”'
+        ],
+        correctAnswer: '“A user must never have to wait long for a screen to appear.”'
+      },
+      {
+        category: 'User',
+        question: 'What’s the recommended automation level for testable stories?',
+        choices: ['50%', '75%', '10%', '99%'],
+        correctAnswer: '99%'
+      },
+      {
+        category: 'User',
+        question: 'What INVEST principle is violated when you require a backend to be implemented before you can start on a frontend story?',
+        choices: ['Valuable', 'Negotiable', 'Independent', 'Testable'],
+        correctAnswer: 'Independent'
+      },
+      {
+        category: 'User',
+        question: 'Which of these is not a suggested fix for stories that are too dependent?',
+        choices: [
+          'Combine them into a larger independent story',
+          'Find a different way to split them',
+          'Assign them all the same point value',
+          'Prioritize conversations between customer and devs'
+        ],
+        correctAnswer: 'Assign them all the same point value'
+      },
+      {
+        category: 'User',
+        question: 'Why is it helpful to defer story detail until later in development?',
+        choices: [
+          'It’s faster to write',
+          'You avoid wasting time on stories that might not be needed',
+          'You can skip confirmation',
+          'So testers can write the test cases themselves'
+        ],
+        correctAnswer: 'You avoid wasting time on stories that might not be needed'
+      },
+      {
+        category: 'User',
+        question: 'Why is using domain language critical in user stories?',
+        choices: [
+          'It makes translation easier',
+          'It keeps stories compatible with test scripts',
+          'It helps both devs and customers understand the story',
+          'It’s required by IEEE 830 standard'
+        ],
+        correctAnswer: 'It helps both devs and customers understand the story'
+      },
+      {
+        category: 'User',
+        question: 'What does the “S” in INVEST stand for, and what does it imply?',
+        choices: [
+          'Secure – must follow all security rules',
+          'Specific – should not be vague',
+          'Small – should be small enough to fit in a sprint',
+          'Standardized – must follow IEEE story format'
+        ],
+        correctAnswer: 'Small – should be small enough to fit in a sprint'
+      },
+      {
+        category: 'User',
+        question: 'A team cannot complete a story in one sprint, even after breaking it down. What INVEST property is being violated?',
+        choices: ['Testable', 'Estimable', 'Small', 'Independent'],
+        correctAnswer: 'Small'
       }
  
     
