@@ -2522,7 +2522,411 @@ AppConfig* cfg2 = loadConfig();`,
         'It increases polymorphism'
       ],
       correctAnswer: 'It makes changes in one class affect many others'
-    }  
+    },
+      {
+        category: 'Design',
+        question: 'What does high coupling lead to, according to the slides?',
+        choices: [
+          'Better maintainability',
+          'Stable interfaces',
+          'Interdependent entities, hard-to-change design',
+          'Increased code reuse'
+        ],
+        correctAnswer: 'Interdependent entities, hard-to-change design'
+      },
+      {
+        category: 'Design',
+        question: 'What is a consequence of low cohesion?',
+        choices: [
+          'Improved clarity of dependencies',
+          'Entity’s members contribute to a well-defined purpose',
+          'Vague entity names and unrelated functionality',
+          'Easier to maintain and extend'
+        ],
+        correctAnswer: 'Vague entity names and unrelated functionality'
+      },
+      {
+        category: 'Design',
+        question: 'What principle is illustrated by: “Take the parts that vary and encapsulate them”?',
+        choices: [
+          'Open/Closed Principle',
+          'Encapsulation Principle',
+          'Interface Segregation Principle',
+          'Encapsulate What Varies'
+        ],
+        correctAnswer: 'Encapsulate What Varies'
+      },
+      {
+        category: 'Design',
+        question: 'What is the main downside of high coupling in object-oriented systems?',
+        choices: [
+          'Components are reusable',
+          'Interfaces are well-isolated',
+          'Changes in one entity ripple through many others',
+          'You save time during debugging'
+        ],
+        correctAnswer: 'Changes in one entity ripple through many others'
+      },
+      {
+        category: 'Design',
+        question: 'What defines low coupling?',
+        choices: [
+          'Passing entire objects',
+          'Sharing global variables',
+          'Using C++ friend classes',
+          'Sharing only data through parameters and returns'
+        ],
+        correctAnswer: 'Sharing only data through parameters and returns'
+      },
+      {
+        category: 'Design',
+        question: 'According to the slides, what does “code to an interface” really mean?',
+        choices: [
+          'Always use Java interfaces',
+          'Code only against abstract classes',
+          'Code to a supertype, not a subtype',
+          'Use design patterns like Adapter'
+        ],
+        correctAnswer: 'Code to a supertype, not a subtype'
+      },
+      {
+        category: 'Design',
+        question: 'What is a drawback of creating a large inheritance hierarchy, according to the athlete/team example?',
+        choices: [
+          'Promotes flexibility',
+          'Respects the Open/Closed Principle',
+          'Causes extensive code duplication',
+          'Increases interface cohesion'
+        ],
+        correctAnswer: 'Causes extensive code duplication'
+      },
+      {
+        category: 'Design',
+        question: 'What kind of relationship does composition establish?',
+        choices: ['IS-A', 'HAS-A', 'IS-LIKE-A', 'USES-A'],
+        correctAnswer: 'HAS-A'
+      },
+      {
+        category: 'Design',
+        question: 'What principle is best followed by delegating behavior through behavior objects?',
+        choices: [
+          'Liskov Substitution',
+          'Encapsulate What Varies',
+          'Dependency Inversion',
+          'Interface Segregation'
+        ],
+        correctAnswer: 'Encapsulate What Varies'
+      },
+      {
+        category: 'Design',
+        question: 'What is the goal of the Interface Segregation Principle?',
+        choices: [
+          'Keep clients dependent on fewer modules',
+          'Avoid adding new subclasses',
+          'Avoid fat interfaces and promote cohesive ones',
+          'Remove public methods'
+        ],
+        correctAnswer: 'Avoid fat interfaces and promote cohesive ones'
+      },
+      {
+        category: 'Design',
+        question: 'Which principle states “Abstractions should not depend upon details”?',
+        choices: [
+          'Open/Closed Principle',
+          'Interface Segregation',
+          'Dependency Inversion',
+          'Liskov Substitution'
+        ],
+        correctAnswer: 'Dependency Inversion'
+      },
+      {
+        category: 'Design',
+        question: 'What does the Dependency Inversion Principle suggest about modules?',
+        choices: [
+          'High-level modules should depend on low-level modules',
+          'Both should depend on abstractions',
+          'Details should be built first',
+          'Interface code should be written last'
+        ],
+        correctAnswer: 'Both should depend on abstractions'
+      },
+      {
+        category: 'Design',
+        question: 'What design risk arises when we add every new method to a base class?',
+        choices: [
+          'Improved reusability',
+          'Interface becomes too cohesive',
+          'Violates the Liskov Substitution Principle',
+          'Violates the Open/Closed Principle'
+        ],
+        correctAnswer: 'Violates the Open/Closed Principle'
+      },
+      {
+        category: 'Design',
+        question: 'What’s the downside of adapting code to fit a design pattern instead of the reverse?',
+        choices: [
+          'Increased flexibility',
+          'Risk of missing out on standardization',
+          'Risk of solving the wrong problem',
+          'Simpler implementation'
+        ],
+        correctAnswer: 'Risk of solving the wrong problem'
+      },
+      {
+        category: 'Design',
+        question: 'What do patterns encourage when used properly?',
+        choices: [
+          'Early code writing',
+          'Inheritance-heavy architectures',
+          'Shared learning and abstract thinking',
+          'Runtime performance focus'
+        ],
+        correctAnswer: 'Shared learning and abstract thinking'
+      },
+      {
+        category: 'Design',
+        question: 'What is the consequence component of a design pattern used for?',
+        choices: [
+          'Naming the pattern',
+          'Describing the class diagram',
+          'Evaluating trade-offs of applying the pattern',
+          'Explaining the runtime behavior'
+        ],
+        correctAnswer: 'Evaluating trade-offs of applying the pattern'
+      },
+      {
+        category: 'Design',
+        question: 'What are the three types of design patterns identified by the Gang of Four?',
+        choices: [
+          'Creation, Delegation, Abstract',
+          'Subclass, Composition, Observer',
+          'Creational, Structural, Behavioural',
+          'Simple, Complex, Abstract'
+        ],
+        correctAnswer: 'Creational, Structural, Behavioural'
+      },
+      {
+        category: 'Design',
+        question: 'Which of the following is NOT a benefit listed under design pattern usage?',
+        choices: [
+          'Faster development',
+          'Less abstraction in code',
+          'More modular systems',
+          'Common terminology among developers'
+        ],
+        correctAnswer: 'Less abstraction in code'
+      },
+      {
+        category: 'Design',
+        question: 'What is the definition of the Single Responsibility Principle?',
+        choices: [
+          'A class should only have one method',
+          'Every object in a system should be closed to modification',
+          'Every object in a system should have a single responsibility, and all the object’s services should be focused on carrying out that single responsibility',
+          'A class must implement all methods of its interface'
+        ],
+        correctAnswer: 'Every object in a system should have a single responsibility, and all the object’s services should be focused on carrying out that single responsibility'
+      },
+      {
+        category: 'Design',
+        question: 'What is the Open/Closed Principle?',
+        choices: [
+          'Classes should be editable and testable',
+          'Classes should be open for modification and closed to inheritance',
+          'Classes should be open for extension, and closed for modification',
+          'You should avoid extending existing classes'
+        ],
+        correctAnswer: 'Classes should be open for extension, and closed for modification'
+      },
+      {
+        category: 'Design',
+        question: 'What is the Liskov Substitution Principle?',
+        choices: [
+          'All base classes should have a constructor',
+          'Subtypes must be substitutable for their base types',
+          'Subtypes must override every virtual method of the base class',
+          'All derived classes should only use composition'
+        ],
+        correctAnswer: 'Subtypes must be substitutable for their base types'
+      },
+      {
+        category: 'Design',
+        question: 'What does the Interface Segregation Principle state?',
+        choices: [
+          'Code should use only concrete classes',
+          'One large interface is better than many specific ones',
+          'Many client-specific interfaces are better than one general purpose interface',
+          'All clients must inherit from a base class'
+        ],
+        correctAnswer: 'Many client-specific interfaces are better than one general purpose interface'
+      },
+      {
+        category: 'Design',
+        question: 'What is the Dependency Inversion Principle?',
+        choices: [
+          'Lower-level modules should not call higher-level modules',
+          'Code should depend only on concrete implementations',
+          'High-level modules should not depend upon low-level modules. Both should depend upon abstractions.',
+          'Modules should always inherit behavior'
+        ],
+        correctAnswer: 'High-level modules should not depend upon low-level modules. Both should depend upon abstractions.'
+      },
+      {
+        category: 'Design',
+        question: 'What is the meaning of “Encapsulate What Varies”?',
+        choices: [
+          'Keep everything in the same class for simplicity',
+          'Put all similar code into static helper classes',
+          'Take the parts that vary and encapsulate them, so that later you can alter or extend the parts that vary without affecting those that don’t',
+          'Create an abstract interface for every method'
+        ],
+        correctAnswer: 'Take the parts that vary and encapsulate them, so that later you can alter or extend the parts that vary without affecting those that don’t'
+      },
+      {
+        category: 'Design',
+        question: 'What does “Code to an Interface, Not an Implementation” mean?',
+        choices: [
+          'Always use language-level interfaces',
+          'Create a subclass for each new feature',
+          'Interact with a supertype, not a subtype',
+          'Define all logic in constructors'
+        ],
+        correctAnswer: 'Interact with a supertype, not a subtype'
+      },
+      {
+        category: 'Design',
+        question: 'What is the principle behind “Favour Composition Over Inheritance”?',
+        choices: [
+          'You should never use inheritance in OOP',
+          'Always override parent methods in derived classes',
+          'By favouring delegation, composition, and aggregation over inheritance, we can produce software that is more flexible, and easier to maintain, extend, and reuse',
+          'Create the largest inheritance tree to reduce code duplication'
+        ],
+        correctAnswer: 'By favouring delegation, composition, and aggregation over inheritance, we can produce software that is more flexible, and easier to maintain, extend, and reuse'
+      },
+      {
+        category: 'Design',
+        question: 'What does the principle of High Cohesion imply?',
+        choices: [
+          'Group unrelated methods to reduce memory',
+          'All members of a class should be private',
+          'A class should have functions that act on the same set of data and contribute to a specific purpose',
+          'Every function in the system should be public'
+        ],
+        correctAnswer: 'A class should have functions that act on the same set of data and contribute to a specific purpose'
+      },
+      {
+        category: 'Design',
+        question: 'What is Low Coupling associated with?',
+        choices: [
+          'Strong dependencies between objects',
+          'Sharing global variables across modules',
+          'Hiding data and minimizing dependencies between classes',
+          'Making classes friend with each other'
+        ],
+        correctAnswer: 'Hiding data and minimizing dependencies between classes'
+      },
+      {
+        category: 'Design',
+        question: 'What is a direct benefit of adhering to the Single Responsibility Principle?',
+        choices: [
+          'Lower run-time overhead',
+          'Higher coupling',
+          'Increased cohesion',
+          'More global access'
+        ],
+        correctAnswer: 'Increased cohesion'
+      },
+      {
+        category: 'Design',
+        question: 'Which principle is directly violated when a class must override methods it doesn\'t use?',
+        choices: [
+          'Liskov Substitution',
+          'Open/Closed',
+          'Interface Segregation',
+          'Dependency Inversion'
+        ],
+        correctAnswer: 'Interface Segregation'
+      },
+      {
+        category: 'Design',
+        question: 'What does the SOLID acronym stand for?',
+        choices: [
+          'Structured, Open, Limited, Interchangeable, Defined',
+          'Substitution, Object-orientation, Logic, Interface, Design',
+          'Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion',
+          'Static Objects, Linked Interfaces, Design patterns'
+        ],
+        correctAnswer: 'Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion'
+      },
+      {
+        category: 'Design',
+        question: 'A Square subclass overrides setWidth() and setHeight() from Rectangle, changing both at once. This violates which principle?',
+        choices: [
+          'Interface Segregation',
+          'Liskov Substitution',
+          'Single Responsibility',
+          'Dependency Inversion'
+        ],
+        correctAnswer: 'Liskov Substitution'
+      },
+      {
+        category: 'Design',
+        question: 'A new feature requires modifying an existing, well-tested Shape class. This breaks which principle?',
+        choices: [
+          'Open/Closed Principle',
+          'Liskov Substitution Principle',
+          'Single Responsibility Principle',
+          'Interface Segregation'
+        ],
+        correctAnswer: 'Open/Closed Principle'
+      },
+      {
+        category: 'Design',
+        question: 'You create a fat interface Printer, which includes scan(), fax(), and print(). Your BasicPrinter must implement scan() and fax() but does nothing in them. What principle is violated?',
+        choices: [
+          'Liskov',
+          'Open/Closed',
+          'Interface Segregation',
+          'Single Responsibility'
+        ],
+        correctAnswer: 'Interface Segregation'
+      },
+      {
+        category: 'Design',
+        question: 'A single UserAccount class stores data, manages sessions, and logs activity. This violates which principle?',
+        choices: [
+          'Liskov Substitution',
+          'Open/Closed',
+          'Single Responsibility',
+          'Dependency Inversion'
+        ],
+        correctAnswer: 'Single Responsibility'
+      },
+      {
+        category: 'Design',
+        question: 'You create a subclass just to change a few private variables. The parent class was modified directly for this. What principle was violated?',
+        choices: [
+          'Open/Closed',
+          'Liskov Substitution',
+          'Interface Segregation',
+          'Dependency Inversion'
+        ],
+        correctAnswer: 'Open/Closed'
+      },
+      {
+        category: 'Design',
+        question: 'A class hierarchy breaks when a subclass’s method overrides behavior in a way that breaks a test on the parent class. This is a classic example of violating:',
+        choices: [
+          'Liskov Substitution',
+          'Interface Segregation',
+          'Open/Closed',
+          'Composition Principle'
+        ],
+        correctAnswer: 'Liskov Substitution'
+      }
+ 
+    
   
   
 ];

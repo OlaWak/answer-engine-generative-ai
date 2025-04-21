@@ -67,7 +67,7 @@ export default function CS3307Quiz() {
 
   // 2) Section select screen
   if (access && !selectedSection) {
-    const sections = ['PastExams', 'Patterns', 'C++', 'UML'];
+    const sections = ['PastExams', 'Patterns', 'C++', 'UML','Design'];
 
     return (
       <div className={`min-h-screen flex flex-col items-center justify-center gap-4 ${bg} text-gray-800 font-mono px-4`}>
@@ -88,7 +88,9 @@ export default function CS3307Quiz() {
                 ? 'Past Exams' 
                 : section === 'Patterns' 
                 ? 'Design Patterns' 
-                : section === 'UML' 
+                : section == 'Design'
+                ? 'Design Principles'
+                :section === 'UML' 
                 ? 'UML' 
                 : 'C++'}
             </button>
