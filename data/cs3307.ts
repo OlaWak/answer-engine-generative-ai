@@ -3096,11 +3096,120 @@ AppConfig* cfg2 = loadConfig();`,
         question: 'A team cannot complete a story in one sprint, even after breaking it down. What INVEST property is being violated?',
         choices: ['Testable', 'Estimable', 'Small', 'Independent'],
         correctAnswer: 'Small'
-      }
+      },
+
+      { category: 'Patterns',
+        question: 'What is the following desgin pattern?',
+        image: '/data/imgs/abs.png',
+        choices: ['Bridge','Factory Method','Abstract Factory','Adapter'
+        ],
+        correctAnswer: 'Abstract Factory'
+      },
  
+      { category: 'Patterns',
+        question: 'What is the following desgin pattern?',
+        image: '/data/imgs/adapter.png',
+        choices: ['Bridge','Strategy','Abstract Factory','Adapter'
+        ],
+        correctAnswer: 'Adapter'
+      },
     
+      { category: 'Patterns',
+        question: 'What is the following desgin pattern?',
+        image: '/data/imgs/bridge.png',
+        choices: ['Bridge','Strategy','Builder','Adapter'
+        ],
+        correctAnswer: 'Bridge'
+      }, 
+      
+      { category: 'Patterns',
+        question: 'What is the following desgin pattern?',
+        image: '/data/imgs/builder.png',
+        choices: ['Bridge','Strategy','Builder','Bob'
+        ],
+        correctAnswer: 'Builder'
+      },
+
+      { category: 'Patterns',
+        question: 'What is the following desgin pattern?',
+        image: '/data/imgs/command.png',
+        choices: ['Bridge','Command','Observer','Composite'
+        ],
+        correctAnswer: 'Command'
+      },
+
+      { category: 'Patterns',
+        question: 'What is the following desgin pattern?',
+        image: '/data/imgs/composite.png',
+        choices: ['Bridge','Command','Visitor','Composite'
+        ],
+        correctAnswer: 'Composite'
+      },
+
+      { category: 'Patterns',
+        question: 'What is the following desgin pattern?',
+        image: '/data/imgs/decorator.png',
+        choices: ['Decorator','Command','Visitor','Composite'
+        ],
+        correctAnswer: 'Decorator'
+      },
+
+      { category: 'Patterns',
+        question: 'What is the following desgin pattern?',
+        image: '/data/imgs/factory.png',
+        choices: ['Decorator','Factory Method','Visitor','Abstract Factory'
+        ],
+        correctAnswer: 'Factory Method'
+      },
   
+      
+      { category: 'Patterns',
+        question: 'What is the following desgin pattern?',
+        image: '/data/imgs/fly.png',
+        choices: ['Decorator','Factory Method','Flyweight','Abstract Factory'
+        ],
+        correctAnswer: 'Flyweight'
+      },
+
+      { category: 'Patterns',
+        question: 'What is the following desgin pattern?',
+        image: '/data/imgs/obs.png',
+        choices: ['Decorator','Observer','Flyweight','Abstract Factory'
+        ],
+        correctAnswer: 'Observer'
+      },
   
+      { category: 'Patterns',
+        question: 'What is the following desgin pattern?',
+        image: '/data/imgs/proto.png',
+        choices: ['Decorator','Prototype','Flyweight','Abstract Factory'
+        ],
+        correctAnswer: 'Prototype'
+      },
+  
+      { category: 'Patterns',
+        question: 'What is the following desgin pattern?',
+        image: '/data/imgs/single.png',
+        choices: ['Observer','Prototype','Flyweight','Singlton'
+        ],
+        correctAnswer: 'Singlton'
+      },
+  
+      { category: 'Patterns',
+        question: 'What is the following desgin pattern?',
+        image: '/data/imgs/state.png',
+        choices: ['Observer','State','Strategy','Singlton'
+        ],
+        correctAnswer: 'State'
+      },
+
+      { category: 'Patterns',
+        question: 'What is the following desgin pattern?',
+        image: '/data/imgs/visitor.png',
+        choices: ['Visiting','State','Visitor','Singlton'
+        ],
+        correctAnswer: 'Visitor'
+      },
 ];
 
 export default cs3307;
