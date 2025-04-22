@@ -335,7 +335,7 @@ const cs3307: Question[] = [
     question: 'Which key difference distinguishes Abstract Factory from Factory Method, according to the PowerPoint?',
     choices: [
       'Factory Method uses aggregation/composition, Abstract Factory uses inheritance',
-      'Factory Method is for creating families, Abstract Factory is for a single product',
+      'Abstract Factory uses aggregation/composition; Factory Method uses inheritance',
       'Factory Method uses inheritance; Abstract Factory uses composition and creates families',
       'Both are identical except for naming conventions'
     ],
