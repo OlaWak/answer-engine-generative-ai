@@ -319,7 +319,7 @@ const cs3307: Question[] = [
 { category: 'PastExams',
     question: 'The Prototype pattern, as discussed in class, works by wrapping one object inside another with the same interface.',
     choices: ['True', 'False'],
-    correctAnswer: 'True'
+    correctAnswer: 'False'
   },
 { category: 'PastExams',
     question: 'The Bridge pattern, as discussed in class, defines a family of algorithms, encapsulates each one, and makes them interchangeable. Bridge lets the algorithm vary independently from clients that use it.',
