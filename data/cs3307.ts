@@ -181,7 +181,7 @@ const cs3307: Question[] = [
       "Both a) and c) are true",
       "All of the above are true"
     ],
-    correctAnswer: "Both a) and c) are true"
+    correctAnswer: "All of the above are true"
   },
 { category: 'PastExams',
     question: "The Builder pattern is used to:",
