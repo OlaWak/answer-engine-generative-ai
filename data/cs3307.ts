@@ -223,7 +223,7 @@ const cs3307: Question[] = [
 { category: 'PastExams',
     question: 'Classes are mandatory in all valid C++ programs.',
     choices: ['True', 'False'],
-    correctAnswer: ''
+    correctAnswer: 'False'
   },
 { category: 'PastExams',
     question: 'A valid C++ program can have how many main() functions:',
