@@ -3116,7 +3116,7 @@ AppConfig* cfg2 = loadConfig();`,
     
       { category: 'Patterns',
         question: 'What is the following desgin pattern?',
-        image: '/data/imgs/bridge.png',
+        image: '/data/imgs/brige.png',
         choices: ['Bridge','Strategy','Builder','Adapter'
         ],
         correctAnswer: 'Bridge'
